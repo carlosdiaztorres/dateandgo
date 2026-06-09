@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Manrope:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#1e2023",
+                        "on-tertiary": "#303032",
+                        "secondary-fixed": "#e5e2e3",
+                        "inverse-on-surface": "#2e3034",
+                        "on-background": "#e2e2e7",
+                        "surface": "#111317",
+                        "on-primary-fixed": "#241a00",
+                        "on-error-container": "#ffdad6",
+                        "background": "#111317",
+                        "outline": "#99907c",
+                        "surface-variant": "#333539",
+                        "error-container": "#93000a",
+                        "primary": "#f2ca50",
+                        "surface-container-highest": "#333539",
+                        "surface-bright": "#37393d",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#574500",
+                        "outline-variant": "#4d4635",
+                        "inverse-surface": "#e2e2e7",
+                        "on-tertiary-container": "#454547",
+                        "on-secondary-container": "#bab8b9",
+                        "on-secondary-fixed": "#1b1b1c",
+                        "on-secondary": "#303031",
+                        "on-surface": "#e2e2e7",
+                        "surface-container-lowest": "#0c0e12",
+                        "primary-container": "#d4af37",
+                        "on-secondary-fixed-variant": "#474647",
+                        "tertiary-fixed": "#e4e2e4",
+                        "primary-fixed": "#ffe088",
+                        "secondary": "#c8c6c7",
+                        "surface-dim": "#111317",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "surface-container-high": "#282a2e",
+                        "secondary-fixed-dim": "#c8c6c7",
+                        "tertiary": "#d0cdd0",
+                        "primary-fixed-dim": "#e9c349",
+                        "tertiary-container": "#b4b2b4",
+                        "on-primary": "#3c2f00",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#735c00",
+                        "surface-container-low": "#1a1c1f",
+                        "on-surface-variant": "#d0c5af",
+                        "secondary-container": "#49494a",
+                        "on-primary-container": "#554300",
+                        "surface-tint": "#e9c349"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-xs": "4px",
+                        "unit-xl": "64px",
+                        "margin-desktop": "80px",
+                        "unit-md": "16px",
+                        "unit-sm": "8px",
+                        "margin-tablet": "40px",
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "unit-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display"],
+                        "label-caps": ["Manrope"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Manrope"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .concierge-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #d4af37;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #d4af37;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-container-low border-b border-outline-variant dark:border-outline shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-md text-primary dark:text-primary-fixed-dim">DateAndGo</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Discover</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Dates</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Messages</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-secondary transition-all duration-300" href="#">Profile</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-caps text-label-caps hover:translate-y-[-2px] transition-transform duration-200">
+                Request Concierge
+            </button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-unit-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Side: Hero Image & Gallery -->
+<div class="md:col-span-5 space-y-unit-md">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden shadow-2xl">
+<img alt="Marta" class="w-full h-full object-cover" data-alt="A professional portrait of a 34-year-old woman with an elegant, intelligent expression, posing against a minimalist architectural background with soft natural lighting. She wears high-end, contemporary minimalist fashion. The overall atmosphere is sophisticated, luxurious, and calm, utilizing a palette of deep charcoal, soft gold, and warm skin tones, reflecting a high-discretion editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjTBvmeUrApOgx-P0ayJ30jOHxSblWAAEp3REuVeTdzzodLMGhxvzMWkwAZdEpM4nvBawu8eaQgz1bF73u-iXW4csbT0wIFJFv3UPYRfNwfmnQjaN3nU59fZdT0vAsEAgESqnQQjIco9JwcK4xfVwHcXKqL8uKlUeYKLjook2oxqUHXj0Mu6EhLuOLW6lBcDt7z2qUvrReOkE38x8gs1Yan6IpptJR8zB_CMD0Ti9ZibmUteYxNiBvzbH2Py10mUmMQKq5EU5p9U8"/>
+<div class="absolute bottom-0 left-0 right-0 p-unit-lg bg-gradient-to-t from-black/80 to-transparent">
+<div class="flex items-center gap-2">
+<h1 class="font-headline-md text-display-lg text-white">Marta, 34</h1>
+<div class="concierge-badge" title="Verified Member">V</div>
+</div>
+<p class="text-secondary font-label-caps text-label-caps mt-2">ARCHITECT • MADRID</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-unit-sm">
+<div class="aspect-square rounded-lg overflow-hidden glass-panel">
+<img class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" data-alt="A wide-angle shot of a sleek, minimalist modern interior design with clean lines and floor-to-ceiling windows overlooking a sunset. The lighting is warm and golden, casting long shadows. The color scheme is monochrome with gold accents, perfectly aligned with a luxury architectural lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSIBodl4ytqoqgRfLNDJDYWpwvcfYdI4j1zaPD_AQCK5aG-_0mCFsjyK56suyPc34NnGK0nwCU_WyzzcgwbyYNryVkKaly5lLr6PxrJSId-mEY3QzFs9CmMBwPHE7vMf0PEZ7eq4NI857V4YDeXbVDYpsaA79fKVp-uvCXbFaJ7zMuz2iacC8ORk8mbbEnTuI7mqjqlUJlxoC1K0APgPDQ_C3fo9p4o1_pIhC_KXFgnxois3BQgDlgMgstWyKIAH48_9ce_LME3Pc"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden glass-panel">
+<img class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" data-alt="A sophisticated close-up of a high-end sketchbook and drafting tools resting on a marble table next to a glass of vintage wine. The lighting is moody and intimate, with a shallow depth of field. The palette is rich with deep browns and warm golden highlights, communicating a refined creative professional life." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg332S-k7yDnKVVMtmZY5zCgF_u2TWabfGEDmQ1yMbtczmxm3ytuy9y6bPbOkdoToMYxXIwiLLrsBOmnAf20p-bVjXQ1fEV_-EFZZzQnKPbuUi3uMrjfMB9EDCa3hUWpsEkuaq7zD5iaCY7YicUlWh_gRv5jNR9SsxTEioMgjU25Ph2X5ZEjpk1Da0eRyekF7ZsxNRGOVz1_fKrG0RyyCqwbIigGAS80paSqI1uZ1o1iOYUd4JIt1PZgPvO5MycevcDSdNlcoaeIU"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden glass-panel relative group cursor-pointer">
+<img class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" data-alt="An artistic, abstract shot of architectural blueprints being examined under soft, focused task lighting. The scene suggests a late-night studio session, with deep shadows and sharp highlights. The mood is intellectual and passionate, emphasizing high-quality craftsmanship and attention to detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPcDowwXOH1GCH178PkPtjVXM983Kud9OwzH6OLu7OrDImFjgatOd3sxOGJGCB5yfcHOBlAAKV4AQ6JAWAWeCnhmW0-xyFbwsg4KGwkzmvWoUdNA5FLdrg1iCPs0MhykGmZ7OXy1yJW5e2WUdsjuKzrObTLn1haKNSpdCI9pna3rRYv6anxtxlEIMGeh38U108CmQkFuFzA10-t3VsnlXm9uFvPbjt73kQRG8CUBl3AWzWGPo5DoHg3Nbhk_T4mr-Pwma5mCnIKcU"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
+<span class="text-white font-label-caps text-label-caps">+4</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Details -->
+<div class="md:col-span-7 md:pl-unit-lg flex flex-col justify-between">
+<div>
+<!-- Actions Row -->
+<div class="flex justify-end gap-4 mb-unit-lg">
+<button class="px-6 py-2 border border-outline rounded-full font-label-caps text-label-caps text-on-surface hover:bg-surface-variant transition-all">
+                            CERRAR SESIÓN
+                        </button>
+<button class="px-8 py-2 bg-primary text-on-primary rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+                            EDITAR PERFIL
+                        </button>
+</div>
+<!-- Profile Info -->
+<section class="space-y-unit-lg">
+<div>
+<h2 class="font-label-caps text-label-caps text-primary mb-unit-sm uppercase">Sobre mí</h2>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                                Diseñando espacios con intención y viviendo la vida con la misma filosofía. Arquitecta apasionada por el minimalismo, el buen vino y las conversaciones que duran hasta el amanecer. Busco a alguien que aprecie la belleza en los detalles y la profundidad en lo cotidiano.
+                            </p>
+</div>
+<div class="grid grid-cols-2 gap-gutter py-unit-md">
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-4 uppercase">Intereses</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-sm border border-outline-variant">Ópera</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-sm border border-outline-variant">Arquitectura Moderna</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-sm border border-outline-variant">Vela</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-sm border border-outline-variant">Gastronomía Michelin</span>
+</div>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-4 uppercase">Preferencias</h3>
+<ul class="space-y-2">
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">diamond</span>
+<span class="text-sm">Viajes espontáneos</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">diamond</span>
+<span class="text-sm">Cenas privadas</span>
+</li>
+</ul>
+</div>
+</div>
+<hr class="border-outline-variant"/>
+<div class="glass-panel p-unit-md rounded-xl space-y-4">
+<h3 class="font-headline-sm text-on-surface">Detalles del Concierge</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/30">
+<p class="text-xs text-on-surface-variant font-label-caps mb-1">MEMBRESÍA</p>
+<p class="font-bold text-primary">Elite Diamond</p>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/30">
+<p class="text-xs text-on-surface-variant font-label-caps mb-1">VERIFICACIÓN</p>
+<p class="font-bold text-on-surface">Validada por Concierge</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Stats -->
+<div class="mt-unit-xl flex justify-between items-center text-on-surface-variant border-t border-outline-variant pt-unit-md">
+<div class="flex gap-8">
+<div>
+<span class="block font-headline-sm text-on-surface">12</span>
+<span class="text-xs font-label-caps">CONEXIONES</span>
+</div>
+<div>
+<span class="block font-headline-sm text-on-surface">4</span>
+<span class="text-xs font-label-caps">CITAS PLANIFICADAS</span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-label-caps">MIEMBRO DESDE</p>
+<p class="text-on-surface">Noviembre 2023</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-highest dark:bg-tertiary-container border-t border-outline-variant mt-unit-xl">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="font-headline-md text-primary dark:text-primary-fixed mb-4">DateAndGo</div>
+<p class="text-on-surface-variant dark:text-on-tertiary-fixed-variant max-w-xs font-body-sm text-body-sm">
+                    © 2024 DateAndGo Concierge. Todos los derechos reservados.
+                </p>
+</div>
+<div class="grid grid-cols-2 md:flex gap-x-12 gap-y-4">
+<a class="text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors duration-200 font-body-sm text-body-sm" href="#">Política de Privacidad</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors duration-200 font-body-sm text-body-sm" href="#">Términos de Servicio</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors duration-200 font-body-sm text-body-sm" href="#">Contactar Concierge</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors duration-200 font-body-sm text-body-sm" href="#">FAQ</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.style.transform = 'scale(0.95)';
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.transform = '';
+            });
+        });
+
+        // Subtle parallax or scroll effects could be added here
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('backdrop-blur-md', 'bg-surface/90');
+            } else {
+                header.classList.remove('backdrop-blur-md', 'bg-surface/90');
+            }
+        });
+    </script>
+</body></html>

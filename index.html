@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>DateAndGo | Menos chat. Más citas.</title>
+    <meta name="description" content="DateAndGo elimina la fatiga digital de las apps de citas. Nuestro servicio concierge gestiona la logística para que tú solo te preocupes por la primera impresión. Únete a la beta exclusiva." />
+    <meta name="theme-color" content="#111317" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#1e2023",
+                        "on-tertiary": "#303032",
+                        "secondary-fixed": "#e5e2e3",
+                        "inverse-on-surface": "#2e3034",
+                        "on-background": "#e2e2e7",
+                        "surface": "#111317",
+                        "on-primary-fixed": "#241a00",
+                        "on-error-container": "#ffdad6",
+                        "background": "#111317",
+                        "outline": "#99907c",
+                        "surface-variant": "#333539",
+                        "error-container": "#93000a",
+                        "primary": "#f2ca50",
+                        "surface-container-highest": "#333539",
+                        "surface-bright": "#37393d",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#574500",
+                        "outline-variant": "#4d4635",
+                        "inverse-surface": "#e2e2e7",
+                        "on-tertiary-container": "#454547",
+                        "on-secondary-container": "#bab8b9",
+                        "on-secondary-fixed": "#1b1b1c",
+                        "on-secondary": "#303031",
+                        "on-surface": "#e2e2e7",
+                        "surface-container-lowest": "#0c0e12",
+                        "primary-container": "#d4af37",
+                        "on-secondary-fixed-variant": "#474647",
+                        "tertiary-fixed": "#e4e2e4",
+                        "primary-fixed": "#ffe088",
+                        "secondary": "#c8c6c7",
+                        "surface-dim": "#111317",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "surface-container-high": "#282a2e",
+                        "secondary-fixed-dim": "#c8c6c7",
+                        "tertiary": "#d0cdd0",
+                        "primary-fixed-dim": "#e9c349",
+                        "tertiary-container": "#b4b2b4",
+                        "on-primary": "#3c2f00",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#735c00",
+                        "surface-container-low": "#1a1c1f",
+                        "on-surface-variant": "#d0c5af",
+                        "secondary-container": "#49494a",
+                        "on-primary-container": "#554300",
+                        "surface-tint": "#e9c349"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "unit-xs": "4px",
+                        "unit-xl": "64px",
+                        "margin-desktop": "80px",
+                        "unit-md": "16px",
+                        "unit-sm": "8px",
+                        "margin-tablet": "40px",
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "unit-lg": "32px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Playfair Display"],
+                        "label-caps": ["Manrope"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Manrope"],
+                        "headline-sm": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Manrope"]
+                    },
+                    fontSize: {
+                        "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "700" }],
+                        "display-lg": ["64px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-sm": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "display-lg-mobile": ["40px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: #111317;
+            color: #e2e2e7;
+        }
+
+        /* ── Navigation ── */
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            z-index: 100;
+            transition: background-color 0.3s ease, padding 0.3s ease;
+        }
+        .glass-nav.scrolled {
+            background-color: rgba(17, 19, 23, 0.95);
+        }
+
+        /* ── Shared Components ── */
+        .editorial-shadow {
+            box-shadow: 0 40px 100px -20px rgba(212, 175, 55, 0.15);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .concierge-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border: 1px solid #d4af37;
+            border-radius: 50%;
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 14px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* ── Glass panels ── */
+        .glass-panel {
+            background: rgba(26, 26, 27, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ── Animations ── */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Preview Carousel ── */
+        .preview-carousel {
+            position: relative;
+            overflow: hidden;
+        }
+        .preview-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .preview-slide {
+            min-width: 100%;
+            padding: 0 8px;
+            box-sizing: border-box;
+        }
+        .preview-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #d4af37;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .preview-dot.active {
+            background: #d4af37;
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+        }
+
+        /* ── Preview device frame ── */
+        .device-frame {
+            background: rgba(17, 19, 23, 0.9);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6), 0 0 60px -10px rgba(212, 175, 55, 0.08);
+        }
+        .device-titlebar {
+            height: 40px;
+            background: rgba(30, 32, 35, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 8px;
+        }
+        .device-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        /* ── Diamond indicator for questionnaire ── */
+        .diamond-indicator {
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        /* ── Selection glow ── */
+        .selection-glow:hover {
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
+        }
+
+        /* ── Gold glow ── */
+        .gold-glow {
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+        }
+
+        /* ── V badge small ── */
+        .v-badge {
+            font-family: 'Playfair Display', serif;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ── Form success animation ── */
+        @keyframes checkmark {
+            0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+            50% { transform: scale(1.2) rotate(-45deg); opacity: 1; }
+            100% { transform: scale(1) rotate(-45deg); opacity: 1; }
+        }
+        .success-check {
+            width: 24px;
+            height: 12px;
+            border-left: 3px solid #d4af37;
+            border-bottom: 3px solid #d4af37;
+            transform: scale(0) rotate(-45deg);
+            animation: checkmark 0.5s ease forwards;
+        }
+
+        /* ── Mobile nav ── */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* ── Smooth pulse for preview label ── */
+        @keyframes subtlePulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+        .pulse-label {
+            animation: subtlePulse 2.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body class="font-body-md overflow-x-hidden">
+
+    <!-- ════════════════════════════════════════════════
+         NAVIGATION
+         ════════════════════════════════════════════════ -->
+    <header id="main-nav" class="fixed top-0 left-0 right-0 glass-nav">
+        <nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+            <!-- Logo -->
+            <a href="#" class="font-display-lg text-headline-md text-primary cursor-pointer select-none">DateAndGo</a>
+
+            <!-- Desktop links -->
+            <div class="hidden md:flex gap-unit-lg items-center">
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-label-caps text-label-caps tracking-widest px-1" href="#como-funciona">Cómo Funciona</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-label-caps text-label-caps tracking-widest px-1" href="#preview">La App</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-label-caps text-label-caps tracking-widest px-1" href="#beta">Beta</a>
+            </div>
+
+            <!-- CTA desktop -->
+            <a href="#beta" class="hidden md:inline-block bg-primary text-on-primary px-unit-lg py-unit-sm rounded-full font-label-caps text-label-caps hover:translate-y-[-2px] transition-transform duration-200">
+                Unirse a la Beta
+            </a>
+
+            <!-- Hamburger mobile -->
+            <button id="mobile-toggle" class="md:hidden text-on-surface p-2" aria-label="Abrir menú">
+                <span class="material-symbols-outlined text-[28px]">menu</span>
+            </button>
+        </nav>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-surface-container/95 backdrop-blur-xl border-l border-outline-variant/30 flex flex-col p-8 gap-8 md:hidden z-[200]">
+            <button id="mobile-close" class="self-end text-on-surface" aria-label="Cerrar menú">
+                <span class="material-symbols-outlined text-[28px]">close</span>
+            </button>
+            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps tracking-widest" href="#como-funciona" data-close-menu>Cómo Funciona</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps tracking-widest" href="#preview" data-close-menu>La App</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps tracking-widest" href="#beta" data-close-menu>Beta</a>
+            <a href="#beta" class="bg-primary text-on-primary px-unit-lg py-3 rounded-full font-label-caps text-label-caps text-center mt-4" data-close-menu>Unirse a la Beta</a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ════════════════════════════════════════════════
+             HERO SECTION
+             ════════════════════════════════════════════════ -->
+        <section class="relative min-h-screen flex items-center pt-32 pb-unit-xl overflow-hidden">
+            <!-- Ambient glow -->
+            <div class="absolute top-1/4 -left-32 w-96 h-96 bg-primary opacity-[0.04] rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-primary opacity-[0.03] rounded-full blur-[160px] pointer-events-none"></div>
+
+            <div class="container mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-12 gap-gutter relative z-10 max-w-container-max">
+                <!-- Left: Copy -->
+                <div class="md:col-span-7 flex flex-col justify-center animate-on-scroll">
+                    <span class="text-primary font-label-caps text-label-caps mb-unit-md tracking-[0.3em]">RE-DEFINIENDO LA CONEXIÓN</span>
+                    <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-unit-lg leading-tight">
+                        Menos chat.<br/>
+                        <span class="text-primary-fixed-dim italic">Más citas.</span>
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-unit-xl leading-relaxed">
+                        Eliminamos la fatiga digital. En DateAndGo, nuestro concierge gestiona la logística para que tú solo te preocupes por la primera impresión. Una experiencia editorial para quienes valoran su tiempo.
+                    </p>
+                    <div class="flex flex-wrap gap-unit-md">
+                        <a href="#beta" class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-caps text-label-caps editorial-shadow hover:brightness-110 transition-all">UNIRSE A LA BETA</a>
+                        <a href="#como-funciona" class="border border-outline-variant text-on-surface px-10 py-4 rounded-full font-label-caps text-label-caps hover:bg-surface-variant transition-colors">VER CÓMO FUNCIONA</a>
+                    </div>
+                </div>
+
+                <!-- Right: Editorial image -->
+                <div class="md:col-span-5 relative mt-12 md:mt-0">
+                    <div class="aspect-[4/5] rounded-xl overflow-hidden editorial-shadow relative group animate-on-scroll" style="transition-delay: 0.15s;">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Pareja elegante en un bar de lujo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCadVo8p6Y60CcJ8gMl_hlz_nTIdSJfLKwOqwa-LZm0jfJoEiBH-H84c-BO1Iq3EcmYE_4FtKGbBGLpEcAJ6VtrLIyRNkXZ_GIaRo_5vw4A1k4BJ3plwFZpB9FWEah98Xw0H3rsm3V6llh9xF8ng33nxmM8BwazdFzl69tW_clkxQZIXGHJvFQvLmALigBA92gk7H5FS2sf7O1V2mozXCIBU2G2bStoMeXU7npZZlxHajqDnLH4KDPABybqMsaNX8n7J4H8f38mN5Y" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+                        <div class="absolute bottom-8 left-8">
+                            <div class="flex items-center gap-unit-sm mb-unit-xs">
+                                <span class="concierge-badge">V</span>
+                                <span class="font-headline-sm text-headline-sm text-white">Adriana, 29</span>
+                            </div>
+                            <p class="text-secondary font-body-md">Socia Fundadora, Madrid</p>
+                        </div>
+                    </div>
+                    <!-- Floating testimonial card -->
+                    <div class="absolute -bottom-10 -left-20 hidden lg:block p-unit-lg rounded-xl glass-panel border border-white/10 w-72 editorial-shadow animate-on-scroll" style="transition-delay: 0.3s;">
+                        <span class="material-symbols-outlined text-primary mb-unit-sm">verified_user</span>
+                        <p class="font-body-md text-on-surface italic">"La curación es impecable. Finalmente una plataforma que entiende el valor de la discreción."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════
+             COMPARATIVE TABLE
+             ════════════════════════════════════════════════ -->
+        <section id="como-funciona" class="py-unit-xl bg-surface-container-lowest">
+            <div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-container-max">
+                <div class="text-center mb-unit-xl animate-on-scroll">
+                    <h2 class="font-headline-md text-headline-md mb-unit-sm">El Cambio de Paradigma</h2>
+                    <p class="text-on-surface-variant font-body-md">Por qué DateAndGo no es una app de citas más.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/30 rounded-xl overflow-hidden border border-outline-variant/30 animate-on-scroll" style="transition-delay: 0.1s;">
+                    <!-- Traditional Apps -->
+                    <div class="bg-surface p-unit-lg md:p-unit-xl">
+                        <h3 class="font-headline-sm text-headline-sm text-secondary mb-unit-lg opacity-50">Apps Tradicionales</h3>
+                        <ul class="space-y-unit-lg">
+                            <li class="flex items-start gap-unit-md">
+                                <span class="material-symbols-outlined text-error mt-1">close</span>
+                                <div>
+                                    <p class="font-bold text-on-surface">Algoritmos de Dopamina</p>
+                                    <p class="text-on-surface-variant text-body-md">Diseñadas para mantenerte deslizando, no para que salgas de la app.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-unit-md">
+                                <span class="material-symbols-outlined text-error mt-1">close</span>
+                                <div>
+                                    <p class="font-bold text-on-surface">Ghosting Constante</p>
+                                    <p class="text-on-surface-variant text-body-md">Cientos de chats que nunca llegan a una cita real.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-unit-md">
+                                <span class="material-symbols-outlined text-error mt-1">close</span>
+                                <div>
+                                    <p class="font-bold text-on-surface">Logística Agotadora</p>
+                                    <p class="text-on-surface-variant text-body-md">Días de conversación para decidir un lugar y una hora.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- DateAndGo -->
+                    <div class="bg-surface-container-high p-unit-lg md:p-unit-xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-unit-md">
+                            <span class="bg-primary/20 text-primary text-[10px] px-3 py-1 rounded-full font-label-caps tracking-widest">PREMIUM</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-primary mb-unit-lg">DateAndGo</h3>
+                        <ul class="space-y-unit-lg">
+                            <li class="flex items-start gap-unit-md">
+                                <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                <div>
+                                    <p class="font-bold text-on-surface">Curación Humana</p>
+                                    <p class="text-on-surface-variant text-body-md">Perfiles verificados y seleccionados por su afinidad real.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-unit-md">
+                                <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                <div>
+                                    <p class="font-bold text-on-surface">Cero Ghosting</p>
+                                    <p class="text-on-surface-variant text-body-md">El compromiso es con la cita, no con la pantalla.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-unit-md">
+                                <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                <div>
+                                    <p class="font-bold text-on-surface">Gestión Concierge</p>
+                                    <p class="text-on-surface-variant text-body-md">Nosotros reservamos. Tú solo te presentas.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════
+             APP PREVIEW CAROUSEL
+             ════════════════════════════════════════════════ -->
+        <section id="preview" class="py-unit-xl bg-surface-container-lowest relative overflow-hidden">
+            <!-- Ambient glows -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary opacity-[0.03] blur-[160px] rounded-full pointer-events-none"></div>
+
+            <div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-container-max">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <span class="text-primary font-label-caps text-label-caps tracking-widest pulse-label">PREVIEW EXCLUSIVO</span>
+                    <h2 class="font-display-lg text-headline-md mt-unit-sm">Así será la experiencia.</h2>
+                    <p class="text-on-surface-variant font-body-md mt-unit-sm max-w-xl mx-auto">Un adelanto de las tres pantallas principales que harán de DateAndGo algo completamente diferente.</p>
+                </div>
+
+                <!-- Carousel tabs -->
+                <div class="flex justify-center gap-4 mb-8 animate-on-scroll" style="transition-delay: 0.1s;">
+                    <button class="carousel-tab active font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="0">Cuestionario</button>
+                    <button class="carousel-tab font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="1">Tu Perfil</button>
+                    <button class="carousel-tab font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="2">Propuesta de Match</button>
+                </div>
+
+                <!-- Carousel container -->
+                <div class="preview-carousel max-w-4xl mx-auto animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="preview-track" id="preview-track">
+
+                        <!-- ──── SLIDE 1: CUESTIONARIO ──── -->
+                        <div class="preview-slide">
+                            <div class="device-frame">
+                                <div class="device-titlebar">
+                                    <div class="device-dot bg-red-500/60"></div>
+                                    <div class="device-dot bg-yellow-500/60"></div>
+                                    <div class="device-dot bg-green-500/60"></div>
+                                    <span class="ml-3 text-[11px] text-on-surface-variant/50 font-label-caps">dateandgo.com/cuestionario</span>
+                                </div>
+                                <div class="p-6 md:p-10 bg-background">
+                                    <!-- Progress -->
+                                    <div class="flex justify-between mb-4">
+                                        <span class="font-label-caps text-label-caps text-primary">Consulta de Compatibilidad</span>
+                                        <span class="font-label-caps text-label-caps text-on-surface-variant">Paso 4 de 12</span>
+                                    </div>
+                                    <div class="h-[2px] w-full bg-surface-variant rounded-full mb-8">
+                                        <div class="h-full bg-primary rounded-full" style="width: 33.33%;"></div>
+                                    </div>
+                                    <!-- Question -->
+                                    <div class="text-center mb-8">
+                                        <h3 class="font-headline-md text-headline-sm md:text-headline-md text-on-surface mb-unit-sm">¿Qué es lo que más valoras en una pareja?</h3>
+                                        <p class="font-body-md text-body-md text-on-surface-variant opacity-80">Selecciona la cualidad que consideras esencial para una conexión genuina y duradera.</p>
+                                    </div>
+                                    <!-- Options -->
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-lg mx-auto">
+                                        <div class="glass-panel p-4 flex items-center gap-unit-md rounded-lg cursor-pointer hover:border-primary/50 transition-all selection-glow border border-primary bg-primary/10">
+                                            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                                            <span class="font-body-lg text-on-surface">Sinceridad</span>
+                                            <div class="ml-auto w-4 h-4 diamond-indicator bg-primary"></div>
+                                        </div>
+                                        <div class="glass-panel p-4 flex items-center gap-unit-md rounded-lg cursor-pointer hover:border-primary/50 transition-all selection-glow">
+                                            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+                                            <span class="font-body-lg text-on-surface">Ambición</span>
+                                            <div class="ml-auto w-4 h-4 diamond-indicator border border-outline-variant"></div>
+                                        </div>
+                                        <div class="glass-panel p-4 flex items-center gap-unit-md rounded-lg cursor-pointer hover:border-primary/50 transition-all selection-glow">
+                                            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">mood</span>
+                                            <span class="font-body-lg text-on-surface">Sentido del humor</span>
+                                            <div class="ml-auto w-4 h-4 diamond-indicator border border-outline-variant"></div>
+                                        </div>
+                                        <div class="glass-panel p-4 flex items-center gap-unit-md rounded-lg cursor-pointer hover:border-primary/50 transition-all selection-glow">
+                                            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">diamond</span>
+                                            <span class="font-body-lg text-on-surface">Estilo de vida</span>
+                                            <div class="ml-auto w-4 h-4 diamond-indicator border border-outline-variant"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Actions -->
+                                    <div class="mt-8 flex justify-between items-center max-w-lg mx-auto">
+                                        <span class="flex items-center gap-2 font-label-caps text-label-caps text-on-surface-variant">
+                                            <span class="material-symbols-outlined text-[18px]">arrow_back</span> Atrás
+                                        </span>
+                                        <span class="bg-primary text-on-primary-fixed font-label-caps text-label-caps px-6 py-3 rounded-sm">Siguiente paso</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ──── SLIDE 2: PERFIL ──── -->
+                        <div class="preview-slide">
+                            <div class="device-frame">
+                                <div class="device-titlebar">
+                                    <div class="device-dot bg-red-500/60"></div>
+                                    <div class="device-dot bg-yellow-500/60"></div>
+                                    <div class="device-dot bg-green-500/60"></div>
+                                    <span class="ml-3 text-[11px] text-on-surface-variant/50 font-label-caps">dateandgo.com/perfil</span>
+                                </div>
+                                <div class="p-6 md:p-10 bg-background">
+                                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                                        <!-- Left: Photo -->
+                                        <div class="md:col-span-5">
+                                            <div class="relative aspect-[3/4] rounded-xl overflow-hidden max-h-[340px]">
+                                                <img class="w-full h-full object-cover" alt="Marta, arquitecta en Madrid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjTBvmeUrApOgx-P0ayJ30jOHxSblWAAEp3REuVeTdzzodLMGhxvzMWkwAZdEpM4nvBawu8eaQgz1bF73u-iXW4csbT0wIFJFv3UPYRfNwfmnQjaN3nU59fZdT0vAsEAgESqnQQjIco9JwcK4xfVwHcXKqL8uKlUeYKLjook2oxqUHXj0Mu6EhLuOLW6lBcDt7z2qUvrReOkE38x8gs1Yan6IpptJR8zB_CMD0Ti9ZibmUteYxNiBvzbH2Py10mUmMQKq5EU5p9U8" />
+                                                <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                                                    <div class="flex items-center gap-2">
+                                                        <span class="font-headline-sm text-white">Marta, 34</span>
+                                                        <span class="concierge-badge text-[12px] w-5 h-5">V</span>
+                                                    </div>
+                                                    <p class="text-secondary font-label-caps text-[10px] mt-1">ARCHITECT • MADRID</p>
+                                                </div>
+                                            </div>
+                                            <!-- Mini gallery -->
+                                            <div class="grid grid-cols-3 gap-2 mt-2">
+                                                <div class="aspect-square rounded-lg overflow-hidden">
+                                                    <img class="w-full h-full object-cover opacity-80" alt="Interior moderno" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSIBodl4ytqoqgRfLNDJDYWpwvcfYdI4j1zaPD_AQCK5aG-_0mCFsjyK56suyPc34NnGK0nwCU_WyzzcgwbyYNryVkKaly5lLr6PxrJSId-mEY3QzFs9CmMBwPHE7vMf0PEZ7eq4NI857V4YDeXbVDYpsaA79fKVp-uvCXbFaJ7zMuz2iacC8ORk8mbbEnTuI7mqjqlUJlxoC1K0APgPDQ_C3fo9p4o1_pIhC_KXFgnxois3BQgDlgMgstWyKIAH48_9ce_LME3Pc" />
+                                                </div>
+                                                <div class="aspect-square rounded-lg overflow-hidden">
+                                                    <img class="w-full h-full object-cover opacity-80" alt="Cuaderno de diseño" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg332S-k7yDnKVVMtmZY5zCgF_u2TWabfGEDmQ1yMbtczmxm3ytuy9y6bPbOkdoToMYxXIwiLLrsBOmnAf20p-bVjXQ1fEV_-EFZZzQnKPbuUi3uMrjfMB9EDCa3hUWpsEkuaq7zD5iaCY7YicUlWh_gRv5jNR9SsxTEioMgjU25Ph2X5ZEjpk1Da0eRyekF7ZsxNRGOVz1_fKrG0RyyCqwbIigGAS80paSqI1uZ1o1iOYUd4JIt1PZgPvO5MycevcDSdNlcoaeIU" />
+                                                </div>
+                                                <div class="aspect-square rounded-lg overflow-hidden relative">
+                                                    <img class="w-full h-full object-cover opacity-80" alt="Planos arquitectónicos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPcDowwXOH1GCH178PkPtjVXM983Kud9OwzH6OLu7OrDImFjgatOd3sxOGJGCB5yfcHOBlAAKV4AQ6JAWAWeCnhmW0-xyFbwsg4KGwkzmvWoUdNA5FLdrg1iCPs0MhykGmZ7OXy1yJW5e2WUdsjuKzrObTLn1haKNSpdCI9pna3rRYv6anxtxlEIMGeh38U108CmQkFuFzA10-t3VsnlXm9uFvPbjt73kQRG8CUBl3AWzWGPo5DoHg3Nbhk_T4mr-Pwma5mCnIKcU" />
+                                                    <div class="absolute inset-0 flex items-center justify-center bg-black/40"><span class="text-white font-label-caps text-[10px]">+4</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Right: Info -->
+                                        <div class="md:col-span-7 flex flex-col justify-between">
+                                            <div>
+                                                <h4 class="font-label-caps text-label-caps text-primary mb-2 uppercase">Sobre mí</h4>
+                                                <p class="font-body-md text-on-surface-variant leading-relaxed text-sm">
+                                                    Diseñando espacios con intención y viviendo la vida con la misma filosofía. Arquitecta apasionada por el minimalismo, el buen vino y las conversaciones que duran hasta el amanecer.
+                                                </p>
+                                                <div class="grid grid-cols-2 gap-4 mt-4">
+                                                    <div>
+                                                        <h5 class="font-label-caps text-[10px] text-primary mb-2">INTERESES</h5>
+                                                        <div class="flex flex-wrap gap-1.5">
+                                                            <span class="px-2 py-0.5 bg-surface-container-high rounded-full text-[11px] border border-outline-variant">Ópera</span>
+                                                            <span class="px-2 py-0.5 bg-surface-container-high rounded-full text-[11px] border border-outline-variant">Arquitectura</span>
+                                                            <span class="px-2 py-0.5 bg-surface-container-high rounded-full text-[11px] border border-outline-variant">Vela</span>
+                                                            <span class="px-2 py-0.5 bg-surface-container-high rounded-full text-[11px] border border-outline-variant">Gastronomía</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h5 class="font-label-caps text-[10px] text-primary mb-2">PREFERENCIAS</h5>
+                                                        <ul class="space-y-1">
+                                                            <li class="flex items-center gap-1.5 text-on-surface-variant text-[11px]">
+                                                                <span class="material-symbols-outlined text-primary text-[12px]">diamond</span> Viajes espontáneos
+                                                            </li>
+                                                            <li class="flex items-center gap-1.5 text-on-surface-variant text-[11px]">
+                                                                <span class="material-symbols-outlined text-primary text-[12px]">diamond</span> Cenas privadas
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Concierge details -->
+                                            <div class="glass-panel p-4 rounded-xl mt-4">
+                                                <h5 class="font-headline-sm text-[16px] text-on-surface mb-2">Detalles del Concierge</h5>
+                                                <div class="grid grid-cols-2 gap-3">
+                                                    <div class="p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/30">
+                                                        <p class="text-[9px] text-on-surface-variant font-label-caps mb-0.5">MEMBRESÍA</p>
+                                                        <p class="font-bold text-primary text-sm">Elite Diamond</p>
+                                                    </div>
+                                                    <div class="p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/30">
+                                                        <p class="text-[9px] text-on-surface-variant font-label-caps mb-0.5">VERIFICACIÓN</p>
+                                                        <p class="font-bold text-on-surface text-sm">Validada</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ──── SLIDE 3: PROPUESTA DE MATCH ──── -->
+                        <div class="preview-slide">
+                            <div class="device-frame">
+                                <div class="device-titlebar">
+                                    <div class="device-dot bg-red-500/60"></div>
+                                    <div class="device-dot bg-yellow-500/60"></div>
+                                    <div class="device-dot bg-green-500/60"></div>
+                                    <span class="ml-3 text-[11px] text-on-surface-variant/50 font-label-caps">dateandgo.com/match</span>
+                                </div>
+                                <div class="p-6 md:p-10 bg-background relative overflow-hidden">
+                                    <!-- Ambient glow -->
+                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary opacity-5 blur-[120px] rounded-full pointer-events-none"></div>
+
+                                    <!-- Header -->
+                                    <div class="text-center mb-6 relative z-10">
+                                        <span class="font-label-caps text-label-caps text-primary mb-2 block tracking-[0.2em]">MATCH EXCLUSIVO</span>
+                                        <h3 class="font-display-lg text-headline-sm md:text-headline-md text-on-surface">Hemos encontrado a alguien para ti.</h3>
+                                    </div>
+
+                                    <!-- Match cards -->
+                                    <div class="grid grid-cols-3 gap-4 items-center max-w-2xl mx-auto relative z-10">
+                                        <!-- User -->
+                                        <div class="flex flex-col items-center">
+                                            <div class="relative w-full aspect-[3/4] max-w-[160px] rounded-lg overflow-hidden">
+                                                <img class="w-full h-full object-cover" alt="Tu perfil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNAWS5AlaTGN_TpqOZNdVyPcvMyi59TaD4jtzTLfKG7nKLvF9RXRbvMOzZMCzJrXly_LzAolLf2EntUjr2BYlXgFs5qGEyHG5uxppx-Da5u1U4EnDVf7FzoPoJYz1BGkdlyEpg-XobEmwzAlsO4n55g85n7H3qLRn3daRuFt6lOiKqB86tgEaQ0VYBwOFo7eyGPIf5wACHzU0I-q9TQo4kbpdq0qmwTLujFUPuGnnDTHttD9RZ1vDKvlvknTloUoGTBDzz3L6plI8" />
+                                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-surface-dim to-transparent">
+                                                    <p class="font-headline-sm text-[14px] text-on-surface">Tú</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Compatibility Score -->
+                                        <div class="flex flex-col items-center justify-center">
+                                            <div class="relative w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
+                                                <svg class="w-full h-full transform -rotate-90">
+                                                    <circle class="text-outline-variant opacity-20" cx="50%" cy="50%" fill="transparent" r="45%" stroke="currentColor" stroke-width="2"></circle>
+                                                    <circle class="text-primary gold-glow" cx="50%" cy="50%" fill="transparent" r="45%" stroke="currentColor" stroke-dasharray="283" stroke-dashoffset="17" stroke-width="4"></circle>
+                                                </svg>
+                                                <div class="absolute flex flex-col items-center">
+                                                    <span class="font-display-lg text-[32px] md:text-[40px] text-primary">94%</span>
+                                                    <span class="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant">COMPATIBILIDAD</span>
+                                                </div>
+                                            </div>
+                                            <!-- Shared interests -->
+                                            <div class="flex gap-3 mt-3">
+                                                <div class="flex flex-col items-center gap-0.5 opacity-80">
+                                                    <span class="material-symbols-outlined text-primary text-[18px]">restaurant</span>
+                                                    <span class="font-label-caps text-[8px] text-on-surface-variant">Dining</span>
+                                                </div>
+                                                <div class="flex flex-col items-center gap-0.5 opacity-80">
+                                                    <span class="material-symbols-outlined text-primary text-[18px]">flight</span>
+                                                    <span class="font-label-caps text-[8px] text-on-surface-variant">Viajes</span>
+                                                </div>
+                                                <div class="flex flex-col items-center gap-0.5 opacity-80">
+                                                    <span class="material-symbols-outlined text-primary text-[18px]">theater_comedy</span>
+                                                    <span class="font-label-caps text-[8px] text-on-surface-variant">Cultura</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Elena -->
+                                        <div class="flex flex-col items-center">
+                                            <div class="relative w-full aspect-[3/4] max-w-[160px] rounded-lg overflow-hidden">
+                                                <img class="w-full h-full object-cover" alt="Elena, 32" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRfEiS3K5I1z99t9B9f9rQcNrqCgt3sew9rSV-slqxKTuVbVRLUe63v55M8zW7XO-zVBZTDkh6HODlVb3Uhf0Po8dWTbfPuYpGkDfrE0bB2vtH4dTpNXokOtv7rc-qomUXpCVBTT6HM1ArdXN0-b5zrEAeqmkjBLNm2cAvBZ-hM_7A4KtOtvGhlQc38aNorpH9to-75XutRGv5IgLFIoXpTbgbEJp2CA_ZkROVGE3BAheb9YmB1DelSMqYeL6eAWcNsWXJjW8AxEc" />
+                                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-surface-dim to-transparent">
+                                                    <div class="flex items-center gap-1">
+                                                        <p class="font-headline-sm text-[14px] text-on-surface">Elena, 32</p>
+                                                        <span class="v-badge text-[10px] w-4 h-4">V</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- CTA: No payment, beta message -->
+                                    <div class="mt-6 max-w-sm mx-auto text-center relative z-10 glass-panel p-5 rounded-xl border border-primary/20">
+                                        <p class="font-body-md text-on-surface italic mb-3">"Una velada diseñada para conectar, sin distracciones."</p>
+                                        <div class="bg-primary/10 border border-primary/30 text-primary px-4 py-3 rounded-lg font-label-caps text-label-caps tracking-widest">
+                                            <span class="material-symbols-outlined text-[16px] align-middle mr-1">lock_open</span>
+                                            DISPONIBLE EN LA BETA
+                                        </div>
+                                        <p class="text-on-surface-variant text-[12px] mt-2">Únete a la lista para ser de los primeros en probarlo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /preview-track -->
+                </div><!-- /preview-carousel -->
+
+                <!-- Carousel dots -->
+                <div class="flex justify-center gap-3 mt-8">
+                    <button class="preview-dot active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="preview-dot" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="preview-dot" data-slide="2" aria-label="Slide 3"></button>
+                </div>
+
+                <!-- Carousel arrows -->
+                <div class="flex justify-center gap-4 mt-6">
+                    <button id="carousel-prev" class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-colors text-on-surface-variant" aria-label="Anterior">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <button id="carousel-next" class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-colors text-on-surface-variant" aria-label="Siguiente">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════
+             BETA SIGNUP FORM
+             ════════════════════════════════════════════════ -->
+        <section id="beta" class="py-unit-xl relative overflow-hidden">
+            <!-- Background texture -->
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover opacity-10" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvqxvdF7fd5ZbDU_Ao8s5W943RDX5TJgNbQ3tdnCun6y76IfJ5cGCEnWU45K7_DBdUMeu4BX62lSlfck7oh-DiMc5kqBV9j7KBR40vvCEcg-jC0YS6tLxNVkFgRtcdwrE95091jE62Oq28MVjmpbuoRBMfhmy6ZGicI7Biix8NV8CevgtZCS-vcye6bfPMFjKuoXv0_UwQDlJ8oaf2IiVvdPkfsRfpz3UpB3uKLZZbX0pDXIBRtAzQsAUU_KyrAKsl1FL8NPSkRPM" />
+            </div>
+
+            <div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 max-w-2xl text-center">
+                <div class="bg-surface-container/60 backdrop-blur-xl p-8 md:p-unit-xl rounded-2xl border border-white/5 editorial-shadow animate-on-scroll">
+                    <!-- Form content (shown before submit) -->
+                    <div id="beta-form-container">
+                        <span class="text-primary font-label-caps text-label-caps tracking-widest mb-4 block">ACCESO ANTICIPADO</span>
+                        <h2 class="font-headline-md text-headline-md mb-unit-md">Únete a la Beta Exclusiva</h2>
+                        <p class="text-on-surface-variant mb-unit-xl">Estamos preparando DateAndGo para su lanzamiento. Déjanos tu correo y serás de los primeros en vivir la experiencia.</p>
+
+                        <form id="beta-form" class="space-y-6 text-left" action="https://formspree.io/f/mzdqgazv" method="POST">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="relative">
+                                    <label class="font-label-caps text-[10px] text-primary mb-1 block" for="beta-email">CORREO ELECTRÓNICO *</label>
+                                    <input id="beta-email" name="email" class="w-full bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 py-unit-sm text-body-lg transition-all outline-none" placeholder="tu@email.com" type="email" required />
+                                </div>
+                                <div class="relative">
+                                    <label class="font-label-caps text-[10px] text-primary mb-1 block" for="beta-age">EDAD *</label>
+                                    <input id="beta-age" name="edad" class="w-full bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 py-unit-sm text-body-lg transition-all outline-none" placeholder="Ej. 34" type="number" min="18" max="99" required />
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="relative">
+                                    <label class="font-label-caps text-[10px] text-primary mb-1 block" for="beta-city">CIUDAD *</label>
+                                    <select id="beta-city" name="ciudad" class="w-full bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 py-unit-sm text-body-lg transition-all outline-none appearance-none cursor-pointer" required>
+                                        <option class="bg-surface-container" value="" disabled selected>Selecciona tu ciudad</option>
+                                        <option class="bg-surface-container" value="Madrid">Madrid</option>
+                                        <option class="bg-surface-container" value="Barcelona">Barcelona</option>
+                                        <option class="bg-surface-container" value="Lisboa">Lisboa</option>
+                                        <option class="bg-surface-container" value="Otra">Otra</option>
+                                    </select>
+                                </div>
+                                <div class="relative">
+                                    <label class="font-label-caps text-[10px] text-primary mb-1 block" for="beta-status">SITUACIÓN *</label>
+                                    <select id="beta-status" name="situacion" class="w-full bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 py-unit-sm text-body-lg transition-all outline-none appearance-none cursor-pointer" required>
+                                        <option class="bg-surface-container" value="" disabled selected>Tu situación actual</option>
+                                        <option class="bg-surface-container" value="Soltero/a">Soltero/a</option>
+                                        <option class="bg-surface-container" value="Divorciado/a">Divorciado/a</option>
+                                        <option class="bg-surface-container" value="Viudo/a">Viudo/a</option>
+                                        <option class="bg-surface-container" value="Otra">Otra</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <label class="font-label-caps text-[10px] text-primary mb-1 block" for="beta-intent">¿QUÉ BUSCAS? *</label>
+                                <select id="beta-intent" name="intencion" class="w-full bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 py-unit-sm text-body-lg transition-all outline-none appearance-none cursor-pointer" required>
+                                    <option class="bg-surface-container" value="" disabled selected>Selecciona tu intención real</option>
+                                    <option class="bg-surface-container" value="Conocer a alguien serio">Quiero conocer a alguien serio</option>
+                                    <option class="bg-surface-container" value="Probar citas organizadas">Quiero probar citas organizadas</option>
+                                    <option class="bg-surface-container" value="Solo curiosidad">Solo curiosidad</option>
+                                </select>
+                            </div>
+                            <div class="flex items-start gap-3 pt-2">
+                                <input class="w-5 h-5 border-primary text-primary focus:ring-primary bg-transparent rounded-sm mt-1 cursor-pointer" id="beta-priority" name="acceso_prioritario" type="checkbox" />
+                                <label class="text-body-md text-on-surface cursor-pointer" for="beta-priority">
+                                    <span class="font-bold text-primary block text-sm mb-1">Acceso prioritario limitado</span>
+                                    <span class="text-sm text-on-surface-variant block">Quiero ser de los primeros usuarios cuando abramos citas (cupos limitados).</span>
+                                </label>
+                            </div>
+                            <div class="flex items-start gap-unit-md pt-unit-md border-t border-outline-variant/30">
+                                <input class="w-4 h-4 border-primary text-primary focus:ring-primary bg-transparent rounded-sm mt-0.5 cursor-pointer" id="beta-terms" name="acepta_terminos" type="checkbox" required />
+                                <label class="text-xs text-on-surface-variant cursor-pointer" for="beta-terms">Acepto la <a class="underline text-primary hover:text-primary-fixed transition-colors" href="privacidad.html" target="_blank">Política de Privacidad</a>.</label>
+                            </div>
+                            <button id="beta-submit" type="submit" class="w-full bg-primary text-on-primary py-5 rounded-full font-label-caps text-label-caps tracking-[0.2em] mt-unit-lg shadow-lg hover:brightness-110 transition-all disabled:opacity-30 disabled:cursor-not-allowed">
+                                RESERVAR ACCESO
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Success state (hidden initially) -->
+                    <div id="beta-success" class="hidden py-8">
+                        <div class="flex justify-center mb-6">
+                            <div class="w-20 h-20 rounded-full border-2 border-primary flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            </div>
+                        </div>
+                        <h3 class="font-headline-md text-headline-sm text-primary mb-unit-md">¡Estás en la lista!</h3>
+                        <p class="text-on-surface-variant font-body-md leading-relaxed max-w-md mx-auto">
+                            Hemos recibido tu solicitud. Te contactaremos pronto con acceso exclusivo a la beta de DateAndGo. Prepárate para menos chat y más citas.
+                        </p>
+                        <div class="mt-8 flex justify-center gap-3">
+                            <span class="px-4 py-2 border border-outline-variant rounded-full text-[11px] font-label-caps text-on-surface-variant">
+                                <span class="material-symbols-outlined text-primary text-[14px] align-middle mr-1">schedule</span>
+                                LANZAMIENTO PRÓXIMAMENTE
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ════════════════════════════════════════════════
+         FOOTER
+         ════════════════════════════════════════════════ -->
+    <footer class="bg-surface-container-highest border-t border-outline-variant">
+        <div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto text-on-surface">
+            <div class="mb-unit-lg md:mb-0">
+                <div class="font-headline-md text-primary mb-2">DateAndGo</div>
+                <p class="text-on-surface-variant text-sm">© 2025 DateAndGo Concierge. Todos los derechos reservados.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-unit-lg">
+                <a class="text-on-surface-variant hover:text-secondary transition-colors duration-200 text-sm" href="privacidad.html">Política de Privacidad</a>
+                <a class="text-on-surface-variant hover:text-secondary transition-colors duration-200 text-sm" href="terminos.html">Términos de Servicio</a>
+                <a class="text-on-surface-variant hover:text-secondary transition-colors duration-200 text-sm" href="faq.html">FAQ</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ════════════════════════════════════════════════
+         JAVASCRIPT
+         ════════════════════════════════════════════════ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // ── Navigation scroll effect ──
+            const nav = document.getElementById('main-nav');
+            const navInner = nav.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                    navInner.classList.remove('py-4');
+                    navInner.classList.add('py-2');
+                } else {
+                    nav.classList.remove('scrolled');
+                    navInner.classList.remove('py-2');
+                    navInner.classList.add('py-4');
+                }
+            });
+
+            // ── Mobile menu ──
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileClose = document.getElementById('mobile-close');
+
+            mobileToggle.addEventListener('click', () => mobileMenu.classList.add('open'));
+            mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+            document.querySelectorAll('[data-close-menu]').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+            });
+
+            // ── Scroll animations ──
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+            // ── Preview Carousel ──
+            const track = document.getElementById('preview-track');
+            const dots = document.querySelectorAll('.preview-dot');
+            const tabs = document.querySelectorAll('.carousel-tab');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            let currentSlide = 0;
+            const totalSlides = 3;
+
+            function goToSlide(index) {
+                if (index < 0) index = totalSlides - 1;
+                if (index >= totalSlides) index = 0;
+                currentSlide = index;
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentSlide);
+                });
+                tabs.forEach((tab, i) => {
+                    if (i === currentSlide) {
+                        tab.classList.add('bg-primary', 'text-on-primary', 'border-primary');
+                        tab.classList.remove('text-on-surface-variant');
+                    } else {
+                        tab.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
+                        tab.classList.add('text-on-surface-variant');
+                    }
+                });
+            }
+
+            // Initialize first tab
+            goToSlide(0);
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => goToSlide(parseInt(dot.dataset.slide)));
+            });
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => goToSlide(parseInt(tab.dataset.slide)));
+            });
+            prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+            nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+            // Keyboard navigation for carousel
+            document.addEventListener('keydown', (e) => {
+                const previewSection = document.getElementById('preview');
+                const rect = previewSection.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    if (e.key === 'ArrowLeft') goToSlide(currentSlide - 1);
+                    if (e.key === 'ArrowRight') goToSlide(currentSlide + 1);
+                }
+            });
+
+            // Touch swipe support
+            let touchStartX = 0;
+            let touchEndX = 0;
+            const carousel = document.querySelector('.preview-carousel');
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) goToSlide(currentSlide + 1);
+                    else goToSlide(currentSlide - 1);
+                }
+            }, { passive: true });
+
+            // ── Beta Form ──
+            const betaForm = document.getElementById('beta-form');
+            const betaFormContainer = document.getElementById('beta-form-container');
+            const betaSuccess = document.getElementById('beta-success');
+
+            betaForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const email = document.getElementById('beta-email').value;
+                const age = document.getElementById('beta-age').value;
+                const city = document.getElementById('beta-city').value;
+                const status = document.getElementById('beta-status').value;
+                const intent = document.getElementById('beta-intent').value;
+                const priority = document.getElementById('beta-priority').checked;
+
+                // Send to formspree
+                const formAction = betaForm.getAttribute('action');
+                fetch(formAction, {
+                    method: 'POST',
+                    body: new FormData(betaForm),
+                    headers: { 'Accept': 'application/json' }
+                }).catch(err => console.log('Error enviando formulario:', err));
+
+                // Store in localStorage as backup / simulation
+                const signups = JSON.parse(localStorage.getItem('dateandgo_beta_signups') || '[]');
+                signups.push({
+                    email, age, city, status, intent, priority,
+                    timestamp: new Date().toISOString()
+                });
+                localStorage.setItem('dateandgo_beta_signups', JSON.stringify(signups));
+
+                // Animate transition
+                betaFormContainer.style.opacity = '0';
+                betaFormContainer.style.transform = 'translateY(-20px)';
+                betaFormContainer.style.transition = 'all 0.4s ease';
+
+                setTimeout(() => {
+                    betaFormContainer.classList.add('hidden');
+                    betaSuccess.classList.remove('hidden');
+                    betaSuccess.style.opacity = '0';
+                    betaSuccess.style.transform = 'translateY(20px)';
+                    requestAnimationFrame(() => {
+                        betaSuccess.style.transition = 'all 0.5s ease';
+                        betaSuccess.style.opacity = '1';
+                        betaSuccess.style.transform = 'translateY(0)';
+                    });
+                }, 400);
+            });
+
+            // ── Smooth hover effect on step numbers ──
+            document.querySelectorAll('section .group').forEach(step => {
+                step.addEventListener('mouseenter', () => {
+                    const num = step.querySelector('.font-display-lg');
+                    if (num) num.style.transform = 'translateY(-5px)';
+                });
+                step.addEventListener('mouseleave', () => {
+                    const num = step.querySelector('.font-display-lg');
+                    if (num) num.style.transform = 'translateY(0)';
+                });
+            });
+
+        });
+    </script>
+
+</body>
+</html>
