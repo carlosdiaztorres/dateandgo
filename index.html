@@ -287,6 +287,11 @@
         .pulse-label {
             animation: subtlePulse 2.5s ease-in-out infinite;
         }
+
+        /* ── Tab number inherits parent color ── */
+        .tab-num {
+            color: inherit;
+        }
     </style>
 </head>
 
@@ -462,34 +467,16 @@
                     <p class="text-on-surface-variant font-body-md mt-unit-sm max-w-xl mx-auto">Son tres pasos sencillos. Tú haces el cuestionario y construyes tu perfil — nosotros encontramos a alguien compatible y organizamos la cita.</p>
                 </div>
 
-                <!-- Step indicator -->
-                <div class="flex items-center justify-center gap-3 mb-8 animate-on-scroll" style="transition-delay:0.05s">
-                    <div class="flex items-center gap-2">
-                        <div class="step-bubble w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-caps text-[11px] font-bold">1</div>
-                        <span class="font-label-caps text-[11px] text-on-surface-variant">Cuestionario</span>
-                    </div>
-                    <div class="h-px w-8 bg-outline-variant/60"></div>
-                    <div class="flex items-center gap-2">
-                        <div class="step-bubble w-7 h-7 rounded-full border border-outline-variant text-on-surface-variant flex items-center justify-center font-label-caps text-[11px]">2</div>
-                        <span class="font-label-caps text-[11px] text-on-surface-variant">Tu perfil</span>
-                    </div>
-                    <div class="h-px w-8 bg-outline-variant/60"></div>
-                    <div class="flex items-center gap-2">
-                        <div class="step-bubble w-7 h-7 rounded-full border border-outline-variant text-on-surface-variant flex items-center justify-center font-label-caps text-[11px]">3</div>
-                        <span class="font-label-caps text-[11px] text-on-surface-variant">Tu match</span>
-                    </div>
-                </div>
-
                 <!-- Carousel tabs -->
                 <div class="flex justify-center flex-wrap gap-3 mb-8 animate-on-scroll" style="transition-delay: 0.1s;">
                     <button class="carousel-tab active font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="0">
-                        <span class="text-primary mr-1">01.</span> Cuestionario de compatibilidad
+                        <span class="tab-num mr-1 opacity-60">01.</span> Cuestionario de compatibilidad
                     </button>
                     <button class="carousel-tab font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="1">
-                        <span class="mr-1 opacity-50">02.</span> Tu perfil
+                        <span class="tab-num mr-1 opacity-60">02.</span> Tu perfil
                     </button>
                     <button class="carousel-tab font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="2">
-                        <span class="mr-1 opacity-50">03.</span> Tu propuesta de cita
+                        <span class="tab-num mr-1 opacity-60">03.</span> Tu propuesta de cita
                     </button>
                 </div>
 
@@ -790,7 +777,7 @@
                                         <option class="bg-surface-container" value="" disabled selected>Selecciona tu ciudad</option>
                                         <option class="bg-surface-container" value="Madrid">Madrid</option>
                                         <option class="bg-surface-container" value="Barcelona">Barcelona</option>
-                                        <option class="bg-surface-container" value="Lisboa">Lisboa</option>
+                                        <option class="bg-surface-container" value="Valencia">Valencia</option>
                                         <option class="bg-surface-container" value="Otra">Otra</option>
                                     </select>
                                 </div>
