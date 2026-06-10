@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>DateAndGo | Menos chat. Más citas.</title>
-    <meta name="description" content="DateAndGo elimina la fatiga digital de las apps de citas. Nuestro servicio concierge gestiona la logística para que tú solo te preocupes por la primera impresión. Únete a la beta exclusiva." />
-    <meta name="theme-color" content="#111317" />
+    <meta name="description" content="DateAndGo te organiza una cita real con alguien compatible. Sin apps, sin swipe, sin ghosting. Sé de los primeros en probarlo." />
+    <meta name="theme-color" content="#1c1a17" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
     <!-- Fonts -->
@@ -25,10 +25,10 @@
                         "secondary-fixed": "#e5e2e3",
                         "inverse-on-surface": "#2e3034",
                         "on-background": "#e2e2e7",
-                        "surface": "#13151c",
+                        "surface": "#1c1a17",
                         "on-primary-fixed": "#241a00",
                         "on-error-container": "#ffdad6",
-                        "background": "#13151c",
+                        "background": "#1c1a17",
                         "outline": "#99907c",
                         "surface-variant": "#333539",
                         "error-container": "#93000a",
@@ -45,16 +45,16 @@
                         "on-secondary-fixed": "#1b1b1c",
                         "on-secondary": "#303031",
                         "on-surface": "#e2e2e7",
-                        "surface-container-lowest": "#0d0f16",
+                        "surface-container-lowest": "#141210",
                         "primary-container": "#d4af37",
                         "on-secondary-fixed-variant": "#474647",
                         "tertiary-fixed": "#e4e2e4",
                         "primary-fixed": "#ffe088",
                         "secondary": "#c8c6c7",
-                        "surface-dim": "#13151c",
+                        "surface-dim": "#1c1a17",
                         "on-tertiary-fixed": "#1b1b1d",
                         "on-tertiary-fixed-variant": "#474649",
-                        "surface-container-high": "#282a2e",
+                        "surface-container-high": "#2e2b27",
                         "secondary-fixed-dim": "#c8c6c7",
                         "tertiary": "#d0cdd0",
                         "primary-fixed-dim": "#e9c349",
@@ -63,7 +63,7 @@
                         "error": "#ffb4ab",
                         "inverse-primary": "#735c00",
                         "surface-container-low": "#1a1c1f",
-                        "on-surface-variant": "#d0c5af",
+                        "on-surface-variant": "#c8bca8",
                         "secondary-container": "#49494a",
                         "on-primary-container": "#554300",
                         "surface-tint": "#e9c349"
@@ -112,8 +112,8 @@
     <style>
         html { scroll-behavior: smooth; }
         body {
-            background-color: #13151c;
-            color: #e8e6f0;
+            background-color: #1c1a17;
+            color: #ede9e0;
         }
 
         /* ── Navigation ── */
@@ -125,7 +125,7 @@
             transition: background-color 0.3s ease, padding 0.3s ease;
         }
         .glass-nav.scrolled {
-            background-color: rgba(19, 21, 28, 0.95);
+            background-color: rgba(28, 26, 23, 0.97);
         }
 
         /* ── Shared Components ── */
@@ -304,11 +304,11 @@
             <div class="hidden md:flex gap-unit-lg items-center">
                 <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-label-caps text-label-caps tracking-widest px-1" href="#como-funciona">Cómo Funciona</a>
                 <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-label-caps text-label-caps tracking-widest px-1" href="#preview">La App</a>
-                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-label-caps text-label-caps tracking-widest px-1" href="#beta">Beta</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-label-caps text-label-caps tracking-widest px-1" href="#lista">Apuntarme</a>
             </div>
 
             <!-- CTA desktop -->
-            <a href="#beta" class="hidden md:inline-block bg-primary text-on-primary px-unit-lg py-unit-sm rounded-full font-label-caps text-label-caps hover:translate-y-[-2px] transition-transform duration-200">
+            <a href="#lista" class="hidden md:inline-block bg-primary text-on-primary px-unit-lg py-unit-sm rounded-full font-label-caps text-label-caps hover:translate-y-[-2px] transition-transform duration-200">
                 Quiero mi primera cita
             </a>
 
@@ -325,8 +325,8 @@
             </button>
             <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps tracking-widest" href="#como-funciona" data-close-menu>Cómo Funciona</a>
             <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps tracking-widest" href="#preview" data-close-menu>La App</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps tracking-widest" href="#beta" data-close-menu>Beta</a>
-            <a href="#beta" class="bg-primary text-on-primary px-unit-lg py-3 rounded-full font-label-caps text-label-caps text-center mt-4" data-close-menu>Quiero mi primera cita</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps tracking-widest" href="#lista" data-close-menu>Apuntarme</a>
+            <a href="#lista" class="bg-primary text-on-primary px-unit-lg py-3 rounded-full font-label-caps text-label-caps text-center mt-4" data-close-menu>Quiero mi primera cita</a>
         </div>
     </header>
 
@@ -352,7 +352,7 @@
                         Te organizamos una cita real con alguien compatible. Sin horas de chat, sin logística, sin quedadas que no llegan a ningún lado. Tú solo te presentas.
                     </p>
                     <div class="flex flex-wrap gap-unit-md">
-                        <a href="#beta" class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-caps text-label-caps editorial-shadow hover:brightness-110 transition-all">QUIERO MI PRIMERA CITA</a>
+                        <a href="#lista" class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-caps text-label-caps editorial-shadow hover:brightness-110 transition-all">QUIERO MI PRIMERA CITA</a>
                     </div>
                 </div>
 
@@ -456,17 +456,41 @@
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary opacity-[0.03] blur-[160px] rounded-full pointer-events-none"></div>
 
             <div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-container-max">
-                <div class="text-center mb-12 animate-on-scroll">
-                    <span class="text-primary font-label-caps text-label-caps tracking-widest pulse-label">PREVIEW EXCLUSIVO</span>
-                    <h2 class="font-display-lg text-headline-md mt-unit-sm">Así funciona la experiencia.</h2>
-                    <p class="text-on-surface-variant font-body-md mt-unit-sm max-w-xl mx-auto">Cuestionario de compatibilidad → te creamos tu perfil → te proponemos una cita real. Así de sencillo.</p>
+                <div class="text-center mb-4 animate-on-scroll">
+                    <span class="text-primary font-label-caps text-label-caps tracking-widest pulse-label">CÓMO FUNCIONA</span>
+                    <h2 class="font-display-lg text-headline-md mt-unit-sm">Tu camino hasta la primera cita.</h2>
+                    <p class="text-on-surface-variant font-body-md mt-unit-sm max-w-xl mx-auto">Son tres pasos sencillos. Tú haces el cuestionario y construyes tu perfil — nosotros encontramos a alguien compatible y organizamos la cita.</p>
+                </div>
+
+                <!-- Step indicator -->
+                <div class="flex items-center justify-center gap-3 mb-8 animate-on-scroll" style="transition-delay:0.05s">
+                    <div class="flex items-center gap-2">
+                        <div class="step-bubble w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-caps text-[11px] font-bold">1</div>
+                        <span class="font-label-caps text-[11px] text-on-surface-variant">Cuestionario</span>
+                    </div>
+                    <div class="h-px w-8 bg-outline-variant/60"></div>
+                    <div class="flex items-center gap-2">
+                        <div class="step-bubble w-7 h-7 rounded-full border border-outline-variant text-on-surface-variant flex items-center justify-center font-label-caps text-[11px]">2</div>
+                        <span class="font-label-caps text-[11px] text-on-surface-variant">Tu perfil</span>
+                    </div>
+                    <div class="h-px w-8 bg-outline-variant/60"></div>
+                    <div class="flex items-center gap-2">
+                        <div class="step-bubble w-7 h-7 rounded-full border border-outline-variant text-on-surface-variant flex items-center justify-center font-label-caps text-[11px]">3</div>
+                        <span class="font-label-caps text-[11px] text-on-surface-variant">Tu match</span>
+                    </div>
                 </div>
 
                 <!-- Carousel tabs -->
-                <div class="flex justify-center gap-4 mb-8 animate-on-scroll" style="transition-delay: 0.1s;">
-                    <button class="carousel-tab active font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="0">Cuestionario</button>
-                    <button class="carousel-tab font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="1">Tu Perfil</button>
-                    <button class="carousel-tab font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="2">Propuesta de Match</button>
+                <div class="flex justify-center flex-wrap gap-3 mb-8 animate-on-scroll" style="transition-delay: 0.1s;">
+                    <button class="carousel-tab active font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="0">
+                        <span class="text-primary mr-1">01.</span> Cuestionario de compatibilidad
+                    </button>
+                    <button class="carousel-tab font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="1">
+                        <span class="mr-1 opacity-50">02.</span> Tu perfil
+                    </button>
+                    <button class="carousel-tab font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="2">
+                        <span class="mr-1 opacity-50">03.</span> Tu propuesta de cita
+                    </button>
                 </div>
 
                 <!-- Carousel container -->
@@ -626,7 +650,12 @@
                                     <div class="device-dot bg-green-500/60"></div>
                                     <span class="ml-3 text-[11px] text-on-surface-variant/50 font-label-caps">dateandgo.com/match</span>
                                 </div>
-                                <div class="p-6 md:p-10 bg-background relative overflow-hidden">
+                                 <div class="p-6 md:p-10 bg-background relative overflow-hidden">
+                                     <!-- Step context banner -->
+                                     <div class="mb-5 flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-lg px-4 py-2 relative z-10">
+                                         <div class="w-6 h-6 rounded-full border border-primary text-primary flex items-center justify-center font-label-caps text-[11px] font-bold flex-shrink-0">3</div>
+                                         <p class="font-label-caps text-[11px] text-on-surface-variant">PASO 3 — Te presentamos a alguien compatible y organizamos la cita. Tú solo dices sí.</p>
+                                     </div>
                                     <!-- Ambient glow -->
                                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary opacity-5 blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -696,9 +725,9 @@
                                         <p class="font-body-md text-on-surface italic mb-3">"Una velada diseñada para conectar, sin distracciones."</p>
                                         <div class="bg-primary/10 border border-primary/30 text-primary px-4 py-3 rounded-lg font-label-caps text-label-caps tracking-widest">
                                             <span class="material-symbols-outlined text-[16px] align-middle mr-1">lock_open</span>
-                                            DISPONIBLE EN LA BETA
+                                            DISPONIBLE PRONTO
                                         </div>
-                                        <p class="text-on-surface-variant text-[12px] mt-2">Únete a la lista para ser de los primeros en probarlo.</p>
+                                        <p class="text-on-surface-variant text-[12px] mt-2">Apúntate para ser de los primeros en probarlo.</p>
                                     </div>
                                 </div>
                             </div>
@@ -729,7 +758,7 @@
         <!-- ════════════════════════════════════════════════
              BETA SIGNUP FORM
              ════════════════════════════════════════════════ -->
-        <section id="beta" class="py-unit-xl relative overflow-hidden">
+        <section id="lista" class="py-unit-xl relative overflow-hidden">
             <!-- Background texture -->
             <div class="absolute inset-0 z-0">
                 <img class="w-full h-full object-cover opacity-10" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvqxvdF7fd5ZbDU_Ao8s5W943RDX5TJgNbQ3tdnCun6y76IfJ5cGCEnWU45K7_DBdUMeu4BX62lSlfck7oh-DiMc5kqBV9j7KBR40vvCEcg-jC0YS6tLxNVkFgRtcdwrE95091jE62Oq28MVjmpbuoRBMfhmy6ZGicI7Biix8NV8CevgtZCS-vcye6bfPMFjKuoXv0_UwQDlJ8oaf2IiVvdPkfsRfpz3UpB3uKLZZbX0pDXIBRtAzQsAUU_KyrAKsl1FL8NPSkRPM" />
@@ -740,8 +769,8 @@
                     <!-- Form content (shown before submit) -->
                     <div id="beta-form-container">
                         <span class="text-primary font-label-caps text-label-caps tracking-widest mb-4 block">ACCESO ANTICIPADO</span>
-                        <h2 class="font-headline-md text-headline-md mb-unit-md">Únete a la Beta Exclusiva</h2>
-                        <p class="text-on-surface-variant mb-unit-xl">Estamos preparando DateAndGo para su lanzamiento. Déjanos tu correo y serás de los primeros en vivir la experiencia.</p>
+                        <h2 class="font-headline-md text-headline-md mb-unit-md">Apúntate. Te avisamos cuando abramos.</h2>
+                        <p class="text-on-surface-variant mb-unit-xl">Estamos preparando DateAndGo. Déjanos tus datos y seremos los primeros en darte acceso cuando abramos plazas en tu ciudad.</p>
 
                         <form id="beta-form" class="space-y-6 text-left" action="https://formspree.io/f/mzdqgazv" method="POST">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -811,7 +840,7 @@
                         </div>
                         <h3 class="font-headline-md text-headline-sm text-primary mb-unit-md">¡Estás en la lista!</h3>
                         <p class="text-on-surface-variant font-body-md leading-relaxed max-w-md mx-auto">
-                            Hemos recibido tu solicitud. Te contactaremos pronto con acceso exclusivo a la beta de DateAndGo. Prepárate para menos chat y más citas.
+                            Hemos recibido tu solicitud. Te avisaremos en cuanto abramos plazas en tu ciudad. Prepárate para tu primera cita de verdad.
                         </p>
                         <div class="mt-8 flex justify-center gap-3">
                             <span class="px-4 py-2 border border-outline-variant rounded-full text-[11px] font-label-caps text-on-surface-variant">
@@ -912,6 +941,16 @@
                     } else {
                         tab.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
                         tab.classList.add('text-on-surface-variant');
+                    }
+                });
+                // Update step bubbles
+                document.querySelectorAll('.step-bubble').forEach((bubble, i) => {
+                    if (i === currentSlide) {
+                        bubble.classList.add('bg-primary', 'text-on-primary');
+                        bubble.classList.remove('border', 'border-outline-variant', 'text-on-surface-variant');
+                    } else {
+                        bubble.classList.remove('bg-primary', 'text-on-primary');
+                        bubble.classList.add('border', 'border-outline-variant', 'text-on-surface-variant');
                     }
                 });
             }
