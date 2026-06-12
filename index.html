@@ -415,9 +415,9 @@
                         <div class="absolute bottom-6 left-6 text-white">
                             <div class="flex items-center gap-2 mb-1">
                                 <div class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold" style="background:#4648d4">✓</div>
-                                <span style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:18px;">Adriana, 29</span>
+                                <span id="hero-name" style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:18px;"></span>
                             </div>
-                            <p class="text-white/75 text-sm font-body">Madrid · Verificada</p>
+                            <p id="hero-location" class="text-white/75 text-sm font-body"></p>
                         </div>
                     </div>
 
@@ -428,7 +428,7 @@
                                 <span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings:'FILL' 1;">favorite</span>
                                 <span class="font-body text-label-sm text-on-surface-variant font-semibold">TESTIMONIO REAL</span>
                             </div>
-                            <p class="font-body text-body-md text-on-surface italic leading-snug">"Llevaba años sin encontrar a nadie interesante en apps. La primera cita que me organizaron fue la mejor en mucho tiempo."</p>
+                            <p id="hero-quote" class="font-body text-body-md text-on-surface italic leading-snug"></p>
                         </div>
                     </div>
                 </div>
@@ -876,20 +876,56 @@
     </footer>
 
     <script>
-        // ── Hero random image ──
+        // ── Hero random image + testimonial ──
         const heroPhotos = [
-            { src: 'hero-couple.jpg', credit: 'Photo: @vincefleming' },
-            { src: 'hero-2.jpg',      credit: 'Photo: @brnkd' },
-            { src: 'hero-3.jpg',      credit: 'Photo: @juniorreisfoto' },
-            { src: 'hero-4.jpg',      credit: 'Photo: @ninanaction' },
-            { src: 'hero-5.jpg',      credit: 'Photo: @sirsimo' },
+            {
+                src:      'hero-couple.jpg',
+                credit:   'Photo: @vincefleming',
+                name:     'Sara, 31',
+                location: 'Madrid · Verificada',
+                quote:    '"Llevaba años sin encontrar a nadie interesante en apps. La primera cita que me organizaron fue la mejor en mucho tiempo."'
+            },
+            {
+                src:      'hero-2.jpg',
+                credit:   'Photo: @brnkd',
+                name:     'Laura & Mía, 27',
+                location: 'Barcelona · Verificadas',
+                quote:    '"Nos pareció muy bonito que hubiera un espacio pensado también para nosotras. La cita fue perfecta, sin nada que organizar."'
+            },
+            {
+                src:      'hero-3.jpg',
+                credit:   'Photo: @juniorreisfoto',
+                name:     'Manuel, 68',
+                location: 'Madrid · Verificado',
+                quote:    '"A nuestra edad pensábamos que esto no era para nosotros. Nos demostraron que el amor no tiene fecha de caducidad."'
+            },
+            {
+                src:      'hero-4.jpg',
+                credit:   'Photo: @ninanaction',
+                name:     'Carlos & Álex, 29',
+                location: 'Valencia · Verificados',
+                quote:    '"Por fin un servicio que nos tuvo en cuenta sin hacernos sentir raros. La cita fue mágica, como en las películas."'
+            },
+            {
+                src:      'hero-5.jpg',
+                credit:   'Photo: @sirsimo',
+                name:     'Paula, 34',
+                location: 'Barcelona · Verificada',
+                quote:    '"Me mandaron una propuesta de cita un martes. El viernes ya estaba conociendo a alguien increíble. Así de fácil."'
+            },
         ];
         (function() {
             const pick = heroPhotos[Math.floor(Math.random() * heroPhotos.length)];
-            const img = document.getElementById('hero-img');
-            const credit = document.getElementById('hero-credit');
-            if (img) img.src = pick.src;
-            if (credit) credit.textContent = pick.credit;
+            const img      = document.getElementById('hero-img');
+            const credit   = document.getElementById('hero-credit');
+            const name     = document.getElementById('hero-name');
+            const location = document.getElementById('hero-location');
+            const quote    = document.getElementById('hero-quote');
+            if (img)      img.src           = pick.src;
+            if (credit)   credit.textContent = pick.credit;
+            if (name)     name.textContent   = pick.name;
+            if (location) location.textContent = pick.location;
+            if (quote)    quote.textContent  = pick.quote;
         })();
 
         // ── Nav scroll ──
