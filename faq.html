@@ -1,33 +1,116 @@
 <!DOCTYPE html>
-<html class="dark" lang="es">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>DateAndGo | Preguntas Frecuentes</title>
+    <meta name="description" content="Preguntas frecuentes sobre DateAndGo. Cómo funciona, para quién es y cuándo abre." />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: { extend: { colors: { background: "#111317", primary: "#f2ca50", "on-surface": "#e2e2e7" } } }
-        };
-    </script>
-    <style>body { background-color: #111317; color: #e2e2e7; }</style>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #f8f9ff; color: #0b1c30; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.6; }
+        a { color: #4648d4; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        nav { background: rgba(248,249,255,0.9); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(199,196,215,0.4); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 50; }
+        .logo { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 20px; color: #4648d4; text-decoration: none; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px; font-weight: 600; color: #4648d4; padding: 8px 18px; border: 1.5px solid #4648d4; border-radius: 9999px; transition: all 0.2s; }
+        .back-link:hover { background: #4648d4; color: #fff; text-decoration: none; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+        .chip { display: inline-block; background: #e1e0ff; color: #07006c; font-family: 'Be Vietnam Pro', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; padding: 4px 12px; border-radius: 9999px; margin-bottom: 20px; }
+        h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(28px, 5vw, 40px); line-height: 1.15; letter-spacing: -0.02em; color: #0b1c30; margin-bottom: 12px; }
+        .subtitle { font-size: 16px; color: #464554; margin-bottom: 48px; }
+        .faq-item { border: 1px solid #e5eeff; border-radius: 12px; background: #fff; margin-bottom: 12px; overflow: hidden; transition: box-shadow 0.2s; }
+        .faq-item:hover { box-shadow: 0 4px 16px rgba(70,72,212,0.08); }
+        .faq-q { width: 100%; background: none; border: none; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 16px; color: #0b1c30; text-align: left; }
+        .faq-q .icon { color: #4648d4; font-size: 22px; font-weight: 300; transition: transform 0.25s; flex-shrink: 0; }
+        .faq-q.open .icon { transform: rotate(45deg); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.25s ease; }
+        .faq-a.open { max-height: 300px; padding-bottom: 20px; }
+        .faq-a p { font-size: 15px; color: #464554; padding: 0 24px; line-height: 1.65; }
+        .cta-box { margin-top: 48px; background: linear-gradient(135deg, #eff4ff, #ffdadb22); border: 1px solid #c7c4d7; border-radius: 16px; padding: 32px; text-align: center; }
+        .cta-box h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 22px; color: #0b1c30; margin-bottom: 10px; }
+        .cta-box p { font-size: 15px; color: #464554; margin-bottom: 20px; }
+        .btn { display: inline-block; background: linear-gradient(135deg, #4648d4, #6063ee); color: #fff; font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px; font-weight: 600; padding: 13px 28px; border-radius: 9999px; transition: all 0.2s; box-shadow: 0 4px 14px rgba(70,72,212,0.25); }
+        .btn:hover { text-decoration: none; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(70,72,212,0.35); }
+        footer { background: #0b1c30; color: #767586; text-align: center; padding: 32px 24px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 13px; }
+        footer a { color: #c0c1ff; }
+    </style>
 </head>
-<body class="p-8">
-    <div class="max-w-3xl mx-auto prose prose-invert">
-        <h1>Preguntas Frecuentes (FAQ)</h1>
-        
-        <h3>¿Qué es DateAndGo?</h3>
-        <p>Es un servicio de matchmaking editorial y concierge. En lugar de hacer swipe infinitamente, tú nos dices qué buscas y nosotros organizamos la cita cuando encontramos a alguien altamente compatible.</p>
+<body>
+    <nav>
+        <a href="index.html" class="logo">DateAndGo</a>
+        <a href="index.html" class="back-link">← Volver</a>
+    </nav>
 
-        <h3>¿Por qué tengo que dejar mi información?</h3>
-        <p>Estamos construyendo un "casting" inicial para asegurar que cuando lancemos, haya personas reales, interesantes y compatibles.</p>
+    <div class="container">
+        <span class="chip">FAQ</span>
+        <h1>Preguntas Frecuentes</h1>
+        <p class="subtitle">Todo lo que necesitas saber antes de apuntarte.</p>
 
-        <h3>¿Cuándo se lanzará el servicio?</h3>
-        <p>Abriremos plazas de manera limitada por ciudades. Al estar en la lista prioritaria, serás de los primeros en recibir invitación.</p>
+        <div class="faq-item">
+            <button class="faq-q">¿Qué es DateAndGo? <span class="icon">+</span></button>
+            <div class="faq-a"><p>Es un servicio de matchmaking asistido. En lugar de hacer swipe infinito, tú nos dices qué buscas y nosotros organizamos la cita cuando encontramos a alguien altamente compatible. Sin apps, sin chat previo, sin ghosting.</p></div>
+        </div>
 
-        <p><a href="index.html" class="text-primary no-underline hover:underline">&larr; Volver a DateAndGo</a></p>
+        <div class="faq-item">
+            <button class="faq-q">¿Por qué tengo que dejar mi información? <span class="icon">+</span></button>
+            <div class="faq-a"><p>Estamos construyendo un perfil de compatibilidad inicial para que cuando lancemos, tengamos personas reales, interesantes y que buscan lo mismo. Cuanta más información des, mejor será el match.</p></div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">¿Cuándo se lanzará el servicio? <span class="icon">+</span></button>
+            <div class="faq-a"><p>Abriremos plazas de manera limitada por ciudades. Al estar en la lista de acceso anticipado, serás de los primeros en recibir invitación cuando abramos en tu ciudad.</p></div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">¿Es gratuito? <span class="icon">+</span></button>
+            <div class="faq-a"><p>Durante la fase de validación, el servicio es completamente gratuito. Queremos probar que el modelo funciona antes de pensar en precios. Cuando lo hagamos de pago, siempre lo comunicaremos con antelación.</p></div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">¿Cómo deciden quién es compatible? <span class="icon">+</span></button>
+            <div class="faq-a"><p>Combinamos las respuestas del cuestionario de compatibilidad (valores, estilo de vida, intenciones) con una revisión humana. No es solo un algoritmo: hay personas detrás que revisan los perfiles.</p></div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">¿Qué pasa si no me gusta la propuesta de cita? <span class="icon">+</span></button>
+            <div class="faq-a"><p>Nunca tendrás obligación de aceptar. Si la propuesta no te convence (el plan, el lugar, la persona) simplemente lo rechazas y esperamos al siguiente match. Sin presión.</p></div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">¿Está disponible en mi ciudad? <span class="icon">+</span></button>
+            <div class="faq-a"><p>De momento estamos validando en Madrid, Barcelona y Valencia. Si vives en otra ciudad, apúntate igualmente — si hay suficiente demanda, la añadiremos al mapa.</p></div>
+        </div>
+
+        <div class="cta-box">
+            <h2>¿Tienes más dudas?</h2>
+            <p>Escríbenos directamente o apúntate a la lista y te contamos todo cuando abramos.</p>
+            <a href="index.html#lista" class="btn">Quiero mi primera cita →</a>
+        </div>
     </div>
+
+    <footer>
+        <p>© 2025 DateAndGo · Otro proyecto made in <a href="https://yumpeen.com" target="_blank">Yumpeen</a></p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-q').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                const isOpen = btn.classList.contains('open');
+                // Close all
+                document.querySelectorAll('.faq-q').forEach(b => {
+                    b.classList.remove('open');
+                    b.nextElementSibling.classList.remove('open');
+                });
+                // Open clicked if it was closed
+                if (!isOpen) {
+                    btn.classList.add('open');
+                    answer.classList.add('open');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

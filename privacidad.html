@@ -1,28 +1,78 @@
 <!DOCTYPE html>
-<html class="dark" lang="es">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>DateAndGo | Política de Privacidad</title>
+    <meta name="description" content="Política de privacidad de DateAndGo. Cómo gestionamos y protegemos tus datos." />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: { extend: { colors: { background: "#111317", primary: "#f2ca50", "on-surface": "#e2e2e7" } } }
-        };
-    </script>
-    <style>body { background-color: #111317; color: #e2e2e7; }</style>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #f8f9ff; color: #0b1c30; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.6; }
+        a { color: #4648d4; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Nav */
+        nav { background: rgba(248,249,255,0.9); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(199,196,215,0.4); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 50; }
+        .logo { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 20px; color: #4648d4; text-decoration: none; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px; font-weight: 600; color: #4648d4; padding: 8px 18px; border: 1.5px solid #4648d4; border-radius: 9999px; transition: all 0.2s; }
+        .back-link:hover { background: #4648d4; color: #fff; text-decoration: none; }
+
+        /* Content */
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+        .chip { display: inline-block; background: #e1e0ff; color: #07006c; font-family: 'Be Vietnam Pro', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; padding: 4px 12px; border-radius: 9999px; margin-bottom: 20px; }
+        h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(28px, 5vw, 40px); line-height: 1.15; letter-spacing: -0.02em; color: #0b1c30; margin-bottom: 12px; }
+        .subtitle { font-size: 16px; color: #464554; margin-bottom: 48px; }
+        h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px; color: #0b1c30; margin: 36px 0 12px; padding-bottom: 8px; border-bottom: 1.5px solid #e5eeff; }
+        p { font-size: 16px; color: #464554; margin-bottom: 16px; }
+        ul { padding-left: 20px; margin-bottom: 16px; }
+        ul li { font-size: 16px; color: #464554; margin-bottom: 8px; }
+
+        /* Footer */
+        footer { background: #0b1c30; color: #767586; text-align: center; padding: 32px 24px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 13px; }
+        footer a { color: #c0c1ff; }
+    </style>
 </head>
-<body class="p-8">
-    <div class="max-w-3xl mx-auto prose prose-invert">
+<body>
+    <nav>
+        <a href="index.html" class="logo">DateAndGo</a>
+        <a href="index.html" class="back-link">← Volver</a>
+    </nav>
+
+    <div class="container">
+        <span class="chip">LEGAL</span>
         <h1>Política de Privacidad</h1>
+        <p class="subtitle">Última actualización: junio 2025</p>
+
         <p>En DateAndGo nos tomamos la privacidad muy en serio. Al apuntarte a nuestra lista de espera, tu correo e información se utilizarán exclusivamente para invitarte a las fases piloto de nuestro servicio.</p>
+
         <h2>Datos recogidos</h2>
-        <p>Recopilamos tu correo, ciudad, edad y preferencias de uso con el único fin de hacer mejores matches y entender el perfil de nuestros primeros usuarios.</p>
+        <p>Recopilamos tu correo, ciudad, edad y preferencias de uso con el único fin de hacer mejores matches y entender el perfil de nuestros primeros usuarios. Específicamente:</p>
+        <ul>
+            <li>Correo electrónico — para comunicarnos contigo sobre el acceso anticipado.</li>
+            <li>Edad — para garantizar la compatibilidad y el cumplimiento legal.</li>
+            <li>Ciudad — para agrupar a personas en el mismo área geográfica.</li>
+            <li>Preferencias e intenciones — para realizar mejores sugerencias de compatibilidad.</li>
+        </ul>
+
+        <h2>Uso de los datos</h2>
+        <p>Tus datos se utilizan exclusivamente para:</p>
+        <ul>
+            <li>Notificarte cuando abramos plazas en tu ciudad.</li>
+            <li>Preparar tu perfil de compatibilidad de forma anónima.</li>
+            <li>Mejorar el servicio durante la fase de validación.</li>
+        </ul>
+
         <h2>Seguridad</h2>
-        <p>Todos los datos se guardan de forma segura y nunca serán compartidos ni vendidos a terceros.</p>
-        <p><a href="index.html" class="text-primary no-underline hover:underline">&larr; Volver a DateAndGo</a></p>
+        <p>Todos los datos se guardan de forma segura a través de Formspree y nunca serán compartidos ni vendidos a terceros bajo ninguna circunstancia.</p>
+
+        <h2>Tus derechos</h2>
+        <p>Puedes solicitar la eliminación de tus datos en cualquier momento escribiéndonos a través del formulario de contacto o respondiendo a cualquier email que hayas recibido de nuestra parte.</p>
     </div>
+
+    <footer>
+        <p>© 2025 DateAndGo · Otro proyecto made in <a href="https://yumpeen.com" target="_blank">Yumpeen</a></p>
+    </footer>
 </body>
 </html>

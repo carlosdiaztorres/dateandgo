@@ -1,108 +1,73 @@
 <!DOCTYPE html>
-<html class="dark" lang="es">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>DateAndGo | Menos chat. Más citas.</title>
+    <title>DateAndGo | Menos chat. Más citas. (Vibrant)</title>
     <meta name="description" content="DateAndGo te organiza una cita real con alguien compatible. Sin apps, sin swipe, sin ghosting. Sé de los primeros en probarlo." />
-    <meta name="theme-color" content="#1c1a17" />
+    <meta name="theme-color" content="#f8f9ff" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
     <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "surface-container": "#1e2023",
-                        "on-tertiary": "#303032",
-                        "secondary-fixed": "#e5e2e3",
-                        "inverse-on-surface": "#2e3034",
-                        "on-background": "#e2e2e7",
-                        "surface": "#1c1a17",
-                        "on-primary-fixed": "#241a00",
-                        "on-error-container": "#ffdad6",
-                        "background": "#1c1a17",
-                        "outline": "#99907c",
-                        "surface-variant": "#333539",
-                        "error-container": "#93000a",
-                        "primary": "#f2ca50",
-                        "surface-container-highest": "#333539",
-                        "surface-bright": "#37393d",
-                        "tertiary-fixed-dim": "#c8c6c8",
-                        "on-error": "#690005",
-                        "on-primary-fixed-variant": "#574500",
-                        "outline-variant": "#4d4635",
-                        "inverse-surface": "#e2e2e7",
-                        "on-tertiary-container": "#454547",
-                        "on-secondary-container": "#bab8b9",
-                        "on-secondary-fixed": "#1b1b1c",
-                        "on-secondary": "#303031",
-                        "on-surface": "#e2e2e7",
-                        "surface-container-lowest": "#141210",
-                        "primary-container": "#d4af37",
-                        "on-secondary-fixed-variant": "#474647",
-                        "tertiary-fixed": "#e4e2e4",
-                        "primary-fixed": "#ffe088",
-                        "secondary": "#c8c6c7",
-                        "surface-dim": "#1c1a17",
-                        "on-tertiary-fixed": "#1b1b1d",
-                        "on-tertiary-fixed-variant": "#474649",
-                        "surface-container-high": "#2e2b27",
-                        "secondary-fixed-dim": "#c8c6c7",
-                        "tertiary": "#d0cdd0",
-                        "primary-fixed-dim": "#e9c349",
-                        "tertiary-container": "#b4b2b4",
-                        "on-primary": "#3c2f00",
-                        "error": "#ffb4ab",
-                        "inverse-primary": "#735c00",
-                        "surface-container-low": "#1a1c1f",
-                        "on-surface-variant": "#c8bca8",
-                        "secondary-container": "#49494a",
-                        "on-primary-container": "#554300",
-                        "surface-tint": "#e9c349"
-                    },
-                    borderRadius: {
-                        DEFAULT: "0.25rem",
-                        lg: "0.5rem",
-                        xl: "0.75rem",
-                        full: "9999px"
-                    },
-                    spacing: {
-                        "unit-xs": "4px",
-                        "unit-xl": "64px",
-                        "margin-desktop": "80px",
-                        "unit-md": "16px",
-                        "unit-sm": "8px",
-                        "margin-tablet": "40px",
-                        "margin-mobile": "20px",
-                        "container-max": "1200px",
-                        "gutter": "24px",
-                        "unit-lg": "32px"
+                        "surface":                "#f8f9ff",
+                        "surface-dim":            "#cbdbf5",
+                        "surface-container-low":  "#eff4ff",
+                        "surface-container":      "#e5eeff",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-surface":             "#0b1c30",
+                        "on-surface-variant":     "#464554",
+                        "outline":                "#767586",
+                        "outline-variant":        "#c7c4d7",
+                        "primary":                "#4648d4",
+                        "on-primary":             "#ffffff",
+                        "primary-container":      "#e1e0ff",
+                        "on-primary-container":   "#07006c",
+                        "secondary":              "#b90538",
+                        "on-secondary":           "#ffffff",
+                        "secondary-container":    "#ffdadb",
+                        "on-secondary-container": "#40000d",
+                        "tertiary":               "#00628d",
+                        "on-tertiary":            "#ffffff",
+                        "background":             "#f8f9ff",
+                        "error":                  "#ba1a1a",
                     },
                     fontFamily: {
-                        "headline-md": ["Playfair Display"],
-                        "label-caps": ["Manrope"],
-                        "display-lg": ["Playfair Display"],
-                        "body-md": ["Manrope"],
-                        "headline-sm": ["Playfair Display"],
-                        "display-lg-mobile": ["Playfair Display"],
-                        "body-lg": ["Manrope"]
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body":     ["Be Vietnam Pro", "sans-serif"],
                     },
                     fontSize: {
-                        "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
-                        "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "700" }],
-                        "display-lg": ["64px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
-                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
-                        "headline-sm": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
-                        "display-lg-mobile": ["40px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
-                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }]
+                        "4xl-tight": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "3xl-tight": ["32px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "2xl":       ["24px", { lineHeight: "1.3", fontWeight: "700" }],
+                        "xl":        ["20px", { lineHeight: "1.4", fontWeight: "700" }],
+                        "body-lg":   ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "body-md":   ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "label-md":  ["14px", { lineHeight: "1.4", letterSpacing: "0.01em", fontWeight: "600" }],
+                        "label-sm":  ["12px", { lineHeight: "1.4", fontWeight: "600" }],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        sm:   "0.25rem",
+                        md:   "0.75rem",
+                        lg:   "1rem",
+                        xl:   "1.5rem",
+                        full: "9999px",
+                    },
+                    boxShadow: {
+                        "soft":    "0 2px 12px 0 rgba(70,72,212,0.08), 0 1px 3px 0 rgba(70,72,212,0.06)",
+                        "soft-md": "0 8px 32px 0 rgba(70,72,212,0.12), 0 2px 8px 0 rgba(70,72,212,0.07)",
+                        "soft-lg": "0 20px 60px 0 rgba(70,72,212,0.15), 0 4px 16px 0 rgba(70,72,212,0.08)",
                     }
                 }
             }
@@ -112,162 +77,197 @@
     <style>
         html { scroll-behavior: smooth; }
         body {
-            background-color: #1c1a17;
-            color: #ede9e0;
+            background-color: #f8f9ff;
+            color: #0b1c30;
+            font-family: 'Be Vietnam Pro', sans-serif;
         }
 
         /* ── Navigation ── */
-        .glass-nav {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-            z-index: 100;
-            transition: background-color 0.3s ease, padding 0.3s ease;
+        .top-nav {
+            background: rgba(248, 249, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(199, 196, 215, 0.4);
+            transition: box-shadow 0.3s ease;
         }
-        .glass-nav.scrolled {
-            background-color: rgba(28, 26, 23, 0.97);
+        .top-nav.scrolled {
+            box-shadow: 0 4px 24px rgba(70, 72, 212, 0.08);
         }
 
-        /* ── Shared Components ── */
-        .editorial-shadow {
-            box-shadow: 0 40px 100px -20px rgba(212, 175, 55, 0.15);
-        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
-        .concierge-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            border: 1px solid #d4af37;
-            border-radius: 50%;
-            font-family: 'Playfair Display', serif;
-            color: #d4af37;
-            font-size: 14px;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        /* ── Glass panels ── */
-        .glass-panel {
-            background: rgba(26, 26, 27, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
 
         /* ── Animations ── */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
         }
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* ── Preview Carousel ── */
-        .preview-carousel {
-            position: relative;
-            overflow: hidden;
+        /* ── Buttons ── */
+        .btn-primary {
+            background: linear-gradient(135deg, #4648d4 0%, #6063ee 100%);
+            color: #fff;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            display: inline-block;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 16px rgba(70,72,212,0.25);
         }
-        .preview-track {
-            display: flex;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(70,72,212,0.35);
         }
-        .preview-slide {
-            min-width: 100%;
-            padding: 0 8px;
-            box-sizing: border-box;
-        }
-        .preview-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            border: 1px solid #d4af37;
+        .btn-outline {
             background: transparent;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            color: #4648d4;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 13px 32px;
+            border-radius: 9999px;
+            border: 1.5px solid #4648d4;
+            display: inline-block;
+            transition: all 0.2s ease;
         }
-        .preview-dot.active {
-            background: #d4af37;
-            box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
-        }
-
-        /* ── Preview device frame ── */
-        .device-frame {
-            background: rgba(17, 19, 23, 0.9);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6), 0 0 60px -10px rgba(212, 175, 55, 0.08);
-        }
-        .device-titlebar {
-            height: 40px;
-            background: rgba(30, 32, 35, 0.95);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            padding: 0 16px;
-            gap: 8px;
-        }
-        .device-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
+        .btn-outline:hover {
+            background: #4648d4;
+            color: #fff;
         }
 
-        /* ── Diamond indicator for questionnaire ── */
-        .diamond-indicator {
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        /* ── Card ── */
+        .card {
+            background: #fff;
+            border: 1px solid rgba(199,196,215,0.6);
+            border-radius: 1rem;
+            box-shadow: 0 2px 12px rgba(70,72,212,0.07);
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+        .card:hover {
+            box-shadow: 0 8px 32px rgba(70,72,212,0.12);
+            transform: translateY(-2px);
         }
 
-        /* ── Selection glow ── */
-        .selection-glow:hover {
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
-        }
-
-        /* ── Gold glow ── */
-        .gold-glow {
-            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
-        }
-
-        /* ── V badge small ── */
-        .v-badge {
-            font-family: 'Playfair Display', serif;
+        /* ── Chip ── */
+        .chip {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            border: 1px solid #d4af37;
-            color: #d4af37;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
+            gap: 4px;
+            padding: 4px 12px;
+            border-radius: 9999px;
             font-size: 12px;
-            font-weight: 700;
-            flex-shrink: 0;
+            font-weight: 600;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .chip-indigo { background: #e1e0ff; color: #07006c; }
+        .chip-rose   { background: #ffdadb; color: #40000d; }
+        .chip-sky    { background: #c9e6ff; color: #001e2f; }
+
+        /* ── Carousel ── */
+        .preview-carousel { position: relative; overflow: hidden; }
+        .preview-track {
+            display: flex;
+            transition: transform 0.55s cubic-bezier(0.16,1,0.3,1);
+        }
+        .preview-slide { min-width: 100%; padding: 0 6px; box-sizing: border-box; }
+
+        .carousel-tab {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            border: 1.5px solid #c7c4d7;
+            color: #464554;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .carousel-tab.active {
+            background: #4648d4;
+            color: #fff;
+            border-color: #4648d4;
+            box-shadow: 0 4px 12px rgba(70,72,212,0.25);
+        }
+        .carousel-tab:not(.active):hover {
+            border-color: #4648d4;
+            color: #4648d4;
         }
 
-        /* ── Form success animation ── */
-        @keyframes checkmark {
-            0% { transform: scale(0) rotate(-45deg); opacity: 0; }
-            50% { transform: scale(1.2) rotate(-45deg); opacity: 1; }
-            100% { transform: scale(1) rotate(-45deg); opacity: 1; }
+        .preview-dot {
+            width: 8px; height: 8px;
+            border-radius: 9999px;
+            border: 1.5px solid #4648d4;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.25s ease;
         }
-        .success-check {
+        .preview-dot.active {
+            background: #4648d4;
             width: 24px;
-            height: 12px;
-            border-left: 3px solid #d4af37;
-            border-bottom: 3px solid #d4af37;
-            transform: scale(0) rotate(-45deg);
-            animation: checkmark 0.5s ease forwards;
+        }
+
+        /* ── Device frame ── */
+        .device-frame {
+            background: #fff;
+            border: 1px solid #c7c4d7;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(70,72,212,0.12);
+        }
+        .device-titlebar {
+            height: 38px;
+            background: #f0f2ff;
+            border-bottom: 1px solid #e0e0f0;
+            display: flex;
+            align-items: center;
+            padding: 0 14px;
+            gap: 7px;
+        }
+        .device-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+        /* ── Step banner inside slide ── */
+        .step-banner {
+            background: #eff4ff;
+            border: 1px solid #c7c4d7;
+            border-radius: 0.75rem;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .step-num {
+            width: 26px; height: 26px;
+            border-radius: 9999px;
+            background: #4648d4;
+            color: #fff;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .step-num.inactive {
+            background: transparent;
+            border: 1.5px solid #4648d4;
+            color: #4648d4;
+        }
+        .step-banner p {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            color: #464554;
+            line-height: 1.4;
         }
 
         /* ── Mobile nav ── */
@@ -275,176 +275,239 @@
             transform: translateX(100%);
             transition: transform 0.3s ease;
         }
-        .mobile-menu.open {
-            transform: translateX(0);
+        .mobile-menu.open { transform: translateX(0); }
+
+        /* ── Glass option ── */
+        .opt-card {
+            background: #fff;
+            border: 1.5px solid #e5eeff;
+            border-radius: 0.75rem;
+            padding: 14px 16px;
+            display: flex; align-items: center; gap: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .opt-card:hover, .opt-card.selected {
+            border-color: #4648d4;
+            background: #eff4ff;
+        }
+        .opt-card.selected .diamond {
+            background: #4648d4;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+        .diamond {
+            width: 14px; height: 14px;
+            border: 1.5px solid #c7c4d7;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            flex-shrink: 0;
         }
 
-        /* ── Smooth pulse for preview label ── */
-        @keyframes subtlePulse {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 1; }
+        /* ── Form ── */
+        .field-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1.5px solid #c7c4d7;
+            padding: 8px 0;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 16px;
+            color: #0b1c30;
+            outline: none;
+            transition: border-color 0.2s;
         }
-        .pulse-label {
-            animation: subtlePulse 2.5s ease-in-out infinite;
-        }
+        .field-input:focus { border-color: #4648d4; }
+        .field-input::placeholder { color: #767586; }
 
-        /* ── Tab number inherits parent color ── */
-        .tab-num {
-            color: inherit;
+        /* ── Success ── */
+        @keyframes popIn {
+            0% { transform: scale(0.7); opacity: 0; }
+            70% { transform: scale(1.08); }
+            100% { transform: scale(1); opacity: 1; }
         }
+        .pop-in { animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards; }
     </style>
 </head>
 
-<body class="font-body-md overflow-x-hidden">
+<body class="overflow-x-hidden">
 
-    <!-- ════════════════════════════════════════════════
-         NAVIGATION
-         ════════════════════════════════════════════════ -->
-    <header id="main-nav" class="fixed top-0 left-0 right-0 glass-nav">
-        <nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+    <!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+    <header id="main-nav" class="fixed top-0 left-0 right-0 top-nav z-50">
+        <nav class="flex justify-between items-center px-4 md:px-10 py-4 max-w-[1200px] mx-auto">
             <!-- Logo -->
-            <a href="#" class="font-display-lg text-headline-md text-primary cursor-pointer select-none">DateAndGo</a>
+            <a href="#" class="font-headline text-xl font-800 text-primary" style="font-family:'Plus Jakarta Sans';font-weight:800;">DateAndGo</a>
 
             <!-- Desktop links -->
-            <div class="hidden md:flex gap-unit-lg items-center">
-                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-label-caps text-label-caps tracking-widest px-1" href="#como-funciona">Cómo Funciona</a>
-                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-label-caps text-label-caps tracking-widest px-1" href="#preview">La App</a>
-                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-label-caps text-label-caps tracking-widest px-1" href="#lista">Apuntarme</a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-body font-semibold" href="#como-funciona">Cómo Funciona</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-body font-semibold" href="#preview">La App</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-body font-semibold" href="#lista">Apuntarme</a>
             </div>
 
             <!-- CTA desktop -->
-            <a href="#lista" class="hidden md:inline-block bg-primary text-on-primary px-unit-lg py-unit-sm rounded-full font-label-caps text-label-caps hover:translate-y-[-2px] transition-transform duration-200">
-                Quiero mi primera cita
-            </a>
+            <a href="#lista" class="hidden md:inline-block btn-primary text-sm">Quiero mi primera cita</a>
 
-            <!-- Hamburger mobile -->
+            <!-- Hamburger -->
             <button id="mobile-toggle" class="md:hidden text-on-surface p-2" aria-label="Abrir menú">
                 <span class="material-symbols-outlined text-[28px]">menu</span>
             </button>
         </nav>
 
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-surface-container/95 backdrop-blur-xl border-l border-outline-variant/30 flex flex-col p-8 gap-8 md:hidden z-[200]">
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-surface-container-low backdrop-blur-xl border-l border-outline-variant/40 flex flex-col p-8 gap-6 md:hidden z-[200]">
             <button id="mobile-close" class="self-end text-on-surface" aria-label="Cerrar menú">
                 <span class="material-symbols-outlined text-[28px]">close</span>
             </button>
-            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps tracking-widest" href="#como-funciona" data-close-menu>Cómo Funciona</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps tracking-widest" href="#preview" data-close-menu>La App</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps tracking-widest" href="#lista" data-close-menu>Apuntarme</a>
-            <a href="#lista" class="bg-primary text-on-primary px-unit-lg py-3 rounded-full font-label-caps text-label-caps text-center mt-4" data-close-menu>Quiero mi primera cita</a>
+            <a class="text-on-surface-variant hover:text-primary font-body font-semibold text-label-md" href="#como-funciona" data-close-menu>Cómo Funciona</a>
+            <a class="text-on-surface-variant hover:text-primary font-body font-semibold text-label-md" href="#preview" data-close-menu>La App</a>
+            <a class="text-on-surface-variant hover:text-primary font-body font-semibold text-label-md" href="#lista" data-close-menu>Apuntarme</a>
+            <a href="#lista" class="btn-primary text-center mt-2 text-sm" data-close-menu>Quiero mi primera cita</a>
         </div>
     </header>
 
     <main>
 
-        <!-- ════════════════════════════════════════════════
-             HERO SECTION
-             ════════════════════════════════════════════════ -->
-        <section class="relative min-h-screen flex items-center pt-32 pb-unit-xl overflow-hidden">
-            <!-- Ambient glow -->
-            <div class="absolute top-1/4 -left-32 w-96 h-96 bg-primary opacity-[0.04] rounded-full blur-[120px] pointer-events-none"></div>
-            <div class="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-primary opacity-[0.03] rounded-full blur-[160px] pointer-events-none"></div>
+        <!-- ═══════════════════════ HERO ═══════════════════════ -->
+        <section class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
+            <!-- Ambient blobs -->
+            <div class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full opacity-20 pointer-events-none" style="background: radial-gradient(circle, #6063ee 0%, transparent 70%);"></div>
+            <div class="absolute bottom-0 -left-20 w-80 h-80 rounded-full opacity-15 pointer-events-none" style="background: radial-gradient(circle, #dc2c4f 0%, transparent 70%);"></div>
 
-            <div class="container mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-12 gap-gutter relative z-10 max-w-container-max">
-                <!-- Left: Copy -->
+            <div class="container mx-auto px-4 md:px-10 grid md:grid-cols-12 gap-6 relative z-10 max-w-[1200px]">
+                <!-- Copy -->
                 <div class="md:col-span-7 flex flex-col justify-center animate-on-scroll">
-                    <span class="text-primary font-label-caps text-label-caps mb-unit-md tracking-[0.3em]">CITAS SIN APPS. SIN SWIPE. SIN GHOST.</span>
-                    <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-unit-lg leading-tight">
+                    <!-- Chips -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="chip chip-indigo"><span class="material-symbols-outlined text-[14px]">auto_awesome</span> Sin swipe</span>
+                        <span class="chip chip-rose"><span class="material-symbols-outlined text-[14px]">favorite</span> Sin ghosting</span>
+                        <span class="chip chip-sky"><span class="material-symbols-outlined text-[14px]">calendar_today</span> Cita real organizada</span>
+                    </div>
+
+                    <h1 style="font-family:'Plus Jakarta Sans'; font-size:clamp(36px,6vw,56px); font-weight:800; line-height:1.1; letter-spacing:-0.02em;" class="mb-6 text-on-surface">
                         Menos chat.<br/>
-                        <span class="text-primary-fixed-dim italic">Más citas.</span>
+                        <span style="background: linear-gradient(135deg, #4648d4, #dc2c4f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Más citas.</span>
                     </h1>
-                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-unit-xl leading-relaxed">
+                    <p class="font-body text-body-lg text-on-surface-variant max-w-lg mb-8 leading-relaxed">
                         Te organizamos una cita real con alguien compatible. Sin horas de chat, sin logística, sin quedadas que no llegan a ningún lado. Tú solo te presentas.
                     </p>
-                    <div class="flex flex-wrap gap-unit-md">
-                        <a href="#lista" class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-caps text-label-caps editorial-shadow hover:brightness-110 transition-all">QUIERO MI PRIMERA CITA</a>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#lista" class="btn-primary">QUIERO MI PRIMERA CITA</a>
+                    </div>
+
+                    <!-- Social proof -->
+                    <div class="flex items-center gap-4 mt-10">
+                        <div class="flex -space-x-2">
+                            <div class="w-9 h-9 rounded-full border-2 border-white overflow-hidden" style="background: linear-gradient(135deg,#6063ee,#dc2c4f)"></div>
+                            <div class="w-9 h-9 rounded-full border-2 border-white overflow-hidden" style="background: linear-gradient(135deg,#00628d,#6063ee)"></div>
+                            <div class="w-9 h-9 rounded-full border-2 border-white overflow-hidden" style="background: linear-gradient(135deg,#dc2c4f,#f59e0b)"></div>
+                        </div>
+                        <p class="font-body text-label-md text-on-surface-variant"><span class="text-primary font-semibold">+200 personas</span> ya se han apuntado</p>
                     </div>
                 </div>
 
-                <!-- Right: Editorial image -->
-                <div class="md:col-span-5 relative mt-12 md:mt-0">
-                    <div class="aspect-[4/5] rounded-xl overflow-hidden editorial-shadow relative group animate-on-scroll" style="transition-delay: 0.15s;">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Pareja elegante en un bar de lujo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCadVo8p6Y60CcJ8gMl_hlz_nTIdSJfLKwOqwa-LZm0jfJoEiBH-H84c-BO1Iq3EcmYE_4FtKGbBGLpEcAJ6VtrLIyRNkXZ_GIaRo_5vw4A1k4BJ3plwFZpB9FWEah98Xw0H3rsm3V6llh9xF8ng33nxmM8BwazdFzl69tW_clkxQZIXGHJvFQvLmALigBA92gk7H5FS2sf7O1V2mozXCIBU2G2bStoMeXU7npZZlxHajqDnLH4KDPABybqMsaNX8n7J4H8f38mN5Y" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
-                        <div class="absolute bottom-8 left-8">
-                            <div class="flex items-center gap-unit-sm mb-unit-xs">
-                                <span class="concierge-badge">V</span>
-                                <span class="font-headline-sm text-headline-sm text-white">Adriana, 29</span>
+                <!-- Image -->
+                <div class="md:col-span-5 relative mt-10 md:mt-0 animate-on-scroll" style="transition-delay:0.12s">
+                    <div class="aspect-[4/5] rounded-xl overflow-hidden relative group" style="box-shadow: 0 32px 80px rgba(70,72,212,0.18);">
+                        <img id="hero-img" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                             alt="Pareja en una cita" src="hero-couple.jpg" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <!-- Photo credit -->
+                        <p id="hero-credit" class="absolute bottom-2 right-3 text-white/40 font-body" style="font-size:10px;letter-spacing:0.02em;"></p>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <div class="flex items-center gap-2 mb-1">
+                                <div class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold" style="background:#4648d4">✓</div>
+                                <span style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:18px;">Adriana, 29</span>
                             </div>
-                            <p class="text-secondary font-body-md">Socia Fundadora, Madrid</p>
+                            <p class="text-white/75 text-sm font-body">Madrid · Verificada</p>
                         </div>
                     </div>
-                    <!-- Floating testimonial card -->
-                    <div class="absolute -bottom-10 -left-20 hidden lg:block p-unit-lg rounded-xl glass-panel border border-white/10 w-72 editorial-shadow animate-on-scroll" style="transition-delay: 0.3s;">
-                        <span class="material-symbols-outlined text-primary mb-unit-sm">verified_user</span>
-                        <p class="font-body-md text-on-surface italic">"Llevaba años sin encontrar a nadie interesante en apps. La primera cita que me organizaron fue la mejor en mucho tiempo."</p>
+
+                    <!-- Floating testimonial -->
+                    <div class="absolute -bottom-8 -left-12 hidden lg:block w-72 animate-on-scroll" style="transition-delay:0.25s;">
+                        <div class="card p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings:'FILL' 1;">favorite</span>
+                                <span class="font-body text-label-sm text-on-surface-variant font-semibold">TESTIMONIO REAL</span>
+                            </div>
+                            <p class="font-body text-body-md text-on-surface italic leading-snug">"Llevaba años sin encontrar a nadie interesante en apps. La primera cita que me organizaron fue la mejor en mucho tiempo."</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ════════════════════════════════════════════════
-             COMPARATIVE TABLE
-             ════════════════════════════════════════════════ -->
-        <section id="como-funciona" class="py-unit-xl bg-surface-container-lowest">
-            <div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-container-max">
-                <div class="text-center mb-unit-xl animate-on-scroll">
-                    <h2 class="font-headline-md text-headline-md mb-unit-sm">El Cambio de Paradigma</h2>
-                    <p class="text-on-surface-variant font-body-md">Por qué DateAndGo no es una app de citas más.</p>
+        <!-- ═══════════════════════ COMPARATIVA ═══════════════════════ -->
+        <section id="como-funciona" class="py-20" style="background:#eff4ff;">
+            <div class="container mx-auto px-4 md:px-10 max-w-[1200px]">
+                <div class="text-center mb-14 animate-on-scroll">
+                    <span class="chip chip-indigo mb-4 inline-flex">EL CAMBIO DE PARADIGMA</span>
+                    <h2 style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:clamp(24px,4vw,36px);" class="mt-3 text-on-surface">Por qué DateAndGo no es una app de citas más.</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/30 rounded-xl overflow-hidden border border-outline-variant/30 animate-on-scroll" style="transition-delay: 0.1s;">
-                    <!-- Traditional Apps -->
-                    <div class="bg-surface p-unit-lg md:p-unit-xl">
-                        <h3 class="font-headline-sm text-headline-sm text-secondary mb-unit-lg opacity-50">Apps Tradicionales</h3>
-                        <ul class="space-y-unit-lg">
-                            <li class="flex items-start gap-unit-md">
-                                <span class="material-symbols-outlined text-error mt-1">close</span>
+                <div class="grid md:grid-cols-2 gap-6 animate-on-scroll" style="transition-delay:0.1s;">
+                    <!-- Tradicional -->
+                    <div class="card p-8 opacity-60">
+                        <h3 style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:20px;" class="text-on-surface-variant mb-6">Apps Tradicionales</h3>
+                        <ul class="space-y-5">
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#ffdadb;">
+                                    <span class="material-symbols-outlined text-error text-[18px]">close</span>
+                                </div>
                                 <div>
-                                    <p class="font-bold text-on-surface">Algoritmos de Dopamina</p>
-                                    <p class="text-on-surface-variant text-body-md">Diseñadas para mantenerte deslizando, no para que salgas de la app.</p>
+                                    <p class="font-body font-semibold text-on-surface">Algoritmos de Dopamina</p>
+                                    <p class="font-body text-body-md text-on-surface-variant mt-0.5">Diseñadas para mantenerte deslizando, no para que salgas de la app.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-unit-md">
-                                <span class="material-symbols-outlined text-error mt-1">close</span>
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#ffdadb;">
+                                    <span class="material-symbols-outlined text-error text-[18px]">close</span>
+                                </div>
                                 <div>
-                                    <p class="font-bold text-on-surface">Ghosting Constante</p>
-                                    <p class="text-on-surface-variant text-body-md">Cientos de chats que nunca llegan a una cita real.</p>
+                                    <p class="font-body font-semibold text-on-surface">Ghosting Constante</p>
+                                    <p class="font-body text-body-md text-on-surface-variant mt-0.5">Cientos de chats que nunca llegan a una cita real.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-unit-md">
-                                <span class="material-symbols-outlined text-error mt-1">close</span>
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#ffdadb;">
+                                    <span class="material-symbols-outlined text-error text-[18px]">close</span>
+                                </div>
                                 <div>
-                                    <p class="font-bold text-on-surface">Logística Agotadora</p>
-                                    <p class="text-on-surface-variant text-body-md">Días de conversación para decidir un lugar y una hora.</p>
+                                    <p class="font-body font-semibold text-on-surface">Logística Agotadora</p>
+                                    <p class="font-body text-body-md text-on-surface-variant mt-0.5">Días de conversación para decidir un lugar y una hora.</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
+
                     <!-- DateAndGo -->
-                    <div class="bg-surface-container-high p-unit-lg md:p-unit-xl relative overflow-hidden">
-
-                        <h3 class="font-headline-sm text-headline-sm text-primary mb-unit-lg">DateAndGo</h3>
-                        <ul class="space-y-unit-lg">
-                            <li class="flex items-start gap-unit-md">
-                                <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                    <div class="card p-8 relative overflow-hidden" style="border-color:#6063ee; background: linear-gradient(145deg,#fff 60%,#eff4ff 100%);">
+                        <div class="absolute top-4 right-4 chip chip-indigo text-[11px]">DATEANDGO</div>
+                        <h3 style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:20px;color:#4648d4;" class="mb-6">DateAndGo</h3>
+                        <ul class="space-y-5">
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#e1e0ff;">
+                                    <span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span>
+                                </div>
                                 <div>
-                                    <p class="font-bold text-on-surface">Curación Humana</p>
-                                    <p class="text-on-surface-variant text-body-md">Perfiles verificados y seleccionados por su afinidad real.</p>
+                                    <p class="font-body font-semibold text-on-surface">Curación Humana</p>
+                                    <p class="font-body text-body-md text-on-surface-variant mt-0.5">Perfiles verificados y seleccionados por su afinidad real.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-unit-md">
-                                <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#e1e0ff;">
+                                    <span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span>
+                                </div>
                                 <div>
-                                    <p class="font-bold text-on-surface">Cero Ghosting</p>
-                                    <p class="text-on-surface-variant text-body-md">El compromiso es con la cita, no con la pantalla.</p>
+                                    <p class="font-body font-semibold text-on-surface">Cero Ghosting</p>
+                                    <p class="font-body text-body-md text-on-surface-variant mt-0.5">El compromiso es con la cita, no con la pantalla.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-unit-md">
-                                <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#e1e0ff;">
+                                    <span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span>
+                                </div>
                                 <div>
-                                    <p class="font-bold text-on-surface">Nosotros organizamos la cita</p>
-                                    <p class="text-on-surface-variant text-body-md">Elegimos el lugar, la hora, el plan. Tú solo dices sí.</p>
+                                    <p class="font-body font-semibold text-on-surface">Nosotros organizamos la cita</p>
+                                    <p class="font-body text-body-md text-on-surface-variant mt-0.5">Elegimos el lugar, la hora, el plan. Tú solo dices sí.</p>
                                 </div>
                             </li>
                         </ul>
@@ -453,173 +516,134 @@
             </div>
         </section>
 
-        <!-- ════════════════════════════════════════════════
-             APP PREVIEW CAROUSEL
-             ════════════════════════════════════════════════ -->
-        <section id="preview" class="py-unit-xl bg-surface-container-lowest relative overflow-hidden">
-            <!-- Ambient glows -->
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary opacity-[0.03] blur-[160px] rounded-full pointer-events-none"></div>
-
-            <div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-container-max">
-                <div class="text-center mb-4 animate-on-scroll">
-                    <span class="text-primary font-label-caps text-label-caps tracking-widest pulse-label">CÓMO FUNCIONA</span>
-                    <h2 class="font-display-lg text-headline-md mt-unit-sm">Tu camino hasta la primera cita.</h2>
-                    <p class="text-on-surface-variant font-body-md mt-unit-sm max-w-xl mx-auto">Son tres pasos sencillos. Tú haces el cuestionario y construyes tu perfil — nosotros encontramos a alguien compatible y organizamos la cita.</p>
+        <!-- ═══════════════════════ PREVIEW CAROUSEL ═══════════════════════ -->
+        <section id="preview" class="py-20 bg-surface">
+            <div class="container mx-auto px-4 md:px-10 max-w-[1200px]">
+                <div class="text-center mb-10 animate-on-scroll">
+                    <span class="chip chip-sky mb-3 inline-flex">CÓMO FUNCIONA</span>
+                    <h2 style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:clamp(24px,4vw,36px);" class="mt-3 text-on-surface">Tu camino hasta la primera cita.</h2>
+                    <p class="font-body text-body-lg text-on-surface-variant mt-3 max-w-xl mx-auto">Son tres pasos sencillos. Tú haces el cuestionario y construyes tu perfil — nosotros encontramos a alguien compatible y organizamos la cita.</p>
                 </div>
 
-                <!-- Carousel tabs -->
-                <div class="flex justify-center flex-wrap gap-3 mb-8 animate-on-scroll" style="transition-delay: 0.1s;">
-                    <button class="carousel-tab active font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="0">
-                        <span class="tab-num mr-1 opacity-60">01.</span> Cuestionario de compatibilidad
-                    </button>
-                    <button class="carousel-tab font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="1">
-                        <span class="tab-num mr-1 opacity-60">02.</span> Tu perfil
-                    </button>
-                    <button class="carousel-tab font-label-caps text-label-caps px-5 py-2 rounded-full border border-outline-variant transition-all duration-300" data-slide="2">
-                        <span class="tab-num mr-1 opacity-60">03.</span> Tu propuesta de cita
-                    </button>
+                <!-- Tabs -->
+                <div class="flex justify-center flex-wrap gap-3 mb-8 animate-on-scroll" style="transition-delay:0.08s;">
+                    <button class="carousel-tab active" data-slide="0"><span class="tab-num mr-1 opacity-70">01.</span> Cuestionario de compatibilidad</button>
+                    <button class="carousel-tab" data-slide="1"><span class="tab-num mr-1 opacity-70">02.</span> Tu perfil</button>
+                    <button class="carousel-tab" data-slide="2"><span class="tab-num mr-1 opacity-70">03.</span> Tu propuesta de cita</button>
                 </div>
 
-                <!-- Carousel container -->
-                <div class="preview-carousel max-w-4xl mx-auto animate-on-scroll" style="transition-delay: 0.2s;">
+                <!-- Carousel -->
+                <div class="preview-carousel max-w-4xl mx-auto animate-on-scroll" style="transition-delay:0.16s;">
                     <div class="preview-track" id="preview-track">
 
-                        <!-- ──── SLIDE 1: CUESTIONARIO ──── -->
+                        <!-- SLIDE 1: CUESTIONARIO -->
                         <div class="preview-slide">
                             <div class="device-frame">
                                 <div class="device-titlebar">
-                                    <div class="device-dot bg-red-500/60"></div>
-                                    <div class="device-dot bg-yellow-500/60"></div>
-                                    <div class="device-dot bg-green-500/60"></div>
-                                    <span class="ml-3 text-[11px] text-on-surface-variant/50 font-label-caps">dateandgo.com/cuestionario</span>
+                                    <div class="device-dot bg-red-400"></div>
+                                    <div class="device-dot bg-yellow-400"></div>
+                                    <div class="device-dot bg-green-400"></div>
+                                    <span class="ml-3 text-[11px] text-on-surface-variant font-body">dateandgo.com/cuestionario</span>
                                 </div>
-                                <div class="p-6 md:p-10 bg-background">
+                                <div class="p-6 md:p-10 bg-surface">
+                                    <div class="step-banner">
+                                        <div class="step-num">1</div>
+                                        <p>PASO 1 — Respondemos unas preguntas para conocerte bien y encontrar a alguien compatible de verdad.</p>
+                                    </div>
                                     <!-- Progress -->
-                                    <div class="flex justify-between mb-4">
-                                        <span class="font-label-caps text-label-caps text-primary">Consulta de Compatibilidad</span>
-                                        <span class="font-label-caps text-label-caps text-on-surface-variant">Paso 4 de 12</span>
+                                    <div class="flex justify-between mb-3">
+                                        <span class="font-body text-label-sm text-primary font-semibold">Consulta de Compatibilidad</span>
+                                        <span class="font-body text-label-sm text-on-surface-variant">Paso 4 de 12</span>
                                     </div>
-                                    <div class="h-[2px] w-full bg-surface-variant rounded-full mb-8">
-                                        <div class="h-full bg-primary rounded-full" style="width: 33.33%;"></div>
+                                    <div class="h-1.5 w-full bg-surface-container-high rounded-full mb-8">
+                                        <div class="h-full rounded-full" style="width:33%;background:linear-gradient(90deg,#4648d4,#6063ee);"></div>
                                     </div>
-                                    <!-- Question -->
-                                    <div class="text-center mb-8">
-                                        <h3 class="font-headline-md text-headline-sm md:text-headline-md text-on-surface mb-unit-sm">¿Qué es lo que más valoras en una pareja?</h3>
-                                        <p class="font-body-md text-body-md text-on-surface-variant opacity-80">Selecciona la cualidad que consideras esencial para una conexión genuina y duradera.</p>
+                                    <div class="text-center mb-6">
+                                        <h3 style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:20px;" class="text-on-surface mb-2">¿Qué es lo que más valoras en una pareja?</h3>
+                                        <p class="font-body text-body-md text-on-surface-variant">Selecciona la cualidad que consideras esencial para una conexión genuina.</p>
                                     </div>
-                                    <!-- Options -->
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-lg mx-auto">
-                                        <div class="glass-panel p-4 flex items-center gap-unit-md rounded-lg cursor-pointer hover:border-primary/50 transition-all selection-glow border border-primary bg-primary/10">
-                                            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
-                                            <span class="font-body-lg text-on-surface">Sinceridad</span>
-                                            <div class="ml-auto w-4 h-4 diamond-indicator bg-primary"></div>
+                                        <div class="opt-card selected">
+                                            <span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings:'FILL' 1;">favorite</span>
+                                            <span class="font-body font-semibold text-on-surface">Sinceridad</span>
+                                            <div class="ml-auto diamond" style="background:#4648d4;clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);border:none;"></div>
                                         </div>
-                                        <div class="glass-panel p-4 flex items-center gap-unit-md rounded-lg cursor-pointer hover:border-primary/50 transition-all selection-glow">
-                                            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">trending_up</span>
-                                            <span class="font-body-lg text-on-surface">Ambición</span>
-                                            <div class="ml-auto w-4 h-4 diamond-indicator border border-outline-variant"></div>
+                                        <div class="opt-card">
+                                            <span class="material-symbols-outlined text-primary text-[20px]">trending_up</span>
+                                            <span class="font-body font-semibold text-on-surface">Ambición</span>
+                                            <div class="ml-auto diamond"></div>
                                         </div>
-                                        <div class="glass-panel p-4 flex items-center gap-unit-md rounded-lg cursor-pointer hover:border-primary/50 transition-all selection-glow">
-                                            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">mood</span>
-                                            <span class="font-body-lg text-on-surface">Sentido del humor</span>
-                                            <div class="ml-auto w-4 h-4 diamond-indicator border border-outline-variant"></div>
+                                        <div class="opt-card">
+                                            <span class="material-symbols-outlined text-primary text-[20px]">mood</span>
+                                            <span class="font-body font-semibold text-on-surface">Sentido del humor</span>
+                                            <div class="ml-auto diamond"></div>
                                         </div>
-                                        <div class="glass-panel p-4 flex items-center gap-unit-md rounded-lg cursor-pointer hover:border-primary/50 transition-all selection-glow">
-                                            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">diamond</span>
-                                            <span class="font-body-lg text-on-surface">Estilo de vida</span>
-                                            <div class="ml-auto w-4 h-4 diamond-indicator border border-outline-variant"></div>
+                                        <div class="opt-card">
+                                            <span class="material-symbols-outlined text-primary text-[20px]">self_improvement</span>
+                                            <span class="font-body font-semibold text-on-surface">Estilo de vida</span>
+                                            <div class="ml-auto diamond"></div>
                                         </div>
                                     </div>
-                                    <!-- Actions -->
                                     <div class="mt-8 flex justify-between items-center max-w-lg mx-auto">
-                                        <span class="flex items-center gap-2 font-label-caps text-label-caps text-on-surface-variant">
+                                        <span class="flex items-center gap-1.5 font-body text-label-md text-on-surface-variant cursor-pointer hover:text-primary transition-colors">
                                             <span class="material-symbols-outlined text-[18px]">arrow_back</span> Atrás
                                         </span>
-                                        <span class="bg-primary text-on-primary-fixed font-label-caps text-label-caps px-6 py-3 rounded-sm">Siguiente paso</span>
+                                        <span class="btn-primary text-sm">Siguiente paso</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- ──── SLIDE 2: PERFIL ──── -->
+                        <!-- SLIDE 2: PERFIL -->
                         <div class="preview-slide">
                             <div class="device-frame">
                                 <div class="device-titlebar">
-                                    <div class="device-dot bg-red-500/60"></div>
-                                    <div class="device-dot bg-yellow-500/60"></div>
-                                    <div class="device-dot bg-green-500/60"></div>
-                                    <span class="ml-3 text-[11px] text-on-surface-variant/50 font-label-caps">dateandgo.com/perfil</span>
+                                    <div class="device-dot bg-red-400"></div>
+                                    <div class="device-dot bg-yellow-400"></div>
+                                    <div class="device-dot bg-green-400"></div>
+                                    <span class="ml-3 text-[11px] text-on-surface-variant font-body">dateandgo.com/perfil</span>
                                 </div>
-                                <div class="p-6 md:p-10 bg-background">
+                                <div class="p-6 md:p-10 bg-surface">
+                                    <div class="step-banner">
+                                        <div class="step-num inactive">2</div>
+                                        <p>PASO 2 — Con tus respuestas construimos tu perfil. Así se ven las personas que participan en DateAndGo.</p>
+                                    </div>
                                     <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-                                        <!-- Left: Photo -->
                                         <div class="md:col-span-5">
-                                            <div class="relative aspect-[3/4] rounded-xl overflow-hidden max-h-[340px]">
-                                                <img class="w-full h-full object-cover" alt="Marta, arquitecta en Madrid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjTBvmeUrApOgx-P0ayJ30jOHxSblWAAEp3REuVeTdzzodLMGhxvzMWkwAZdEpM4nvBawu8eaQgz1bF73u-iXW4csbT0wIFJFv3UPYRfNwfmnQjaN3nU59fZdT0vAsEAgESqnQQjIco9JwcK4xfVwHcXKqL8uKlUeYKLjook2oxqUHXj0Mu6EhLuOLW6lBcDt7z2qUvrReOkE38x8gs1Yan6IpptJR8zB_CMD0Ti9ZibmUteYxNiBvzbH2Py10mUmMQKq5EU5p9U8" />
-                                                <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                                            <div class="relative aspect-[3/4] rounded-xl overflow-hidden max-h-[320px]">
+                                                <img class="w-full h-full object-cover" alt="Marta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjTBvmeUrApOgx-P0ayJ30jOHxSblWAAEp3REuVeTdzzodLMGhxvzMWkwAZdEpM4nvBawu8eaQgz1bF73u-iXW4csbT0wIFJFv3UPYRfNwfmnQjaN3nU59fZdT0vAsEAgESqnQQjIco9JwcK4xfVwHcXKqL8uKlUeYKLjook2oxqUHXj0Mu6EhLuOLW6lBcDt7z2qUvrReOkE38x8gs1Yan6IpptJR8zB_CMD0Ti9ZibmUteYxNiBvzbH2Py10mUmMQKq5EU5p9U8" />
+                                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                                <div class="absolute bottom-4 left-4">
                                                     <div class="flex items-center gap-2">
-                                                        <span class="font-headline-sm text-white">Marta, 34</span>
-                                                        <span class="concierge-badge text-[12px] w-5 h-5">V</span>
+                                                        <span class="text-white font-semibold" style="font-family:'Plus Jakarta Sans';">Marta, 34</span>
+                                                        <div class="w-5 h-5 rounded-full flex items-center justify-center text-[10px] text-white font-bold" style="background:#4648d4;">✓</div>
                                                     </div>
-                                                    <p class="text-secondary font-label-caps text-[10px] mt-1">ARCHITECT • MADRID</p>
+                                                    <p class="text-white/70 font-body text-[11px] mt-0.5">ARQUITECTA · MADRID</p>
                                                 </div>
                                             </div>
-                                            <!-- Mini gallery -->
                                             <div class="grid grid-cols-3 gap-2 mt-2">
-                                                <div class="aspect-square rounded-lg overflow-hidden">
-                                                    <img class="w-full h-full object-cover opacity-80" alt="Interior moderno" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSIBodl4ytqoqgRfLNDJDYWpwvcfYdI4j1zaPD_AQCK5aG-_0mCFsjyK56suyPc34NnGK0nwCU_WyzzcgwbyYNryVkKaly5lLr6PxrJSId-mEY3QzFs9CmMBwPHE7vMf0PEZ7eq4NI857V4YDeXbVDYpsaA79fKVp-uvCXbFaJ7zMuz2iacC8ORk8mbbEnTuI7mqjqlUJlxoC1K0APgPDQ_C3fo9p4o1_pIhC_KXFgnxois3BQgDlgMgstWyKIAH48_9ce_LME3Pc" />
-                                                </div>
-                                                <div class="aspect-square rounded-lg overflow-hidden">
-                                                    <img class="w-full h-full object-cover opacity-80" alt="Cuaderno de diseño" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg332S-k7yDnKVVMtmZY5zCgF_u2TWabfGEDmQ1yMbtczmxm3ytuy9y6bPbOkdoToMYxXIwiLLrsBOmnAf20p-bVjXQ1fEV_-EFZZzQnKPbuUi3uMrjfMB9EDCa3hUWpsEkuaq7zD5iaCY7YicUlWh_gRv5jNR9SsxTEioMgjU25Ph2X5ZEjpk1Da0eRyekF7ZsxNRGOVz1_fKrG0RyyCqwbIigGAS80paSqI1uZ1o1iOYUd4JIt1PZgPvO5MycevcDSdNlcoaeIU" />
-                                                </div>
-                                                <div class="aspect-square rounded-lg overflow-hidden relative">
-                                                    <img class="w-full h-full object-cover opacity-80" alt="Planos arquitectónicos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPcDowwXOH1GCH178PkPtjVXM983Kud9OwzH6OLu7OrDImFjgatOd3sxOGJGCB5yfcHOBlAAKV4AQ6JAWAWeCnhmW0-xyFbwsg4KGwkzmvWoUdNA5FLdrg1iCPs0MhykGmZ7OXy1yJW5e2WUdsjuKzrObTLn1haKNSpdCI9pna3rRYv6anxtxlEIMGeh38U108CmQkFuFzA10-t3VsnlXm9uFvPbjt73kQRG8CUBl3AWzWGPo5DoHg3Nbhk_T4mr-Pwma5mCnIKcU" />
-                                                    <div class="absolute inset-0 flex items-center justify-center bg-black/40"><span class="text-white font-label-caps text-[10px]">+4</span></div>
-                                                </div>
+                                                <div class="aspect-square rounded-lg overflow-hidden"><img class="w-full h-full object-cover opacity-80" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSIBodl4ytqoqgRfLNDJDYWpwvcfYdI4j1zaPD_AQCK5aG-_0mCFsjyK56suyPc34NnGK0nwCU_WyzzcgwbyYNryVkKaly5lLr6PxrJSId-mEY3QzFs9CmMBwPHE7vMf0PEZ7eq4NI857V4YDeXbVDYpsaA79fKVp-uvCXbFaJ7zMuz2iacC8ORk8mbbEnTuI7mqjqlUJlxoC1K0APgPDQ_C3fo9p4o1_pIhC_KXFgnxois3BQgDlgMgstWyKIAH48_9ce_LME3Pc" /></div>
+                                                <div class="aspect-square rounded-lg overflow-hidden"><img class="w-full h-full object-cover opacity-80" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg332S-k7yDnKVVMtmZY5zCgF_u2TWabfGEDmQ1yMbtczmxm3ytuy9y6bPbOkdoToMYxXIwiLLrsBOmnAf20p-bVjXQ1fEV_-EFZZzQnKPbuUi3uMrjfMB9EDCa3hUWpsEkuaq7zD5iaCY7YicUlWh_gRv5jNR9SsxTEioMgjU25Ph2X5ZEjpk1Da0eRyekF7ZsxNRGOVz1_fKrG0RyyCqwbIigGAS80paSqI1uZ1o1iOYUd4JIt1PZgPvO5MycevcDSdNlcoaeIU" /></div>
+                                                <div class="aspect-square rounded-lg overflow-hidden relative"><img class="w-full h-full object-cover opacity-80" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPcDowwXOH1GCH178PkPtjVXM983Kud9OwzH6OLu7OrDImFjgatOd3sxOGJGCB5yfcHOBlAAKV4AQ6JAWAWeCnhmW0-xyFbwsg4KGwkzmvWoUdNA5FLdrg1iCPs0MhykGmZ7OXy1yJW5e2WUdsjuKzrObTLn1haKNSpdCI9pna3rRYv6anxtxlEIMGeh38U108CmQkFuFzA10-t3VsnlXm9uFvPbjt73kQRG8CUBl3AWzWGPo5DoHg3Nbhk_T4mr-Pwma5mCnIKcU" /><div class="absolute inset-0 flex items-center justify-center bg-black/40"><span class="text-white font-body text-label-sm">+4</span></div></div>
                                             </div>
                                         </div>
-                                        <!-- Right: Info -->
-                                        <div class="md:col-span-7 flex flex-col justify-between">
+                                        <div class="md:col-span-7 flex flex-col gap-4">
                                             <div>
-                                                <h4 class="font-label-caps text-label-caps text-primary mb-2 uppercase">Sobre mí</h4>
-                                                <p class="font-body-md text-on-surface-variant leading-relaxed text-sm">
-                                                    Diseñando espacios con intención y viviendo la vida con la misma filosofía. Arquitecta apasionada por el minimalismo, el buen vino y las conversaciones que duran hasta el amanecer.
-                                                </p>
-                                                <div class="grid grid-cols-2 gap-4 mt-4">
-                                                    <div>
-                                                        <h5 class="font-label-caps text-[10px] text-primary mb-2">INTERESES</h5>
-                                                        <div class="flex flex-wrap gap-1.5">
-                                                            <span class="px-2 py-0.5 bg-surface-container-high rounded-full text-[11px] border border-outline-variant">Ópera</span>
-                                                            <span class="px-2 py-0.5 bg-surface-container-high rounded-full text-[11px] border border-outline-variant">Arquitectura</span>
-                                                            <span class="px-2 py-0.5 bg-surface-container-high rounded-full text-[11px] border border-outline-variant">Vela</span>
-                                                            <span class="px-2 py-0.5 bg-surface-container-high rounded-full text-[11px] border border-outline-variant">Gastronomía</span>
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <h5 class="font-label-caps text-[10px] text-primary mb-2">PREFERENCIAS</h5>
-                                                        <ul class="space-y-1">
-                                                            <li class="flex items-center gap-1.5 text-on-surface-variant text-[11px]">
-                                                                <span class="material-symbols-outlined text-primary text-[12px]">diamond</span> Viajes espontáneos
-                                                            </li>
-                                                            <li class="flex items-center gap-1.5 text-on-surface-variant text-[11px]">
-                                                                <span class="material-symbols-outlined text-primary text-[12px]">diamond</span> Cenas privadas
-                                                            </li>
-                                                        </ul>
+                                                <span class="chip chip-indigo mb-2 inline-flex">SOBRE MÍ</span>
+                                                <p class="font-body text-body-md text-on-surface-variant leading-relaxed">Diseñando espacios con intención y viviendo la vida con la misma filosofía. Arquitecta apasionada por el minimalismo, el buen vino y las conversaciones que duran hasta el amanecer.</p>
+                                            </div>
+                                            <div class="grid grid-cols-2 gap-4">
+                                                <div>
+                                                    <span class="chip chip-rose mb-2 inline-flex">INTERESES</span>
+                                                    <div class="flex flex-wrap gap-1.5 mt-1">
+                                                        <span class="chip chip-sky">Ópera</span>
+                                                        <span class="chip chip-sky">Vela</span>
+                                                        <span class="chip chip-sky">Gastronomía</span>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <!-- Concierge details -->
-                                            <div class="glass-panel p-4 rounded-xl mt-4">
-                                                <h5 class="font-headline-sm text-[16px] text-on-surface mb-2">Detalles del Concierge</h5>
-                                                <div class="grid grid-cols-2 gap-3">
-                                                    <div class="p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/30">
-                                                        <p class="text-[9px] text-on-surface-variant font-label-caps mb-0.5">MEMBRESÍA</p>
-                                                        <p class="font-bold text-primary text-sm">Elite Diamond</p>
-                                                    </div>
-                                                    <div class="p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/30">
-                                                        <p class="text-[9px] text-on-surface-variant font-label-caps mb-0.5">VERIFICACIÓN</p>
-                                                        <p class="font-bold text-on-surface text-sm">Validada</p>
-                                                    </div>
+                                                <div>
+                                                    <span class="chip chip-indigo mb-2 inline-flex">VERIFICACIÓN</span>
+                                                    <p class="font-body text-label-md text-primary font-semibold mt-1">✓ Perfil validado</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -628,212 +652,205 @@
                             </div>
                         </div>
 
-                        <!-- ──── SLIDE 3: PROPUESTA DE MATCH ──── -->
+                        <!-- SLIDE 3: MATCH -->
                         <div class="preview-slide">
                             <div class="device-frame">
                                 <div class="device-titlebar">
-                                    <div class="device-dot bg-red-500/60"></div>
-                                    <div class="device-dot bg-yellow-500/60"></div>
-                                    <div class="device-dot bg-green-500/60"></div>
-                                    <span class="ml-3 text-[11px] text-on-surface-variant/50 font-label-caps">dateandgo.com/match</span>
+                                    <div class="device-dot bg-red-400"></div>
+                                    <div class="device-dot bg-yellow-400"></div>
+                                    <div class="device-dot bg-green-400"></div>
+                                    <span class="ml-3 text-[11px] text-on-surface-variant font-body">dateandgo.com/match</span>
                                 </div>
-                                 <div class="p-6 md:p-10 bg-background relative overflow-hidden">
-                                     <!-- Step context banner -->
-                                     <div class="mb-5 flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-lg px-4 py-2 relative z-10">
-                                         <div class="w-6 h-6 rounded-full border border-primary text-primary flex items-center justify-center font-label-caps text-[11px] font-bold flex-shrink-0">3</div>
-                                         <p class="font-label-caps text-[11px] text-on-surface-variant">PASO 3 — Te presentamos a alguien compatible y organizamos la cita. Tú solo dices sí.</p>
-                                     </div>
-                                    <!-- Ambient glow -->
-                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary opacity-5 blur-[120px] rounded-full pointer-events-none"></div>
-
+                                <div class="p-6 md:p-10 bg-surface relative overflow-hidden">
+                                    <div class="step-banner">
+                                        <div class="step-num inactive">3</div>
+                                        <p>PASO 3 — Te presentamos a alguien compatible y organizamos la cita. Tú solo dices sí.</p>
+                                    </div>
                                     <!-- Header -->
-                                    <div class="text-center mb-6 relative z-10">
-                                        <span class="font-label-caps text-label-caps text-primary mb-2 block tracking-[0.2em]">MATCH EXCLUSIVO</span>
-                                        <h3 class="font-display-lg text-headline-sm md:text-headline-md text-on-surface">Hemos encontrado a alguien para ti.</h3>
+                                    <div class="text-center mb-6">
+                                        <span class="chip chip-rose mb-2 inline-flex"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">favorite</span> MATCH</span>
+                                        <h3 style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:20px;" class="text-on-surface">Hemos encontrado a alguien para ti.</h3>
                                     </div>
 
                                     <!-- Match cards -->
-                                    <div class="grid grid-cols-3 gap-4 items-center max-w-2xl mx-auto relative z-10">
-                                        <!-- User -->
+                                    <div class="grid grid-cols-3 gap-4 items-center max-w-2xl mx-auto">
                                         <div class="flex flex-col items-center">
-                                            <div class="relative w-full aspect-[3/4] max-w-[160px] rounded-lg overflow-hidden">
-                                                <img class="w-full h-full object-cover" alt="Tu perfil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNAWS5AlaTGN_TpqOZNdVyPcvMyi59TaD4jtzTLfKG7nKLvF9RXRbvMOzZMCzJrXly_LzAolLf2EntUjr2BYlXgFs5qGEyHG5uxppx-Da5u1U4EnDVf7FzoPoJYz1BGkdlyEpg-XobEmwzAlsO4n55g85n7H3qLRn3daRuFt6lOiKqB86tgEaQ0VYBwOFo7eyGPIf5wACHzU0I-q9TQo4kbpdq0qmwTLujFUPuGnnDTHttD9RZ1vDKvlvknTloUoGTBDzz3L6plI8" />
-                                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-surface-dim to-transparent">
-                                                    <p class="font-headline-sm text-[14px] text-on-surface">Tú</p>
-                                                </div>
+                                            <div class="relative w-full aspect-[3/4] max-w-[160px] rounded-xl overflow-hidden">
+                                                <img class="w-full h-full object-cover" alt="Tú" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNAWS5AlaTGN_TpqOZNdVyPcvMyi59TaD4jtzTLfKG7nKLvF9RXRbvMOzZMCzJrXly_LzAolLf2EntUjr2BYlXgFs5qGEyHG5uxppx-Da5u1U4EnDVf7FzoPoJYz1BGkdlyEpg-XobEmwzAlsO4n55g85n7H3qLRn3daRuFt6lOiKqB86tgEaQ0VYBwOFo7eyGPIf5wACHzU0I-q9TQo4kbpdq0qmwTLujFUPuGnnDTHttD9RZ1vDKvlvknTloUoGTBDzz3L6plI8" />
+                                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/70 to-transparent"><p class="text-white font-body text-sm font-semibold">Tú</p></div>
                                             </div>
                                         </div>
 
-                                        <!-- Compatibility Score -->
+                                        <!-- Score -->
                                         <div class="flex flex-col items-center justify-center">
-                                            <div class="relative w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
-                                                <svg class="w-full h-full transform -rotate-90">
-                                                    <circle class="text-outline-variant opacity-20" cx="50%" cy="50%" fill="transparent" r="45%" stroke="currentColor" stroke-width="2"></circle>
-                                                    <circle class="text-primary gold-glow" cx="50%" cy="50%" fill="transparent" r="45%" stroke="currentColor" stroke-dasharray="283" stroke-dashoffset="17" stroke-width="4"></circle>
+                                            <div class="relative w-24 h-24 md:w-32 md:h-32">
+                                                <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                                                    <circle cx="50" cy="50" r="42" fill="none" stroke="#e5eeff" stroke-width="6"/>
+                                                    <circle cx="50" cy="50" r="42" fill="none" stroke="url(#grad)" stroke-width="6"
+                                                        stroke-dasharray="264" stroke-dashoffset="16" stroke-linecap="round"/>
+                                                    <defs>
+                                                        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                            <stop offset="0%" stop-color="#4648d4"/>
+                                                            <stop offset="100%" stop-color="#dc2c4f"/>
+                                                        </linearGradient>
+                                                    </defs>
                                                 </svg>
-                                                <div class="absolute flex flex-col items-center">
-                                                    <span class="font-display-lg text-[32px] md:text-[40px] text-primary">94%</span>
-                                                    <span class="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant">COMPATIBILIDAD</span>
+                                                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                                    <span style="font-family:'Plus Jakarta Sans';font-weight:800;font-size:28px;background:linear-gradient(135deg,#4648d4,#dc2c4f);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">94%</span>
+                                                    <span class="font-body text-[9px] text-on-surface-variant font-semibold">COMPATIBLE</span>
                                                 </div>
                                             </div>
-                                            <!-- Shared interests -->
                                             <div class="flex gap-3 mt-3">
-                                                <div class="flex flex-col items-center gap-0.5 opacity-80">
-                                                    <span class="material-symbols-outlined text-primary text-[18px]">restaurant</span>
-                                                    <span class="font-label-caps text-[8px] text-on-surface-variant">Dining</span>
+                                                <div class="flex flex-col items-center gap-0.5">
+                                                    <span class="material-symbols-outlined text-primary text-[16px]">restaurant</span>
+                                                    <span class="font-body text-[8px] text-on-surface-variant">Dining</span>
                                                 </div>
-                                                <div class="flex flex-col items-center gap-0.5 opacity-80">
-                                                    <span class="material-symbols-outlined text-primary text-[18px]">flight</span>
-                                                    <span class="font-label-caps text-[8px] text-on-surface-variant">Viajes</span>
+                                                <div class="flex flex-col items-center gap-0.5">
+                                                    <span class="material-symbols-outlined text-secondary text-[16px]">flight</span>
+                                                    <span class="font-body text-[8px] text-on-surface-variant">Viajes</span>
                                                 </div>
-                                                <div class="flex flex-col items-center gap-0.5 opacity-80">
-                                                    <span class="material-symbols-outlined text-primary text-[18px]">theater_comedy</span>
-                                                    <span class="font-label-caps text-[8px] text-on-surface-variant">Cultura</span>
+                                                <div class="flex flex-col items-center gap-0.5">
+                                                    <span class="material-symbols-outlined text-tertiary text-[16px]">theater_comedy</span>
+                                                    <span class="font-body text-[8px] text-on-surface-variant">Cultura</span>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <!-- Elena -->
                                         <div class="flex flex-col items-center">
-                                            <div class="relative w-full aspect-[3/4] max-w-[160px] rounded-lg overflow-hidden">
-                                                <img class="w-full h-full object-cover" alt="Elena, 32" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRfEiS3K5I1z99t9B9f9rQcNrqCgt3sew9rSV-slqxKTuVbVRLUe63v55M8zW7XO-zVBZTDkh6HODlVb3Uhf0Po8dWTbfPuYpGkDfrE0bB2vtH4dTpNXokOtv7rc-qomUXpCVBTT6HM1ArdXN0-b5zrEAeqmkjBLNm2cAvBZ-hM_7A4KtOtvGhlQc38aNorpH9to-75XutRGv5IgLFIoXpTbgbEJp2CA_ZkROVGE3BAheb9YmB1DelSMqYeL6eAWcNsWXJjW8AxEc" />
-                                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-surface-dim to-transparent">
+                                            <div class="relative w-full aspect-[3/4] max-w-[160px] rounded-xl overflow-hidden">
+                                                <img class="w-full h-full object-cover" alt="Elena" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRfEiS3K5I1z99t9B9f9rQcNrqCgt3sew9rSV-slqxKTuVbVRLUe63v55M8zW7XO-zVBZTDkh6HODlVb3Uhf0Po8dWTbfPuYpGkDfrE0bB2vtH4dTpNXokOtv7rc-qomUXpCVBTT6HM1ArdXN0-b5zrEAeqmkjBLNm2cAvBZ-hM_7A4KtOtvGhlQc38aNorpH9to-75XutRGv5IgLFIoXpTbgbEJp2CA_ZkROVGE3BAheb9YmB1DelSMqYeL6eAWcNsWXJjW8AxEc" />
+                                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/70 to-transparent">
                                                     <div class="flex items-center gap-1">
-                                                        <p class="font-headline-sm text-[14px] text-on-surface">Elena, 32</p>
-                                                        <span class="v-badge text-[10px] w-4 h-4">V</span>
+                                                        <p class="text-white font-body text-sm font-semibold">Elena, 32</p>
+                                                        <div class="w-4 h-4 rounded-full flex items-center justify-center text-[9px] text-white font-bold flex-shrink-0" style="background:#4648d4;">✓</div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- CTA: No payment, beta message -->
-                                    <div class="mt-6 max-w-sm mx-auto text-center relative z-10 glass-panel p-5 rounded-xl border border-primary/20">
-                                        <p class="font-body-md text-on-surface italic mb-3">"Una velada diseñada para conectar, sin distracciones."</p>
-                                        <div class="bg-primary/10 border border-primary/30 text-primary px-4 py-3 rounded-lg font-label-caps text-label-caps tracking-widest">
-                                            <span class="material-symbols-outlined text-[16px] align-middle mr-1">lock_open</span>
-                                            DISPONIBLE PRONTO
+                                    <!-- CTA -->
+                                    <div class="mt-6 max-w-sm mx-auto text-center">
+                                        <p class="font-body text-body-md text-on-surface-variant italic mb-4">"Una velada diseñada para conectar, sin distracciones."</p>
+                                        <div class="card p-4" style="border-color:#c7c4d7;">
+                                            <div class="chip chip-indigo inline-flex mb-1">
+                                                <span class="material-symbols-outlined text-[14px]">schedule</span> DISPONIBLE PRONTO
+                                            </div>
+                                            <p class="font-body text-label-sm text-on-surface-variant mt-1">Apúntate para ser de los primeros en probarlo.</p>
                                         </div>
-                                        <p class="text-on-surface-variant text-[12px] mt-2">Apúntate para ser de los primeros en probarlo.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                    </div><!-- /preview-track -->
-                </div><!-- /preview-carousel -->
+                    </div><!-- /track -->
+                </div><!-- /carousel -->
 
-                <!-- Carousel dots -->
-                <div class="flex justify-center gap-3 mt-8">
+                <!-- Dots -->
+                <div class="flex justify-center items-center gap-2 mt-8">
                     <button class="preview-dot active" data-slide="0" aria-label="Slide 1"></button>
                     <button class="preview-dot" data-slide="1" aria-label="Slide 2"></button>
                     <button class="preview-dot" data-slide="2" aria-label="Slide 3"></button>
                 </div>
 
-                <!-- Carousel arrows -->
-                <div class="flex justify-center gap-4 mt-6">
-                    <button id="carousel-prev" class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-colors text-on-surface-variant" aria-label="Anterior">
+                <!-- Arrows -->
+                <div class="flex justify-center gap-4 mt-5">
+                    <button id="carousel-prev" class="w-11 h-11 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-colors" aria-label="Anterior">
                         <span class="material-symbols-outlined">arrow_back</span>
                     </button>
-                    <button id="carousel-next" class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-colors text-on-surface-variant" aria-label="Siguiente">
+                    <button id="carousel-next" class="w-11 h-11 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-colors" aria-label="Siguiente">
                         <span class="material-symbols-outlined">arrow_forward</span>
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- ════════════════════════════════════════════════
-             BETA SIGNUP FORM
-             ════════════════════════════════════════════════ -->
-        <section id="lista" class="py-unit-xl relative overflow-hidden">
-            <!-- Background texture -->
-            <div class="absolute inset-0 z-0">
-                <img class="w-full h-full object-cover opacity-10" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvqxvdF7fd5ZbDU_Ao8s5W943RDX5TJgNbQ3tdnCun6y76IfJ5cGCEnWU45K7_DBdUMeu4BX62lSlfck7oh-DiMc5kqBV9j7KBR40vvCEcg-jC0YS6tLxNVkFgRtcdwrE95091jE62Oq28MVjmpbuoRBMfhmy6ZGicI7Biix8NV8CevgtZCS-vcye6bfPMFjKuoXv0_UwQDlJ8oaf2IiVvdPkfsRfpz3UpB3uKLZZbX0pDXIBRtAzQsAUU_KyrAKsl1FL8NPSkRPM" />
-            </div>
+        <!-- ═══════════════════════ SIGNUP FORM ═══════════════════════ -->
+        <section id="lista" class="py-20" style="background: linear-gradient(135deg, #eff4ff 0%, #ffdadb22 100%);">
+            <div class="container mx-auto px-4 md:px-10 max-w-2xl">
+                <div class="card p-8 md:p-12 animate-on-scroll" style="box-shadow:0 24px 60px rgba(70,72,212,0.12);">
+                    <div id="form-container">
+                        <div class="text-center mb-8">
+                            <span class="chip chip-indigo mb-3 inline-flex">ACCESO ANTICIPADO</span>
+                            <h2 style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:28px;" class="text-on-surface mt-3">Apúntate. Te avisamos cuando abramos.</h2>
+                            <p class="font-body text-body-md text-on-surface-variant mt-3">Estamos preparando DateAndGo. Déjanos tus datos y seremos los primeros en darte acceso cuando abramos plazas en tu ciudad.</p>
+                        </div>
 
-            <div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 max-w-2xl text-center">
-                <div class="bg-surface-container/60 backdrop-blur-xl p-8 md:p-unit-xl rounded-2xl border border-white/5 editorial-shadow animate-on-scroll">
-                    <!-- Form content (shown before submit) -->
-                    <div id="beta-form-container">
-                        <span class="text-primary font-label-caps text-label-caps tracking-widest mb-4 block">ACCESO ANTICIPADO</span>
-                        <h2 class="font-headline-md text-headline-md mb-unit-md">Apúntate. Te avisamos cuando abramos.</h2>
-                        <p class="text-on-surface-variant mb-unit-xl">Estamos preparando DateAndGo. Déjanos tus datos y seremos los primeros en darte acceso cuando abramos plazas en tu ciudad.</p>
-
-                        <form id="beta-form" class="space-y-6 text-left" action="https://formspree.io/f/mzdqgazv" method="POST">
+                        <form id="signup-form" class="space-y-6 text-left" action="https://formspree.io/f/mzdqgazv" method="POST">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="relative">
-                                    <label class="font-label-caps text-[10px] text-primary mb-1 block" for="beta-email">CORREO ELECTRÓNICO *</label>
-                                    <input id="beta-email" name="email" class="w-full bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 py-unit-sm text-body-lg transition-all outline-none" placeholder="tu@email.com" type="email" required />
+                                <div>
+                                    <label class="font-body text-label-sm text-primary font-semibold block mb-1.5" for="v-email">CORREO ELECTRÓNICO *</label>
+                                    <input id="v-email" name="email" class="field-input" placeholder="tu@email.com" type="email" required />
                                 </div>
-                                <div class="relative">
-                                    <label class="font-label-caps text-[10px] text-primary mb-1 block" for="beta-age">EDAD *</label>
-                                    <input id="beta-age" name="edad" class="w-full bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 py-unit-sm text-body-lg transition-all outline-none" placeholder="Ej. 34" type="number" min="18" max="99" required />
+                                <div>
+                                    <label class="font-body text-label-sm text-primary font-semibold block mb-1.5" for="v-age">EDAD *</label>
+                                    <input id="v-age" name="edad" class="field-input" placeholder="Ej. 34" type="number" min="18" max="99" required />
                                 </div>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="relative">
-                                    <label class="font-label-caps text-[10px] text-primary mb-1 block" for="beta-city">CIUDAD *</label>
-                                    <select id="beta-city" name="ciudad" class="w-full bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 py-unit-sm text-body-lg transition-all outline-none appearance-none cursor-pointer" required>
-                                        <option class="bg-surface-container" value="" disabled selected>Selecciona tu ciudad</option>
-                                        <option class="bg-surface-container" value="Madrid">Madrid</option>
-                                        <option class="bg-surface-container" value="Barcelona">Barcelona</option>
-                                        <option class="bg-surface-container" value="Valencia">Valencia</option>
-                                        <option class="bg-surface-container" value="Otra">Otra</option>
+                                <div>
+                                    <label class="font-body text-label-sm text-primary font-semibold block mb-1.5" for="v-city">CIUDAD *</label>
+                                    <select id="v-city" name="ciudad" class="field-input" required>
+                                        <option value="" disabled selected>Selecciona tu ciudad</option>
+                                        <option value="Madrid">Madrid</option>
+                                        <option value="Barcelona">Barcelona</option>
+                                        <option value="Valencia">Valencia</option>
+                                        <option value="Otra">Otra</option>
                                     </select>
                                 </div>
-                                <div class="relative">
-                                    <label class="font-label-caps text-[10px] text-primary mb-1 block" for="beta-status">SITUACIÓN *</label>
-                                    <select id="beta-status" name="situacion" class="w-full bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 py-unit-sm text-body-lg transition-all outline-none appearance-none cursor-pointer" required>
-                                        <option class="bg-surface-container" value="" disabled selected>Tu situación actual</option>
-                                        <option class="bg-surface-container" value="Soltero/a">Soltero/a</option>
-                                        <option class="bg-surface-container" value="Divorciado/a">Divorciado/a</option>
-                                        <option class="bg-surface-container" value="Viudo/a">Viudo/a</option>
-                                        <option class="bg-surface-container" value="Otra">Otra</option>
+                                <div>
+                                    <label class="font-body text-label-sm text-primary font-semibold block mb-1.5" for="v-status">SITUACIÓN *</label>
+                                    <select id="v-status" name="situacion" class="field-input" required>
+                                        <option value="" disabled selected>Tu situación actual</option>
+                                        <option value="Soltero/a">Soltero/a</option>
+                                        <option value="Divorciado/a">Divorciado/a</option>
+                                        <option value="Viudo/a">Viudo/a</option>
+                                        <option value="Otra">Otra</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="relative">
-                                <label class="font-label-caps text-[10px] text-primary mb-1 block" for="beta-intent">¿QUÉ BUSCAS? *</label>
-                                <select id="beta-intent" name="intencion" class="w-full bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 py-unit-sm text-body-lg transition-all outline-none appearance-none cursor-pointer" required>
-                                    <option class="bg-surface-container" value="" disabled selected>Selecciona tu intención real</option>
-                                    <option class="bg-surface-container" value="Conocer a alguien serio">Quiero conocer a alguien serio</option>
-                                    <option class="bg-surface-container" value="Probar citas organizadas">Quiero probar citas organizadas</option>
-                                    <option class="bg-surface-container" value="Solo curiosidad">Solo curiosidad</option>
+                            <div>
+                                <label class="font-body text-label-sm text-primary font-semibold block mb-1.5" for="v-intent">¿QUÉ BUSCAS? *</label>
+                                <select id="v-intent" name="intencion" class="field-input" required>
+                                    <option value="" disabled selected>Selecciona tu intención real</option>
+                                    <option value="Conocer a alguien serio">Quiero conocer a alguien serio</option>
+                                    <option value="Probar citas organizadas">Quiero probar citas organizadas</option>
+                                    <option value="Solo curiosidad">Solo curiosidad</option>
                                 </select>
                             </div>
-                            <div class="flex items-start gap-3 pt-2">
-                                <input class="w-5 h-5 border-primary text-primary focus:ring-primary bg-transparent rounded-sm mt-1 cursor-pointer" id="beta-priority" name="acceso_prioritario" type="checkbox" />
-                                <label class="text-body-md text-on-surface cursor-pointer" for="beta-priority">
-                                    <span class="font-bold text-primary block text-sm mb-1">Acceso prioritario limitado</span>
-                                    <span class="text-sm text-on-surface-variant block">Quiero ser de los primeros usuarios cuando abramos citas (cupos limitados).</span>
+
+                            <!-- Priority checkbox -->
+                            <div class="flex items-start gap-3 p-4 rounded-lg" style="background:#eff4ff; border:1px solid #c7c4d7;">
+                                <input class="mt-1 accent-indigo-600 w-4 h-4 cursor-pointer" id="v-priority" name="acceso_prioritario" type="checkbox" />
+                                <label class="font-body text-body-md cursor-pointer" for="v-priority">
+                                    <span class="font-semibold text-primary block mb-0.5">Acceso prioritario limitado</span>
+                                    <span class="text-on-surface-variant text-sm">Quiero ser de los primeros usuarios cuando abramos citas (cupos limitados).</span>
                                 </label>
                             </div>
-                            <div class="flex items-start gap-unit-md pt-unit-md border-t border-outline-variant/30">
-                                <input class="w-4 h-4 border-primary text-primary focus:ring-primary bg-transparent rounded-sm mt-0.5 cursor-pointer" id="beta-terms" name="acepta_terminos" type="checkbox" required />
-                                <label class="text-xs text-on-surface-variant cursor-pointer" for="beta-terms">Acepto la <a class="underline text-primary hover:text-primary-fixed transition-colors" href="privacidad.html" target="_blank">Política de Privacidad</a>.</label>
+
+                            <div class="flex items-start gap-2 pt-1">
+                                <input class="w-4 h-4 mt-0.5 cursor-pointer accent-indigo-600" id="v-terms" name="acepta_terminos" type="checkbox" required />
+                                <label class="font-body text-label-sm text-on-surface-variant cursor-pointer" for="v-terms">
+                                    Acepto la <a class="text-primary underline hover:no-underline" href="privacidad.html" target="_blank">Política de Privacidad</a>.
+                                </label>
                             </div>
-                            <button id="beta-submit" type="submit" class="w-full bg-primary text-on-primary py-5 rounded-full font-label-caps text-label-caps tracking-[0.2em] mt-unit-lg shadow-lg hover:brightness-110 transition-all disabled:opacity-30 disabled:cursor-not-allowed">
+
+                            <button type="submit" class="btn-primary w-full text-center text-sm" style="padding:16px;">
                                 RESERVAR ACCESO
                             </button>
                         </form>
                     </div>
 
-                    <!-- Success state (hidden initially) -->
-                    <div id="beta-success" class="hidden py-8">
-                        <div class="flex justify-center mb-6">
-                            <div class="w-20 h-20 rounded-full border-2 border-primary flex items-center justify-center">
-                                <span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                            </div>
+                    <!-- Success state -->
+                    <div id="form-success" class="hidden text-center py-8">
+                        <div class="pop-in inline-flex w-20 h-20 rounded-full items-center justify-center mb-5" style="background:linear-gradient(135deg,#e1e0ff,#ffdadb);">
+                            <span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings:'FILL' 1;">check_circle</span>
                         </div>
-                        <h3 class="font-headline-md text-headline-sm text-primary mb-unit-md">¡Estás en la lista!</h3>
-                        <p class="text-on-surface-variant font-body-md leading-relaxed max-w-md mx-auto">
-                            Hemos recibido tu solicitud. Te avisaremos en cuanto abramos plazas en tu ciudad. Prepárate para tu primera cita de verdad.
-                        </p>
-                        <div class="mt-8 flex justify-center gap-3">
-                            <span class="px-4 py-2 border border-outline-variant rounded-full text-[11px] font-label-caps text-on-surface-variant">
-                                <span class="material-symbols-outlined text-primary text-[14px] align-middle mr-1">schedule</span>
-                                LANZAMIENTO PRÓXIMAMENTE
-                            </span>
+                        <h3 style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:22px;" class="text-primary mb-3">¡Estás en la lista!</h3>
+                        <p class="font-body text-body-md text-on-surface-variant max-w-sm mx-auto">Hemos recibido tu solicitud. Te avisaremos en cuanto abramos plazas en tu ciudad. Prepárate para tu primera cita de verdad.</p>
+                        <div class="mt-6 inline-flex items-center gap-2 chip chip-sky">
+                            <span class="material-symbols-outlined text-[14px]">schedule</span>
+                            LANZAMIENTO PRÓXIMAMENTE
                         </div>
                     </div>
                 </div>
@@ -842,209 +859,137 @@
 
     </main>
 
-    <!-- ════════════════════════════════════════════════
-         FOOTER
-         ════════════════════════════════════════════════ -->
-    <footer class="bg-surface-container-highest border-t border-outline-variant">
-        <div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto text-on-surface">
-            <div class="mb-unit-lg md:mb-0">
-                <div class="font-headline-md text-primary mb-2">DateAndGo</div>
-                <p class="text-on-surface-variant text-sm">© 2025 DateAndGo Concierge. Todos los derechos reservados.</p>
-                <p class="text-on-surface-variant text-xs mt-2">Otro proyecto made in <a href="https://yumpeen.com" target="_blank" class="text-primary hover:text-primary-fixed transition-colors underline">Yumpeen</a></p>
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+    <footer style="background:#0b1c30; color:#eaf1ff;" class="py-12">
+        <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-10 max-w-[1200px] mx-auto gap-6">
+            <div>
+                <div style="font-family:'Plus Jakarta Sans';font-weight:800;font-size:22px;color:#c0c1ff;" class="mb-1">DateAndGo</div>
+                <p style="color:#767586;" class="font-body text-sm">© 2025 DateAndGo. Todos los derechos reservados.</p>
+                <p style="color:#767586;" class="font-body text-xs mt-1">Otro proyecto made in <a href="https://yumpeen.com" target="_blank" style="color:#c0c1ff;" class="hover:underline">Yumpeen</a></p>
             </div>
-            <div class="flex flex-wrap justify-center gap-unit-lg">
-                <a class="text-on-surface-variant hover:text-secondary transition-colors duration-200 text-sm" href="privacidad.html">Política de Privacidad</a>
-                <a class="text-on-surface-variant hover:text-secondary transition-colors duration-200 text-sm" href="terminos.html">Términos de Servicio</a>
-                <a class="text-on-surface-variant hover:text-secondary transition-colors duration-200 text-sm" href="faq.html">FAQ</a>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a class="font-body text-sm transition-colors hover:text-white" style="color:#767586;" href="privacidad.html">Política de Privacidad</a>
+                <a class="font-body text-sm transition-colors hover:text-white" style="color:#767586;" href="terminos.html">Términos de Servicio</a>
+                <a class="font-body text-sm transition-colors hover:text-white" style="color:#767586;" href="faq.html">FAQ</a>
             </div>
         </div>
     </footer>
 
-    <!-- ════════════════════════════════════════════════
-         JAVASCRIPT
-         ════════════════════════════════════════════════ -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        // ── Hero random image ──
+        const heroPhotos = [
+            { src: 'hero-couple.jpg', credit: 'Photo: @vincefleming' },
+            { src: 'hero-2.jpg',      credit: 'Photo: @brnkd' },
+            { src: 'hero-3.jpg',      credit: 'Photo: @juniorreisfoto' },
+        ];
+        (function() {
+            const pick = heroPhotos[Math.floor(Math.random() * heroPhotos.length)];
+            const img = document.getElementById('hero-img');
+            const credit = document.getElementById('hero-credit');
+            if (img) img.src = pick.src;
+            if (credit) credit.textContent = pick.credit;
+        })();
 
-            // ── Navigation scroll effect ──
-            const nav = document.getElementById('main-nav');
-            const navInner = nav.querySelector('nav');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    nav.classList.add('scrolled');
-                    navInner.classList.remove('py-4');
-                    navInner.classList.add('py-2');
-                } else {
-                    nav.classList.remove('scrolled');
-                    navInner.classList.remove('py-2');
-                    navInner.classList.add('py-4');
+        // ── Nav scroll ──
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // ── Mobile menu ──
+        const mobileMenu = document.getElementById('mobile-menu');
+        document.getElementById('mobile-toggle').addEventListener('click', () => mobileMenu.classList.add('open'));
+        document.getElementById('mobile-close').addEventListener('click', () => mobileMenu.classList.remove('open'));
+        document.querySelectorAll('[data-close-menu]').forEach(el => el.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+        // ── Scroll animations ──
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    setTimeout(() => e.target.classList.add('visible'), i * 40);
+                    observer.unobserve(e.target);
                 }
             });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-            // ── Mobile menu ──
-            const mobileToggle = document.getElementById('mobile-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileClose = document.getElementById('mobile-close');
+        // ── Carousel ──
+        const track = document.getElementById('preview-track');
+        const dots = document.querySelectorAll('.preview-dot');
+        const tabs = document.querySelectorAll('.carousel-tab');
+        const prevBtn = document.getElementById('carousel-prev');
+        const nextBtn = document.getElementById('carousel-next');
+        let currentSlide = 0;
+        const totalSlides = 3;
 
-            mobileToggle.addEventListener('click', () => mobileMenu.classList.add('open'));
-            mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
-            document.querySelectorAll('[data-close-menu]').forEach(link => {
-                link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+        function goToSlide(index) {
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            currentSlide = index;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+            tabs.forEach((t, i) => {
+                if (i === currentSlide) { t.classList.add('active'); }
+                else { t.classList.remove('active'); }
             });
+        }
+        goToSlide(0);
+        dots.forEach(d => d.addEventListener('click', () => goToSlide(+d.dataset.slide)));
+        tabs.forEach(t => t.addEventListener('click', () => goToSlide(+t.dataset.slide)));
+        prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
 
-            // ── Scroll animations ──
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        // Keyboard
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowLeft') goToSlide(currentSlide - 1);
+            if (e.key === 'ArrowRight') goToSlide(currentSlide + 1);
+        });
 
-            document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+        // Touch
+        let touchStartX = 0;
+        track.parentElement.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+        track.parentElement.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50) goToSlide(diff > 0 ? currentSlide + 1 : currentSlide - 1);
+        }, { passive: true });
 
-            // ── Preview Carousel ──
-            const track = document.getElementById('preview-track');
-            const dots = document.querySelectorAll('.preview-dot');
-            const tabs = document.querySelectorAll('.carousel-tab');
-            const prevBtn = document.getElementById('carousel-prev');
-            const nextBtn = document.getElementById('carousel-next');
-            let currentSlide = 0;
-            const totalSlides = 3;
+        // ── Signup form ──
+        const form = document.getElementById('signup-form');
+        const formContainer = document.getElementById('form-container');
+        const formSuccess = document.getElementById('form-success');
 
-            function goToSlide(index) {
-                if (index < 0) index = totalSlides - 1;
-                if (index >= totalSlides) index = 0;
-                currentSlide = index;
-                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const formAction = form.getAttribute('action');
+            fetch(formAction, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).catch(err => console.log('Error:', err));
 
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === currentSlide);
-                });
-                tabs.forEach((tab, i) => {
-                    if (i === currentSlide) {
-                        tab.classList.add('bg-primary', 'text-on-primary', 'border-primary');
-                        tab.classList.remove('text-on-surface-variant');
-                    } else {
-                        tab.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
-                        tab.classList.add('text-on-surface-variant');
-                    }
-                });
-                // Update step bubbles
-                document.querySelectorAll('.step-bubble').forEach((bubble, i) => {
-                    if (i === currentSlide) {
-                        bubble.classList.add('bg-primary', 'text-on-primary');
-                        bubble.classList.remove('border', 'border-outline-variant', 'text-on-surface-variant');
-                    } else {
-                        bubble.classList.remove('bg-primary', 'text-on-primary');
-                        bubble.classList.add('border', 'border-outline-variant', 'text-on-surface-variant');
-                    }
-                });
-            }
+            // localStorage backup
+            const data = {
+                email: document.getElementById('v-email').value,
+                age: document.getElementById('v-age').value,
+                city: document.getElementById('v-city').value,
+                status: document.getElementById('v-status').value,
+                intent: document.getElementById('v-intent').value,
+                priority: document.getElementById('v-priority').checked,
+                timestamp: new Date().toISOString()
+            };
+            const signups = JSON.parse(localStorage.getItem('dateandgo_signups') || '[]');
+            signups.push(data);
+            localStorage.setItem('dateandgo_signups', JSON.stringify(signups));
 
-            // Initialize first tab
-            goToSlide(0);
-
-            dots.forEach(dot => {
-                dot.addEventListener('click', () => goToSlide(parseInt(dot.dataset.slide)));
-            });
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => goToSlide(parseInt(tab.dataset.slide)));
-            });
-            prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
-            nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
-
-            // Keyboard navigation for carousel
-            document.addEventListener('keydown', (e) => {
-                const previewSection = document.getElementById('preview');
-                const rect = previewSection.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    if (e.key === 'ArrowLeft') goToSlide(currentSlide - 1);
-                    if (e.key === 'ArrowRight') goToSlide(currentSlide + 1);
-                }
-            });
-
-            // Touch swipe support
-            let touchStartX = 0;
-            let touchEndX = 0;
-            const carousel = document.querySelector('.preview-carousel');
-
-            carousel.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-
-            carousel.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                const diff = touchStartX - touchEndX;
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) goToSlide(currentSlide + 1);
-                    else goToSlide(currentSlide - 1);
-                }
-            }, { passive: true });
-
-            // ── Beta Form ──
-            const betaForm = document.getElementById('beta-form');
-            const betaFormContainer = document.getElementById('beta-form-container');
-            const betaSuccess = document.getElementById('beta-success');
-
-            betaForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                const email = document.getElementById('beta-email').value;
-                const age = document.getElementById('beta-age').value;
-                const city = document.getElementById('beta-city').value;
-                const status = document.getElementById('beta-status').value;
-                const intent = document.getElementById('beta-intent').value;
-                const priority = document.getElementById('beta-priority').checked;
-
-                // Send to formspree
-                const formAction = betaForm.getAttribute('action');
-                fetch(formAction, {
-                    method: 'POST',
-                    body: new FormData(betaForm),
-                    headers: { 'Accept': 'application/json' }
-                }).catch(err => console.log('Error enviando formulario:', err));
-
-                // Store in localStorage as backup / simulation
-                const signups = JSON.parse(localStorage.getItem('dateandgo_beta_signups') || '[]');
-                signups.push({
-                    email, age, city, status, intent, priority,
-                    timestamp: new Date().toISOString()
-                });
-                localStorage.setItem('dateandgo_beta_signups', JSON.stringify(signups));
-
-                // Animate transition
-                betaFormContainer.style.opacity = '0';
-                betaFormContainer.style.transform = 'translateY(-20px)';
-                betaFormContainer.style.transition = 'all 0.4s ease';
-
-                setTimeout(() => {
-                    betaFormContainer.classList.add('hidden');
-                    betaSuccess.classList.remove('hidden');
-                    betaSuccess.style.opacity = '0';
-                    betaSuccess.style.transform = 'translateY(20px)';
-                    requestAnimationFrame(() => {
-                        betaSuccess.style.transition = 'all 0.5s ease';
-                        betaSuccess.style.opacity = '1';
-                        betaSuccess.style.transform = 'translateY(0)';
-                    });
-                }, 400);
-            });
-
-            // ── Smooth hover effect on step numbers ──
-            document.querySelectorAll('section .group').forEach(step => {
-                step.addEventListener('mouseenter', () => {
-                    const num = step.querySelector('.font-display-lg');
-                    if (num) num.style.transform = 'translateY(-5px)';
-                });
-                step.addEventListener('mouseleave', () => {
-                    const num = step.querySelector('.font-display-lg');
-                    if (num) num.style.transform = 'translateY(0)';
-                });
-            });
-
+            // Animate
+            formContainer.style.opacity = '0';
+            formContainer.style.transform = 'translateY(-16px)';
+            formContainer.style.transition = 'all 0.35s ease';
+            setTimeout(() => {
+                formContainer.classList.add('hidden');
+                formSuccess.classList.remove('hidden');
+            }, 360);
         });
     </script>
-
 </body>
 </html>
