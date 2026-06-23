@@ -342,12 +342,11 @@
             <!-- Desktop links -->
             <div class="hidden md:flex gap-8 items-center">
                 <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-body font-semibold" href="#como-funciona">Cómo Funciona</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-body font-semibold" href="#preview">La App</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-body font-semibold" href="#lista">Apuntarme</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-body font-semibold" href="https://tally.so/r/KYOWL8" target="_blank">Apuntarme</a>
             </div>
 
             <!-- CTA desktop -->
-            <a href="#lista" class="hidden md:inline-block btn-primary text-sm">Quiero mi primera cita</a>
+            <a href="https://tally.so/r/KYOWL8" target="_blank" class="hidden md:inline-block btn-primary text-sm">Quiero mi primera cita</a>
 
             <!-- Hamburger -->
             <button id="mobile-toggle" class="md:hidden text-on-surface p-2" aria-label="Abrir menú">
@@ -365,9 +364,8 @@
             <span class="material-symbols-outlined text-[28px]">close</span>
         </button>
         <a class="text-on-surface-variant hover:text-primary font-body font-semibold text-label-md" href="#como-funciona" data-close-menu>Cómo Funciona</a>
-        <a class="text-on-surface-variant hover:text-primary font-body font-semibold text-label-md" href="#preview" data-close-menu>La App</a>
-        <a class="text-on-surface-variant hover:text-primary font-body font-semibold text-label-md" href="#lista" data-close-menu>Apuntarme</a>
-        <a href="#lista" class="btn-primary text-center mt-2 text-sm" data-close-menu>Quiero mi primera cita</a>
+        <a class="text-on-surface-variant hover:text-primary font-body font-semibold text-label-md" href="https://tally.so/r/KYOWL8" target="_blank" data-close-menu>Apuntarme</a>
+        <a href="https://tally.so/r/KYOWL8" target="_blank" class="btn-primary text-center mt-2 text-sm" data-close-menu>Quiero mi primera cita</a>
     </div>
 
     <main>
@@ -395,7 +393,7 @@
                         Te organizamos una cita real con alguien compatible. Sin horas de chat, sin logística, sin quedadas que no llegan a ningún lado. Tú solo te presentas.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#lista" class="btn-primary">QUIERO MI PRIMERA CITA</a>
+                        <a href="https://tally.so/r/KYOWL8" target="_blank" class="btn-primary">QUIERO MI PRIMERA CITA</a>
                     </div>
 
                     <!-- Social proof -->
@@ -521,8 +519,8 @@
             </div>
         </section>
 
-        <!-- ═══════════════════════ PREVIEW CAROUSEL ═══════════════════════ -->
-        <section id="preview" class="py-20 bg-surface">
+        <!-- PREVIEW CAROUSEL ELIMINADO -->
+        <section id="preview" class="hidden">
             <div class="container mx-auto px-4 md:px-10 max-w-[1200px]">
                 <div class="text-center mb-10 animate-on-scroll">
                     <span class="chip chip-sky mb-3 inline-flex">CÓMO FUNCIONA</span>
@@ -770,96 +768,8 @@
             </div>
         </section>
 
-        <!-- ═══════════════════════ SIGNUP FORM ═══════════════════════ -->
-        <section id="lista" class="py-20" style="background: linear-gradient(135deg, #eff4ff 0%, #ffdadb22 100%);">
-            <div class="container mx-auto px-4 md:px-10 max-w-2xl">
-                <div class="card p-8 md:p-12 animate-on-scroll" style="box-shadow:0 24px 60px rgba(70,72,212,0.12);">
-                    <div id="form-container">
-                        <div class="text-center mb-8">
-                            <span class="chip chip-indigo mb-3 inline-flex">ACCESO ANTICIPADO</span>
-                            <h2 style="font-family:'Poppins';font-weight:700;font-size:28px;" class="text-on-surface mt-3">Apúntate. Te avisamos cuando abramos.</h2>
-                            <p class="font-body text-body-md text-on-surface-variant mt-3">Estamos preparando DateAndGo. Déjanos tus datos y seremos los primeros en darte acceso cuando abramos plazas en tu ciudad.</p>
-                        </div>
-
-                        <form id="signup-form" class="space-y-6 text-left" action="https://formspree.io/f/mzdqgazv" method="POST">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="font-body text-label-sm text-primary font-semibold block mb-1.5" for="v-email">CORREO ELECTRÓNICO *</label>
-                                    <input id="v-email" name="email" class="field-input" placeholder="tu@email.com" type="email" required />
-                                </div>
-                                <div>
-                                    <label class="font-body text-label-sm text-primary font-semibold block mb-1.5" for="v-age">EDAD *</label>
-                                    <input id="v-age" name="edad" class="field-input" placeholder="Ej. 34" type="number" min="18" max="99" required />
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="font-body text-label-sm text-primary font-semibold block mb-1.5" for="v-city">CIUDAD *</label>
-                                    <select id="v-city" name="ciudad" class="field-input" required>
-                                        <option value="" disabled selected>Selecciona tu ciudad</option>
-                                        <option value="Madrid">Madrid</option>
-                                        <option value="Barcelona">Barcelona</option>
-                                        <option value="Valencia">Valencia</option>
-                                        <option value="Otra">Otra</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="font-body text-label-sm text-primary font-semibold block mb-1.5" for="v-status">SITUACIÓN *</label>
-                                    <select id="v-status" name="situacion" class="field-input" required>
-                                        <option value="" disabled selected>Tu situación actual</option>
-                                        <option value="Soltero/a">Soltero/a</option>
-                                        <option value="Divorciado/a">Divorciado/a</option>
-                                        <option value="Viudo/a">Viudo/a</option>
-                                        <option value="Otra">Otra</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="font-body text-label-sm text-primary font-semibold block mb-1.5" for="v-intent">¿QUÉ BUSCAS? *</label>
-                                <select id="v-intent" name="intencion" class="field-input" required>
-                                    <option value="" disabled selected>Selecciona tu intención real</option>
-                                    <option value="Conocer a alguien serio">Quiero conocer a alguien serio</option>
-                                    <option value="Probar citas organizadas">Quiero probar citas organizadas</option>
-                                    <option value="Solo curiosidad">Solo curiosidad</option>
-                                </select>
-                            </div>
-
-                            <!-- Priority checkbox -->
-                            <div class="flex items-start gap-3 p-4 rounded-lg" style="background:#eff4ff; border:1px solid #c7c4d7;">
-                                <input class="mt-1 accent-indigo-600 w-4 h-4 cursor-pointer" id="v-priority" name="acceso_prioritario" type="checkbox" />
-                                <label class="font-body text-body-md cursor-pointer" for="v-priority">
-                                    <span class="font-semibold text-primary block mb-0.5">Acceso prioritario limitado</span>
-                                    <span class="text-on-surface-variant text-sm">Quiero ser de los primeros usuarios cuando abramos citas (cupos limitados).</span>
-                                </label>
-                            </div>
-
-                            <div class="flex items-start gap-2 pt-1">
-                                <input class="w-4 h-4 mt-0.5 cursor-pointer accent-indigo-600" id="v-terms" name="acepta_terminos" type="checkbox" required />
-                                <label class="font-body text-label-sm text-on-surface-variant cursor-pointer" for="v-terms">
-                                    Acepto la <a class="text-primary underline hover:no-underline" href="privacidad.html" target="_blank">Política de Privacidad</a>.
-                                </label>
-                            </div>
-
-                            <button type="submit" class="btn-primary w-full text-center text-sm" style="padding:16px;">
-                                RESERVAR ACCESO
-                            </button>
-                        </form>
-                    </div>
-
-                    <!-- Success state -->
-                    <div id="form-success" class="hidden text-center py-8">
-                        <div class="pop-in inline-flex w-20 h-20 rounded-full items-center justify-center mb-5" style="background:linear-gradient(135deg,#e1e0ff,#ffdadb);">
-                            <span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings:'FILL' 1;">check_circle</span>
-                        </div>
-                        <h3 style="font-family:'Poppins';font-weight:700;font-size:22px;" class="text-primary mb-3">¡Estás en la lista!</h3>
-                        <p class="font-body text-body-md text-on-surface-variant max-w-sm mx-auto">Hemos recibido tu solicitud. Te avisaremos en cuanto abramos plazas en tu ciudad. Prepárate para tu primera cita de verdad.</p>
-                        <div class="mt-6 inline-flex items-center gap-2 chip chip-sky">
-                            <span class="material-symbols-outlined text-[14px]">schedule</span>
-                            LANZAMIENTO PRÓXIMAMENTE
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- ═══════════════════════ CTA CUESTIONARIO ═══════════════════════ -->
+        <section id="lista" class="py-20" style="background: linear-gradient(135deg, #eff4ff 0%, #ffdadb22 100%);"><div class="container mx-auto px-4 md:px-10 max-w-2xl"><div class="card p-8 md:p-12 animate-on-scroll text-center" style="box-shadow:0 24px 60px rgba(70,72,212,0.12);"><span class="chip chip-indigo mb-4 inline-flex">YA PUEDES EMPEZAR</span><h2 style="font-family:'Poppins';font-weight:700;font-size:28px;" class="text-on-surface mt-3 mb-4">Es tu momento. Pon el GO a funcionar.</h2><p class="font-body text-body-md text-on-surface-variant mb-8 max-w-md mx-auto">Si ya te has registrado con nosotros, completa el cuestionario para que podamos conocerte y organizarte tu primera cita de verdad.</p><a href="https://tally.so/r/KYOWL8" target="_blank" class="btn-primary text-sm" style="padding:16px 40px;">COMPLETAR MI CUESTIONARIO →</a><p class="font-body text-label-sm text-on-surface-variant mt-6">Solo para personas ya registradas · Tarda unos 10 minutos</p></div></div>
         </section>
 
     </main>
@@ -977,8 +887,8 @@
         }, { threshold: 0.12 });
         document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-        // ── Carousel ──
-        const track = document.getElementById('preview-track');
+        // ── (Carousel y formulario eliminados) ──
+        // const track = document.getElementById('preview-track');
         const dots = document.querySelectorAll('.preview-dot');
         const tabs = document.querySelectorAll('.carousel-tab');
         const prevBtn = document.getElementById('carousel-prev');
