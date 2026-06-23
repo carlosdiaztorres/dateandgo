@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script async src="https://tally.so/widgets/embed.js"></script>
   <style>
     /* ── RESET & BASE ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,36 +41,6 @@
     }
     .logo-header a { text-decoration: none; display: inline-block; }
     .logo-header img { width: 150px; height: auto; display: block; margin: 0 auto; }
-
-    /* ── PHOTO STRIP (bottom) ── */
-    .photo-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-top: 40px;
-      border-radius: 14px;
-      overflow: hidden;
-    }
-    .photo-strip img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .photo-strip img:hover { transform: scale(1.03); }
-    .photo-strip img:first-child { border-radius: 14px 0 0 14px; }
-    .photo-strip img:last-child  { border-radius: 0 14px 14px 0; }
-
-    .photo-credits {
-      text-align: center;
-      font-size: 11px;
-      color: #9896a8;
-      margin-top: 10px;
-      letter-spacing: 0.02em;
-    }
-    .photo-credits a { color: #9896a8; text-decoration: none; }
-    .photo-credits a:hover { color: #4648d4; }
 
     /* ── CARD ── */
     .card {
@@ -107,227 +78,24 @@
       font-size: 15px;
       color: #464554;
       line-height: 1.65;
-      margin-bottom: 36px;
-      padding-bottom: 32px;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
       border-bottom: 1.5px solid #e5eeff;
     }
 
-    /* ── FORM SECTIONS ── */
-    .form-section {
-      margin-bottom: 32px;
+    /* ── TALLY IFRAME ── */
+    .tally-wrap {
+      width: 100%;
     }
-    .form-section:last-of-type { margin-bottom: 0; }
-
-    .section-divider {
+    .tally-wrap iframe {
+      width: 100%;
       border: none;
-      border-top: 1.5px solid #f0f1fc;
-      margin: 36px 0;
+      display: block;
     }
-
-    /* ── QUESTION LABEL ── */
-    .question-label {
-      font-size: 15px;
-      font-weight: 700;
-      color: #0b1c30;
-      line-height: 1.45;
-      margin-bottom: 6px;
-    }
-    .question-hint {
-      font-size: 13px;
-      color: #767586;
-      font-weight: 400;
-      line-height: 1.55;
-      margin-bottom: 12px;
-    }
-
-    /* ── INPUTS ── */
-    .form-input,
-    .form-textarea,
-    .form-select {
-      width: 100%;
-      font-family: 'Poppins', Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      color: #0b1c30;
-      background: #f8f9ff;
-      border: 1.5px solid #dde1f5;
-      border-radius: 10px;
-      padding: 11px 14px;
-      outline: none;
-      transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
-      appearance: none;
-    }
-    .form-input:focus,
-    .form-textarea:focus,
-    .form-select:focus {
-      border-color: #4648d4;
-      background: #ffffff;
-      box-shadow: 0 0 0 4px rgba(70, 72, 212, 0.10);
-    }
-    .form-input::placeholder,
-    .form-textarea::placeholder { color: #b0aec8; }
-    .form-textarea {
-      resize: vertical;
-      min-height: 100px;
-      line-height: 1.6;
-    }
-    .form-textarea.tall { min-height: 130px; }
-
-    /* ── SELECT WRAPPER ── */
-    .select-wrapper {
-      position: relative;
-    }
-    .select-wrapper::after {
-      content: '▾';
-      position: absolute;
-      right: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #4648d4;
-      pointer-events: none;
-      font-size: 13px;
-    }
-    .form-select { cursor: pointer; padding-right: 36px; }
-
-    /* ── RADIO / CHECKBOX GROUP ── */
-    .choice-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .choice-option {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: #f8f9ff;
-      border: 1.5px solid #dde1f5;
-      border-radius: 10px;
-      padding: 13px 16px;
-      cursor: pointer;
-      transition: border-color 0.16s, background 0.16s, box-shadow 0.16s;
-      position: relative;
-    }
-    .choice-option:hover {
-      border-color: #4648d4;
-      background: #f0f0ff;
-    }
-    .choice-option input[type="radio"],
-    .choice-option input[type="checkbox"] {
-      position: absolute;
-      opacity: 0;
-      width: 100%;
-      height: 100%;
-      top: 0; left: 0;
-      margin: 0;
-      cursor: pointer;
-    }
-    .choice-option input:checked + .choice-indicator {
-      background: #4648d4;
-      border-color: #4648d4;
-    }
-    .choice-option input:checked + .choice-indicator::after { opacity: 1; }
-    .choice-option input:checked ~ .choice-text {
-      color: #4648d4;
-      font-weight: 600;
-    }
-
-    /* checked state for the whole row */
-    .choice-option:has(input:checked) {
-      border-color: #4648d4;
-      background: #eeeeff;
-      box-shadow: 0 0 0 3px rgba(70,72,212,0.10);
-    }
-
-    .choice-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 22px;
-      height: 22px;
-      min-width: 22px;
-      background: #e1e0ff;
-      color: #4648d4;
-      font-size: 11px;
-      font-weight: 800;
-      border-radius: 5px;
-      flex-shrink: 0;
-      z-index: 1;
-      transition: background 0.16s, color 0.16s;
-    }
-    .choice-option:has(input:checked) .choice-badge {
-      background: #4648d4;
-      color: #ffffff;
-    }
-
-    .choice-text {
-      font-size: 14px;
-      color: #464554;
-      line-height: 1.4;
-      z-index: 1;
-      transition: color 0.16s;
-    }
-
-    /* ── FILE UPLOAD ── */
-    .upload-area {
-      border: 2px dashed #c5c3e0;
-      border-radius: 12px;
-      background: #f8f9ff;
-      padding: 32px 20px;
-      text-align: center;
-      cursor: pointer;
-      transition: border-color 0.18s, background 0.18s;
-      position: relative;
-    }
-    .upload-area:hover {
-      border-color: #4648d4;
-      background: #f0f0ff;
-    }
-    .upload-area input[type="file"] {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      cursor: pointer;
-    }
-    .upload-icon { font-size: 32px; margin-bottom: 12px; pointer-events: none; }
-    .upload-text {
-      font-size: 14px;
-      color: #464554;
-      font-weight: 600;
-      margin-bottom: 4px;
-      pointer-events: none;
-    }
-    .upload-hint { font-size: 12px; color: #9896a8; pointer-events: none; }
-
-    /* ── SUBMIT BUTTON ── */
-    .submit-wrap { padding-top: 36px; border-top: 1.5px solid #e5eeff; margin-top: 36px; }
-    .btn-submit {
-      display: inline-block;
-      background: linear-gradient(135deg, #4648d4 0%, #6063ee 100%);
-      color: #ffffff;
-      font-family: 'Poppins', Arial, Helvetica, sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 14px 36px;
-      border-radius: 9999px;
-      border: none;
-      cursor: pointer;
-      letter-spacing: 0.04em;
-      box-shadow: 0 6px 20px rgba(70, 72, 212, 0.28);
-      transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
-      width: 100%;
-      text-align: center;
-    }
-    .btn-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(70, 72, 212, 0.35);
-    }
-    .btn-submit:active { transform: translateY(0); }
 
     /* ── SIGN-OFF ── */
     .sign-off {
-      margin-top: 40px;
+      margin-top: 36px;
       padding-top: 24px;
       border-top: 1.5px solid #e5eeff;
     }
@@ -344,6 +112,36 @@
       margin-top: 4px;
     }
 
+    /* ── PHOTO STRIP (bottom) ── */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 40px;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .photo-strip img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .photo-strip img:hover { transform: scale(1.03); }
+    .photo-strip img:first-child { border-radius: 14px 0 0 14px; }
+    .photo-strip img:last-child  { border-radius: 0 14px 14px 0; }
+
+    .photo-credits {
+      text-align: center;
+      font-size: 11px;
+      color: #9896a8;
+      margin-top: 10px;
+      letter-spacing: 0.02em;
+    }
+    .photo-credits a { color: #9896a8; text-decoration: none; }
+    .photo-credits a:hover { color: #4648d4; }
+
     /* ── FOOTER ── */
     .footer {
       text-align: center;
@@ -356,14 +154,14 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       body { padding: 24px 12px 48px; }
-      .card { padding: 28px 20px 28px; border-radius: 14px; }
+      .card { padding: 28px 18px 28px; border-radius: 14px; }
       .card-title { font-size: 22px; }
       .photo-strip { grid-template-columns: repeat(2, 1fr); }
       .photo-strip img { height: 140px; }
       .photo-strip img:first-child { border-radius: 14px 0 0 0; }
       .photo-strip img:nth-child(2) { border-radius: 0 14px 0 0; }
       .photo-strip img:nth-child(3) { border-radius: 0 0 0 14px; }
-      .photo-strip img:last-child  { border-radius: 0 0 14px 0; }
+      .photo-strip img:last-child   { border-radius: 0 0 14px 0; }
     }
   </style>
 </head>
@@ -379,8 +177,6 @@
       </a>
     </div>
 
-
-
     <!-- MAIN CARD -->
     <div class="card">
 
@@ -388,169 +184,18 @@
       <h1 class="card-title">Tu historia empieza aquí</h1>
       <p class="card-intro">Antes de proponerte una cita, queremos conocerte.</p>
 
-      <form action="#" method="post" enctype="multipart/form-data">
-
-        <!-- 1. Nombre -->
-        <div class="form-section">
-          <label class="question-label" for="q_nombre">¿Cuál es tu nombre?</label>
-          <input class="form-input" id="q_nombre" name="nombre" type="text" placeholder="Tu nombre" required />
-        </div>
-
-        <!-- 2. Edad -->
-        <div class="form-section">
-          <label class="question-label" for="q_edad">¿Cuántos años tienes?</label>
-          <input class="form-input" id="q_edad" name="edad" type="number" min="18" max="99" placeholder="Ej. 32" required />
-        </div>
-
-        <hr class="section-divider" />
-
-        <!-- 3. Edad de la otra persona -->
-        <div class="form-section">
-          <p class="question-label">Edad de la otra persona</p>
-          <p class="question-hint">¿Qué rango de edad te gustaría que tuviera la otra persona? No buscamos límites estrictos, solo una referencia para proponerte personas con las que puedas sentirte cómodo/a.</p>
-          <textarea class="form-textarea" id="q_edad_pareja" name="edad_pareja" placeholder="Ej. entre 28 y 40 años" required></textarea>
-        </div>
-
-        <!-- 4. Género preferido -->
-        <div class="form-section">
-          <p class="question-label">¿Qué tipo de cita prefieres? Puedes seleccionar varias opciones.</p>
-          <div class="choice-group" role="group" aria-label="Género preferido">
-            <label class="choice-option">
-              <input type="checkbox" name="genero" value="hombres" />
-              <span class="choice-badge">A</span>
-              <span class="choice-text">Hombres</span>
-            </label>
-            <label class="choice-option">
-              <input type="checkbox" name="genero" value="mujeres" />
-              <span class="choice-badge">B</span>
-              <span class="choice-text">Mujeres</span>
-            </label>
-            <label class="choice-option">
-              <input type="checkbox" name="genero" value="no_binaria" />
-              <span class="choice-badge">C</span>
-              <span class="choice-text">Persona no binaria</span>
-            </label>
-            <label class="choice-option">
-              <input type="checkbox" name="genero" value="cualquiera" />
-              <span class="choice-badge">D</span>
-              <span class="choice-text">Cualquier persona, independientemente de su género.</span>
-            </label>
-          </div>
-        </div>
-
-        <hr class="section-divider" />
-
-        <!-- 5. Ciudad -->
-        <div class="form-section">
-          <label class="question-label" for="q_ciudad">¿En qué ciudad vives?</label>
-          <input class="form-input" id="q_ciudad" name="ciudad" type="text" placeholder="Ej. Madrid" required />
-        </div>
-
-        <!-- 6. Distancia -->
-        <div class="form-section">
-          <label class="question-label" for="q_distancia">¿Hasta qué distancia estarías dispuesto/a a desplazarte para tener una cita?</label>
-          <p class="question-hint">Indica la distancia en kilómetros o escribe "Me es indiferente".</p>
-          <input class="form-input" id="q_distancia" name="distancia" type="text" placeholder="Ej. 30 km o Me es indiferente" required />
-        </div>
-
-        <hr class="section-divider" />
-
-        <!-- 7. Cuéntanos sobre ti -->
-        <div class="form-section">
-          <label class="question-label" for="q_sobre_ti">Cuéntanos algo sobre ti.</label>
-          <p class="question-hint">No hace falta impresionar a nadie. Escríbenos como si se lo contaras a alguien con quien te apetece hablar de verdad. Si te ayuda, puedes pensar en cosas como: cómo te describirían tus amigos, qué te define en esta etapa de tu vida o qué te hace diferente.</p>
-          <textarea class="form-textarea tall" id="q_sobre_ti" name="sobre_ti" placeholder="Cuéntanos..." required></textarea>
-        </div>
-
-        <!-- 8. Motivo -->
-        <div class="form-section">
-          <label class="question-label" for="q_motivo">El motivo: ¿qué te ha traído hasta DateAndGo?</label>
-          <p class="question-hint">No hay respuestas correctas. Solo queremos entender en qué punto estás ahora mismo.</p>
-          <textarea class="form-textarea tall" id="q_motivo" name="motivo" placeholder="Cuéntanos..." required></textarea>
-        </div>
-
-        <!-- 9. Qué buscas -->
-        <div class="form-section">
-          <p class="question-label">¿Qué te gustaría encontrar?</p>
-          <p class="question-hint">No te preocupes si no lo tienes claro. No hay prisa ni respuestas correctas.</p>
-          <div class="choice-group" role="group" aria-label="Qué buscas">
-            <label class="choice-option">
-              <input type="radio" name="busca" value="relacion_seria" />
-              <span class="choice-badge">A</span>
-              <span class="choice-text">Una relación seria.</span>
-            </label>
-            <label class="choice-option">
-              <input type="radio" name="busca" value="algo_que_fluya" />
-              <span class="choice-badge">B</span>
-              <span class="choice-text">Algo que fluya.</span>
-            </label>
-            <label class="choice-option">
-              <input type="radio" name="busca" value="conocer_gente" />
-              <span class="choice-badge">C</span>
-              <span class="choice-text">Conocer gente nueva.</span>
-            </label>
-            <label class="choice-option">
-              <input type="radio" name="busca" value="no_lo_se" />
-              <span class="choice-badge">D</span>
-              <span class="choice-text">No lo tengo claro.</span>
-            </label>
-          </div>
-        </div>
-
-        <hr class="section-divider" />
-
-        <!-- 10. Plan perfecto -->
-        <div class="form-section">
-          <label class="question-label" for="q_plan">Cuéntanos un plan que te haga feliz de verdad.</label>
-          <p class="question-hint">Puede ser simple o intenso, con gente o a solas, en casa o fuera. No lo pienses demasiado, solo descríbelo.</p>
-          <textarea class="form-textarea" id="q_plan" name="plan" placeholder="Cuéntanos..." required></textarea>
-        </div>
-
-        <!-- 11. Qué te atrae -->
-        <div class="form-section">
-          <label class="question-label" for="q_atrae">¿Qué te suele atraer de alguien?</label>
-          <textarea class="form-textarea" id="q_atrae" name="atrae" placeholder="Cuéntanos..." required></textarea>
-        </div>
-
-        <!-- 12. No repetirías -->
-        <div class="form-section">
-          <label class="question-label" for="q_no_repetir">¿Qué no volverías a repetir en una relación?</label>
-          <textarea class="form-textarea" id="q_no_repetir" name="no_repetir" placeholder="Cuéntanos..." required></textarea>
-        </div>
-
-        <!-- 13. Cómo empieza una historia -->
-        <div class="form-section">
-          <label class="question-label" for="q_inicio">¿Cómo te gusta que empiece una historia?</label>
-          <textarea class="form-textarea" id="q_inicio" name="inicio" placeholder="Cuéntanos..." required></textarea>
-        </div>
-
-        <!-- 14. Algo importante -->
-        <div class="form-section">
-          <label class="question-label" for="q_importante">¿Hay algo importante sobre ti que deberíamos saber?</label>
-          <p class="question-hint">Hay personas que hablan de sus hijos; otras, de su perro, de su forma de querer, de una cicatriz, de un sueño o de un miedo. Y otras, simplemente cuentan algo que les hace sonreír. Lo que quieras compartir está bien. 😉</p>
-          <textarea class="form-textarea tall" id="q_importante" name="importante" placeholder="Cuéntanos..."></textarea>
-        </div>
-
-        <hr class="section-divider" />
-
-        <!-- 15. Fotos / vídeo -->
-        <div class="form-section">
-          <p class="question-label">Ahora, ponle cara a tu historia.</p>
-          <p class="question-hint">Sube un vídeo tuyo de 20 segundos o un máximo de 4 fotos. No buscamos fotos perfectas. Buscamos que quien vaya a conocerte pueda reconocerte cuando os encontréis.</p>
-          <div class="upload-area">
-            <input id="q_fotos" name="fotos" type="file" accept="image/*,video/*" multiple />
-            <div class="upload-icon">📸</div>
-            <p class="upload-text">Sube tus fotos o vídeo aquí</p>
-            <p class="upload-hint">JPG, PNG, MP4 · Máx. 4 archivos · Vídeo máx. 20 seg.</p>
-          </div>
-        </div>
-
-        <!-- SUBMIT -->
-        <div class="submit-wrap">
-          <button type="submit" class="btn-submit">Enviar mi cuestionario →</button>
-        </div>
-
-      </form>
+      <!-- TALLY FORM EMBED -->
+      <div class="tally-wrap">
+        <iframe
+          data-tally-src="https://tally.so/r/KYOWL8?transparentBackground=1"
+          width="100%"
+          height="800"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Tu historia empieza aquí">
+        </iframe>
+      </div>
 
       <!-- SIGN-OFF -->
       <div class="sign-off">
@@ -580,6 +225,16 @@
     </div>
 
   </div><!-- /wrapper -->
+
+  <script>
+    // Tally auto-resize: ajusta el iframe al alto real del formulario
+    window.addEventListener('message', function(e) {
+      if (e.data && e.data.type === 'tally-form-loaded') {
+        var iframe = document.querySelector('.tally-wrap iframe');
+        if (iframe) iframe.style.height = e.data.height + 'px';
+      }
+    });
+  </script>
 
 </body>
 </html>
